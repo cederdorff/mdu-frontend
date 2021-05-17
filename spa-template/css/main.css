@@ -14,7 +14,7 @@ html {
   height: 100%;
   text-align: center;
   width: 100%;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 body {
@@ -23,8 +23,18 @@ body {
 
 h1 {
   font-size: 2em;
-  font-weight: 300;
-  letter-spacing: 3px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+a{
+  color: var(--green);
 }
 
 /* ---------- topbar styling ---------- */
@@ -42,7 +52,8 @@ h1 {
 
 .topbar h2 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 /* ---------- tabbar styling ---------- */
