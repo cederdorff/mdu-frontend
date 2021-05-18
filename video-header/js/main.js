@@ -1,15 +1,15 @@
 "use strict"; // to enable strict mode and modern JavaScript functionality
 
-// declaring a variable with a value
-let message = "Hi Students";
+let video = document.getElementById("header-video");
+let btn = document.querySelector("#play-pause-btn");
 
-// accessing the variable and logging it to the console
-console.log(message);
-
-// appending the value from the variable to thee DOM element #content
-document.querySelector("#content").innerHTML = message;
-
-// showing and alert with a message
-function showAlert() {
-  alert('Open your Developer Console!');
+// Pause and play the video, and change the button text
+function playPauseVideo() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
 }

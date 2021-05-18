@@ -12,22 +12,19 @@
 </head>
 
 <body>
-  <header>
-    <!-- The video -->
-    <video autoplay muted loop id="myVideo">
+  <header class="header-container">
+    <video autoplay muted loop id="header-video">
       <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
     </video>
-
-    <!-- Optional: some overlay text to describe the video -->
-    <div class="content">
+    <section class="header-overlay">
       <h1>Heading</h1>
       <p>Lorem ipsum...</p>
       <!-- Use a button to pause/play the video with JavaScript -->
-      <button id="myBtn" onclick="myFunction()">Pause</button>
-    </div>
+      <button id="play-pause-btn" onclick="playPauseVideo()">Pause</button>
+    </section>
   </header>
-  <section>
-    <h1>Heading</h1>
+  <section class="the-team">
+    <h2>The Team</h2>
     <p>Lorem ipsum...</p>
   </section>
   <!-- main js file -->

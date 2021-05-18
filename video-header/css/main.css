@@ -27,6 +27,12 @@ h1 {
   letter-spacing: 1px;
 }
 
+h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
 button {
   text-align: center;
   cursor: pointer;
@@ -72,41 +78,27 @@ button {
 
 /* ---------- video styling ---------- */
 /* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  /* position: fixed; */
-  right: 0;
-  bottom: 0;
+.header-container{
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#header-video {
   min-width: 100%;
   min-height: 100vh;
 }
 
 /* Add some content at the bottom of the video/page */
-.content {
+.header-overlay {
   position: absolute;
   top: 40%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+  background: var(--light-grey);
   width: 100%;
-  padding: 20px;
+  padding: 20px 0;
 }
 
-/* Style the button used to pause/play the video */
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-
-section{
+.the-team{
   min-height: 100vh;
   padding: 2em;
   background-color: var(--light-green);
