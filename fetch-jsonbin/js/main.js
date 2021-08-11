@@ -1,11 +1,12 @@
 "use strict"; // to enable strict mode and modern JavaScript functionality
 
 async function fetchJson() {
-  const url = `https://api.jsonbin.io/v3/b/610d6c0dd5667e403a3a872a`;
+  const url = "https://api.jsonbin.io/b/61138ef2d5667e403a3fb6a1";
 
   const response = await fetch(url, {
     headers: {
-      'X-Master-Key': '$2b$10$Yf3KXmL/m5RKFETVGwuUGu6P1Y6uoxR/70P6GBjJ.gJQFnkgZ770.',
+      "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
+      "Content-Type": "application/json",
       'X-BIN-META': false
     }
   }); // fetch and wait the response
@@ -20,11 +21,8 @@ function appendTeachers(teachers) {
     console.log(teacher);
     html += /*html*/`
       <article>
-      <img src='${teacher.img}'>
         <h3>${teacher.name}</h3>
-        ${teacher.position}<br>
         <a href='mailto:${teacher.mail}'>${teacher.mail}</a>
-        <p>Keywords: ${teacher.keywords}</p>
     </article>
         `;
   }
