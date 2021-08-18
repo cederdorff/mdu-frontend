@@ -4,21 +4,21 @@
 
 let _selectedUser;
 let _users = [];
-const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1/latest";
+const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1"
 let _headers = {
   "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
-  "Content-Type": "application/json",
-  'X-BIN-META': false
+  "Content-Type": "application/json"
 };
 
 // ========== READ ==========
 
 async function loadPersons() {
-  const response = await fetch(_baseUrl, {
+  const response = await fetch(_baseUrl + "/latest", {
     headers: _headers
   });
-  _users = await response.json();
-  console.log(_users);
+  const data = await response.json();
+  console.log(data);
+  _users = data.record;
   appendUsers(_users);
 }
 loadPersons();
@@ -117,8 +117,8 @@ async function updateJSONBIN(users) {
     body: JSON.stringify(users)
   });
   // waiting for the result
-  let result = await response.json(); // the new updated users array from jsonbin
+  const result = await response.json(); // the new updated users array from jsonbin
   console.log(result);
   //updating the DOM with the new fetched users
-  appendUsers(result.data);
+  appendUsers(result.record);
 }
