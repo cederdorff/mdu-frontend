@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Product Single Page Application">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#products">Products</a>
+    <a href="#add">Add Product</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- home page -->
+  <section id="products" class="page">
+    <header class="topbar">
+      <h2>Products</h2>
+    </header>
+    <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search('')">
+    <input type="checkbox" id="outOfStock" onchange="showHideOfStock(this.checked)" checked>
+    <label for="outOfStock"> Show out of stock</label>
+
+    <section id="products-container"></section>
+  </section>
+
+  <!-- about page -->
+  <section id="add" class="page">
+    <header class="topbar">
+      <h2>Add New Product</h2>
+    </header>
+    <form>
+      <input id="brand" type="text" name="brand" placeholder="Brand">
+      <input id="model" type="text" name="model" placeholder="Model">
+      <input id="price" type="text" name="price" placeholder="Price">
+      <input id="img" type="text" name="img" placeholder="Image URL">
+      <button type="button" name="button" onclick="addNewProduct()">Save</button>
+    </form>
+  </section>
+
+  <!-- SPA functionality  -->
+  <script src="js/spa.js"></script>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

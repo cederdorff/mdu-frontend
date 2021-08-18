@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Peter Madsen",
+    "age": 52,
+    "hairColor": "blonde",
+    "relation": "dad",
+    "img": "img/dad.jpg"
+  },
+  {
+    "name": "Ane Madsen",
+    "age": 51,
+    "hairColor": "brown",
+    "relation": "mom",
+    "img": "img/ane.jpg"
+  }
+]

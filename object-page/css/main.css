@@ -1,0 +1,54 @@
+/* ---------- root variables ---------- */
+:root {
+  --green: rgb(38, 76, 89);
+  --light-green: rgb(172, 198, 201);
+  --light-grey: #f1f1f4;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--text-color-dark);
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+/* ---------- header styling ---------- */
+
+header{
+  background-color: var(--green);
+}
+
+header img{
+  max-width: 200px;
+  padding: 2em 0;
+}
+img {
+  max-width: 300px;
+  width: 100%;
+}
+
+/* ---------- footer styling ---------- */
+
+footer{
+  background-color: var(--light-green);
+  color: var(--green);
+}
+
+footer p{
+  padding: 2em 0;
+}

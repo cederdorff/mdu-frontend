@@ -27,6 +27,11 @@ h1 {
   letter-spacing: 3px;
 }
 
+a {
+  text-decoration: none;
+  color: var(--light-green);
+}
+
 /* ---------- topbar styling ---------- */
 .topbar {
   background-color: var(--green);
@@ -43,6 +48,21 @@ h1 {
 .topbar h2 {
   margin: 0;
   font-weight: 300;
+}
+
+.topbar a {
+  text-decoration: none;
+  color: var(--text-color-light);
+  position: absolute;
+  top: 20px;
+}
+
+.topbar a.left {
+  left: 20px;
+}
+
+.topbar a.right {
+  right: 20px;
 }
 
 /* ---------- tabbar styling ---------- */
@@ -76,7 +96,7 @@ h1 {
 /* Add a color to the active/current link */
 .tabbar a.active {
   background-color: var(--light-green);
-  color: var(--green);
+  color: var(--text-color-light);
 }
 
 /* ---------- page styling ---------- */
@@ -107,4 +127,87 @@ h1 {
   to {
     opacity: 1
   }
+}
+
+/* ---------- input form stryling ---------- */
+form {
+  background-color: var(--light-green);
+  padding: 2em 1em 2.5em;
+}
+
+form button {
+  font-weight: 200;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1em;
+  border-radius: 0;
+  color: var(--text-color-light);
+  background-color: var(--green);
+  width: 100%;
+  max-width: 350px;
+}
+
+article button {
+  font-weight: 200;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 0;
+  color: var(--text-color-light);
+  background-color: var(--green);
+  width: 40%;
+}
+
+input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+}
+
+.grid-container>article {
+  text-align: center;
+  padding: 10px;
+}
+
+.grid-container>article img {
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 1em;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.grid-container>article h3 {
+  font-weight: 200;
+}
+
+.image-preview {
+  width: 100%;
+  height: auto;
+  margin: 1em 0;
 }

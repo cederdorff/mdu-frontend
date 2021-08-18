@@ -76,7 +76,7 @@ h1 {
 /* Add a color to the active/current link */
 .tabbar a.active {
   background-color: var(--light-green);
-  color: var(--green);
+  color: var(--text-color-light);
 }
 
 /* ---------- page styling ---------- */
@@ -108,3 +108,37 @@ h1 {
     opacity: 1
   }
 }
+
+/* ---------- tinder carousel ---------- */
+    #board {
+      width: 100%;
+      height: 100%;
+      /* position: absolute; */
+      overflow: hidden;
+      background-color: rgb(245, 247, 250);
+    }
+
+    .card {
+      width: 90%;
+      height: calc(100vh - 200px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 1%;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      transform: translateX(-50%) translateY(-50%) scale(0.95);
+    }
+
+    /* slide show */
+  [data-component="slideshow"] .slide {
+    display: none;
+  }
+
+  [data-component="slideshow"] .slide.active {
+    display: block;
+  }
+
+  .card img{
+    width: 100%;
+  }

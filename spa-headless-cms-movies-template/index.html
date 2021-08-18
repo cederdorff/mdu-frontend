@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Movie Single Page Application">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#movies">Movies</a>
+    <a href="#genre">Genre</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- products -->
+  <section id="movies" class="page">
+    <header class="topbar">
+      <h2>Movies</h2>
+    </header>
+    <input type="search" placeholder="Search" onkeyup="search(this.value)">
+    <section id="movies-container" class="grid-container"></section>
+  </section>
+
+  <!-- category page -->
+  <section id="genre" class="page">
+    <header class="topbar">
+      <h2>Movies By Genre</h2>
+    </header>
+    <select id="select-genre" name="genre" onchange="genreSelected(this.value)">
+      <option value="">Select Genre</option>
+    </select>
+    <section id="movies-by-genre-container" class="grid-container">
+      <p>Please, select genre</p>
+    </section>
+  </section>
+
+  <!-- loader  -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- SPA functionality  -->
+  <script src="js/spa.js"></script>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

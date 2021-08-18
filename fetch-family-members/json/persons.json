@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Peter Madsen",
+    "age": 52,
+    "hairColor": "blonde",
+    "relation": "dad",
+    "img": "img/dad.jpg"
+  },
+  {
+    "name": "Ane Madsen",
+    "age": 51,
+    "hairColor": "brown",
+    "relation": "mom",
+    "img": "img/ane.jpg"
+  },
+  {
+    "name": "Rasmus Madsen",
+    "age": 28,
+    "hairColor": "blonde",
+    "relation": "brother",
+    "img": "img/IMG_0526_kvadrat.jpg"
+  },
+  {
+    "name": "Mie Madsen",
+    "age": 25,
+    "hairColor": "brown",
+    "relation": "blonde",
+    "img": "img/mie.jpg"
+  },
+  {
+    "name": "Mads Madsen",
+    "age": 18,
+    "hairColor": "dark",
+    "relation": "blonde",
+    "img": "img/mads.jpg"
+  },
+  {
+    "name": "Jens Madsen",
+    "age": 14,
+    "hairColor": "blonde",
+    "relation": "uncle",
+    "img": "img/jenspeter.jpg"
+  }
+]

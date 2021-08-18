@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SPA Template Modules</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Single Page Application">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#home">Home</a>
+    <a href="#persons">Persons</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- home page -->
+  <section id="home" class="page">
+    <header class="topbar">
+      <h2>Home</h2>
+    </header>
+    <h3>SPA Template Modules</h3>
+    <p>My Single Page Web App Template</p>
+  </section>
+
+  <!-- persons page -->
+  <section id="persons" class="page">
+    <header class="topbar">
+      <h2>Persons</h2>
+    </header>
+    <div id="grid-persons" class="grid-container"></div>
+  </section>
+
+  <!-- loader  -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <!-- main js file -->
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>

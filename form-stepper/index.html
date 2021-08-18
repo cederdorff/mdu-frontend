@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML, CSS AND JAVASCRIPT PROJECT TEMPLATE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="WORKING WITH FORMS">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body>
+  <header>
+    <h1>WORKING WITH FORMS</h1>
+  </header>
+  <form id="regForm" name="newUserForm">
+    <!-- One "tab" for each step in the form: -->
+    <fieldset class="tab">
+      <legend>Name</legend>
+      <p><input placeholder="First name..."></p>
+      <p><input placeholder="Last name..."></p>
+    </fieldset>
+
+    <fieldset class="tab">
+      <legend>Contact Info</legend>
+      <p><input placeholder="E-mail..."></p>
+      <p><input placeholder="Phone..."></p>
+    </fieldset>
+
+    <fieldset class="tab">Birthday:
+      <p><input placeholder="dd"></p>
+      <p><input placeholder="mm"></p>
+      <p><input placeholder="yyyy"></p>
+    </fieldset>
+
+    <fieldset class="tab">Login Info:
+      <p><input placeholder="Username..."></p>
+      <p><input placeholder="Password..."></p>
+    </fieldset>
+
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+
+  </form>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

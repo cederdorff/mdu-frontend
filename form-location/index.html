@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>WORKING WITH FORMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="WORKING WITH FORMS">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body>
+  <header>
+    <h1>WORKING WITH FORMS</h1>
+  </header>
+  <form>
+    <fieldset>
+      <legend>New User</legend>
+      <p>
+        <label for="name">Name </label>
+        <input type="text" name="name" id="name">
+      </p>
+      <p>
+        <label for="name">Email </label>
+        <input type="email" name="email" id="email">
+      </p>
+      <button type="button" name="button" onclick="createUser()" id="createUserBtn">Create user</button>
+    </fieldset>
+  </form>
+
+  <div id="location"></div>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

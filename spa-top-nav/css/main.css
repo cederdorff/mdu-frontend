@@ -27,17 +27,17 @@ h1 {
   letter-spacing: 3px;
 }
 
+/* ---------- Grid container ---------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
 /* ---------- topbar styling ---------- */
 .topbar {
-  background-color: var(--green);
-  color: var(--text-color-light);
-  padding: 13.5px;
+  background-color: transparent;
+  padding: 2em 0;
   text-transform: uppercase;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
 }
 
 .topbar h2 {
@@ -45,14 +45,27 @@ h1 {
   font-weight: 300;
 }
 
+/* ---------- header styling ---------- */
+header {
+  background-color: var(--green);
+}
+
+.img-col img {
+  max-width: 200px;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.grid-container section {
+  position: relative;
+}
+
 /* ---------- tabbar styling ---------- */
 .tabbar {
   background-color: var(--green);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+  margin: auto;
+  width: 100%;
 }
 
 /* Style the links inside the navigation bar */
@@ -76,25 +89,20 @@ h1 {
 /* Add a color to the active/current link */
 .tabbar a.active {
   background-color: var(--light-green);
-  color: var(--green);
+  color: var(--text-color-light);
 }
 
 /* ---------- page styling ---------- */
 .page {
   display: none;
-  /*min heigh is screen heigh minus height of tab and top bar */
-  min-height: calc(100vh - 110px);
-  background: var(--light-grey);
   animation: fadeIn 0.4s;
-  /* padding equals height of tabbar and topbar */
-  padding: 55px 0;
 }
 
 /* ---------- logo styling ---------- */
 .logo {
   margin: 2em auto;
   width: 100%;
-  max-width: 300px;
+  max-width: 150px;
 }
 
 /* ---------- animations ---------- */

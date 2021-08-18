@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>SINGLE PAGE WEB APP TEMPLATE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Get started with HTML, CSS and JavaScript">
+    <meta name="author" content="Rasmus Cederdorff">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  </head>
+
+  <body onhashchange="pageChange()">
+    <!-- tabbar navigation -->
+    <nav class="tabbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- pages -->
+    <!-- home page -->
+    <section id="home" class="page">
+      <header class="topbar">
+        <h2>Home</h2>
+      </header>
+      <p>My Single Page Web App Template</p>
+    </section>
+
+    <!-- about page -->
+    <section id="about" class="page">
+      <header class="topbar">
+        <h2>About</h2>
+      </header>
+      <p>This is my about page</p>
+    </section>
+
+    <!-- clients page -->
+    <section id="projects" class="page">
+      <header class="topbar">
+        <h2>My Projects</h2>
+      </header>
+
+      <!-- Tab links -->
+      <div class="tab">
+        <button class="tablinks design" onclick="showTab('design')">design</button>
+        <button class="tablinks web" onclick="showTab('web')">web</button>
+        <button class="tablinks photo" onclick="showTab('photo')">photo</button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="design" class="tabcontent">
+        <h3>Design</h3>
+        <p>Hola</p>
+        <div class="grid-container">
+          <article>
+            <a href="#project1" class="navigation-link">
+              <img src="https://cederdorff.com/img/karolineshus_web.jpg">
+              <h3>My Project 1</h3>
+            </a>
+          </article>
+          <article>
+            <a href="#project2" class="navigation-link">
+              <img src="https://cederdorff.com/img/cphcloud_web.jpg">
+              <h3>My Project 1</h3>
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <div id="web" class="tabcontent">
+        <h3>Web</h3>
+        <p>web is the capital of France.</p>
+      </div>
+
+      <div id="photo" class="tabcontent">
+        <h3>Photo</h3>
+        <p>photo is the capital of Japan.</p>
+      </div>
+    </section>
+
+    <!-- contact page -->
+    <section id="contact" class="page">
+      <header class="topbar">
+        <h2>Contact</h2>
+      </header>
+      <p>So, contact info?</p>
+      <p><a href="mailto:race@eaaa.dk">race@eaaa.dk</a></p>
+      <a href="http://cederdorff.com" target="_blank">
+        <img src="img/logo.png" alt="Cederdorff logo" class="logo">
+      </a>
+    </section>
+
+    <section id="project1" class="page">
+      <header class="topbar">
+        <h2>Project 1</h2>
+      </header>
+      <p>My project 1</p>
+    </section>
+
+    <section id="project2" class="page">
+      <header class="topbar">
+        <h2>Project 2</h2>
+      </header>
+      <p>My project 2</p>
+    </section>
+
+    <!-- SPA functionality  -->
+    <script src="js/spa.js"></script>
+    <!-- main js file -->
+    <script src="js/main.js"></script>
+  </body>
+
+</html>

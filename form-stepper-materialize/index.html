@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.0.1/dist/css/mstepper.min.css">
+  <link href="css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <form>
+          <ul class="stepper linear">
+            <li class="step active">
+              <div data-step-label="There's labels too!" class="step-title waves-effect waves-dark">Step 1</div>
+              <div class="step-content" style="">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="linear_email" name="linear_email" type="email" class="validate" required="">
+                    <label for="linear_email">Your e-mail</label>
+                  </div>
+                </div>
+                <div class="step-actions">
+                  <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-title waves-effect waves-dark">Step 2</div>
+              <div class="step-content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="linear_password" name="linear_password" type="password" class="validate" required="">
+                    <label for="linear_password">Your password</label>
+                  </div>
+                </div>
+                <div class="step-actions">
+                  <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
+                  <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-title waves-effect waves-dark">Step 3</div>
+              <div class="step-content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="linear_birthdate" name="linear_password" type="text" class="validate datepicker" required="">
+                    <label for="linear_birthdate">Your Birthday</label>
+                  </div>
+                </div>
+                <div class="step-actions">
+                  <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
+                  <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-title waves-effect waves-dark">Step 4</div>
+              <div class="step-content">
+                Finish!
+                <div class="step-actions">
+                  <button class="waves-effect waves-dark btn blue" type="button">SUBMIT</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/materialize-stepper@3.0.1/dist/js/mstepper.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

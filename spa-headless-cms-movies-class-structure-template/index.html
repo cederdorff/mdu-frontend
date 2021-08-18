@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Movie Single Page Application">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#movies">Movies</a>
+    <a href="#category">category</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- home page -->
+  <section id="movies" class="page">
+    <header class="topbar">
+      <h2>Movies</h2>
+    </header>
+    <input type="search" placeholder="Search" onkeyup="search(this.value)">
+    <section id="movies-container" class="grid-container"></section>
+  </section>
+
+  <!-- about page -->
+  <section id="category" class="page">
+    <header class="topbar">
+      <h2>Movies By category</h2>
+    </header>
+    <select id="select-category" name="category" onchange="categorySelected(this.value)">
+      <option value="">Select category</option>
+    </select>
+    <section id="movies-by-category-container" class="grid-container">
+      <p>Please, select category</p>
+    </section>
+  </section>
+
+  <!-- loader  -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <!-- main js file -->
+  <script src="scripts/main.js" type="module"></script>
+</body>
+
+</html>
