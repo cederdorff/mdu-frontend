@@ -13,7 +13,8 @@ let _headers = {
 // ========== READ ==========
 
 async function loadPersons() {
-  const response = await fetch(_baseUrl + "/latest", {
+  const url = _baseUrl + "/latest"; // make sure to get the latest version
+  const response = await fetch(url, {
     headers: _headers
   });
   const data = await response.json();
