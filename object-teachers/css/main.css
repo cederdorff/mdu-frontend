@@ -10,7 +10,7 @@
 /* ---------- general styling ---------- */
 html {
   color: var(--text-color-dark);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -45,6 +45,10 @@ button {
   background-color: var(--green);
   width: 100%;
   max-width: 350px;
+}
+
+a{
+  color: var(--green);
 }
 
 /* ---------- grid container styling ---------- */

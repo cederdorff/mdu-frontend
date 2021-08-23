@@ -10,7 +10,7 @@
 html {
   color: var(--text-color-dark);
   display: table;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100%;
   text-align: center;
   width: 100%;
