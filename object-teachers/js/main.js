@@ -11,19 +11,19 @@ let teacher1 = {
   address: "Ringvej Syd 104, 8260 Viby J",
   position: "Senior Lecturer",
   department: "Multimedia Design",
-  img: "https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg"
+  img: "https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132301335231430000&format=webp"
 };
 
-// Martin
+// Lykke
 let teacher2 = {
-  name: "Martin Aagaard Nøhr",
-  initials: "mnor",
-  mail: "mnor@baaa.dk",
-  phone: "7228 6320",
+  name: "Lykke Dahlén",
+  initials: "lyda",
+  mail: "lyda@baaa.dk",
+  phone: "7228 6329",
   address: "Ringvej Syd 104, 8260 Viby J",
   position: "Lecturer",
-  department: "Multimedia Design",
-  img: "https://media-exp1.licdn.com/dms/image/C4D03AQElLjyVglReqw/profile-displayphoto-shrink_800_800/0/1520939660019?e=1635379200&v=beta&t=zrSCqxYCv1T7tYMzLSF5qwKq_zh_o236X5BDvJps8Rs"
+  department: "Multimedia Design & Digital Concept Development",
+  img: "https://www.baaa.dk/media/vk5evkad/lykke-dahlen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132301335291100000&format=webp"
 };
 
 // log objects to the developer console
