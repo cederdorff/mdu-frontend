@@ -16,11 +16,19 @@ let teacher1 = {
 
 // Martin
 let teacher2 = {
-
+  name: "Martin Aagaard Nøhr",
+  initials: "mnor",
+  mail: "mnor@baaa.dk",
+  phone: "7228 6320",
+  address: "Ringvej Syd 104, 8260 Viby J",
+  position: "Lecturer",
+  department: "Multimedia Design",
+  img: "https://media-exp1.licdn.com/dms/image/C4D03AQElLjyVglReqw/profile-displayphoto-shrink_800_800/0/1520939660019?e=1635379200&v=beta&t=zrSCqxYCv1T7tYMzLSF5qwKq_zh_o236X5BDvJps8Rs"
 };
 
 // log objects to the developer console
 console.log(teacher1);
+console.log(teacher2);
 
 // Appending objects to the DOM
 
@@ -34,4 +42,10 @@ document.querySelector("#grid-teachers").innerHTML += /*html*/ `
 </article>`;
 
 //teacher2 - Martin
-//todo
+document.querySelector("#grid-teachers").innerHTML += /*html*/ `
+<article>
+  <img src='${teacher2.img}'>
+  <h3>${teacher2.name}</h3>
+  ${teacher2.position}<br>
+  <a href='mailto:${teacher2.mail}'>${teacher2.mail}</a>
+</article>`;
