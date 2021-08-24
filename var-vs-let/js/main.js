@@ -16,18 +16,27 @@ let user2; // SyntaxError: 'user' has already been declared
 if (true) {
   var test1 = true; // use "var" instead of "let"
 }
-console.log(test1); // true, the variable lives after if
+// true, the variable lives after if
+// console.log(test1);
 
 // Example 2
 if (true) {
   let test2 = true; // use "let"
 }
-console.log(test2); // Error: test is not defined
+
+// Error: test is not defined
+// console.log(test2);
 
 // Example 3
 for (var i = 0; i < 10; i++) {
   // ...
 }
-console.log(i); // 10, "i" is visible after loop, it's a global variable
+// 10, "i" is visible after loop, it's a global variable
+// console.log(i);
 
+// const is also block scoped
 
+if (true) {
+  const programmingLecturer = "RACE";
+}
+// console.log(programmingLecturer);
