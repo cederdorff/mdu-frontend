@@ -5,12 +5,13 @@
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
   --text-color-dark: #333;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- general styling ---------- */
 html {
   color: var(--text-color-dark);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-family);
   height: 100%;
   text-align: center;
   width: 100%;
