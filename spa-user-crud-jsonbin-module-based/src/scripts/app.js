@@ -24,3 +24,4 @@ async function appendUsers() {
 appendUsers();
 
 window.selectUser = (id) => console.log(id);
+window.deleteUser = (id) => console.log(id);
