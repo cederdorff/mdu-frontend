@@ -86,7 +86,7 @@ function updateUser() {
   });
 
   // update database user
-  _userRef.doc(_currentUser.uid).update({
+  _userRef.doc(_currentUser.uid).set({
     img: document.querySelector('#imagePreview').src,
     birthdate: document.querySelector('#birthdate').value,
     hairColor: document.querySelector('#hairColor').value
@@ -213,19 +213,23 @@ function createMovie() {
   let inputImageUrl = document.getElementById("imageUrl");
   let inputDescription = document.getElementById("description");
 
-  let newMovie = {
-    title: inputTitle.value,
-    year: inputYear.value,
-    img: inputImageUrl.value,
-    description: inputDescription.value
-  };
-  // add to movie ref
-  _movieRef.add(newMovie);
-  //navigate to home
-  navigateTo("home");
-  // reset input values
-  inputTitle.value = "";
-  inputYear.value = "";
-  inputImageUrl.value = "";
-  inputDescription.value = "";
+  if (inputTitle.value && inputYear.value && inputImageUrl && inputDescription) {
+    let newMovie = {
+      title: inputTitle.value,
+      year: inputYear.value,
+      img: inputImageUrl.value,
+      description: inputDescription.value
+    };
+    // add to movie ref
+    _movieRef.add(newMovie);
+    //navigate to home
+    navigateTo("home");
+    // reset input values
+    inputTitle.value = "";
+    inputYear.value = "";
+    inputImageUrl.value = "";
+    inputDescription.value = "";
+  } else {
+    alert("Please, fill in all input fields.");
+  }
 }
