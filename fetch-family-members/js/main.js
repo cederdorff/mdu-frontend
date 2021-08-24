@@ -1,4 +1,3 @@
-// =========== Product functionality =========== //
 /*
 global variable: _familyMembers
 */
