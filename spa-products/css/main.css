@@ -5,18 +5,16 @@
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
   --text-color-dark: #333;
-  --text-color-out-of-stock: rgb(255, 97, 97); 
-  --text-color-in-stock: rgb(78, 255, 158);
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- general styling ---------- */
 html {
   color: var(--text-color-dark);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-family);
   height: 100%;
   text-align: center;
   width: 100%;
-  font-weight: 200;
 }
 
 body {
@@ -25,8 +23,14 @@ body {
 
 h1 {
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 3px;
+}
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0.5em 0 0.2em;
 }
 
 /* ---------- topbar styling ---------- */
@@ -44,7 +48,7 @@ h1 {
 
 .topbar h2 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* ---------- tabbar styling ---------- */
@@ -78,7 +82,7 @@ h1 {
 /* Add a color to the active/current link */
 .tabbar a.active {
   background-color: var(--light-green);
-  color: var(--text-color-light);
+  color: var(--green);
 }
 
 /* ---------- page styling ---------- */
@@ -111,32 +115,45 @@ h1 {
   }
 }
 
-/* ---------- product styling ---------- */
-#products-container img {
+/* ---------- grid container styling ---------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+}
+
+.grid-container>article {
+  text-align: center;
+  padding: 10px;
+}
+
+.grid-container>article img {
+  max-width: 300px;
   width: 100%;
-  max-width: 250px;
   height: auto;
 }
 
-#products-container article {
-  padding: 0.5em 0 2em;
-}
+/* ---------- product styling ---------- */
 
- p.outOfStock{
-  color: var(--text-color-out-of-stock);
-}
-
-p.inStock{
-  color: var(--text-color-in-stock);
-}
-
-/* ---------- form styling ---------- */
+/* input form stryling */
 form {
   margin: auto;
 }
 
 form button {
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   cursor: pointer;
   border: none;
@@ -147,6 +164,8 @@ form button {
   background-color: rgb(38, 76, 89);
   width: 100%;
   max-width: 350px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 input {
