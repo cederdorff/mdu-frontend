@@ -66,15 +66,15 @@ function search(searchValue) {
   searchValue = searchValue.toLowerCase();
   console.log(searchValue);
 
-  let filteredFamilyMembers = [];
+  let result = [];
 
   for (let familyMember of familyMembers) {
     let name = familyMember.name.toLowerCase();
     if (name.includes(searchValue.toLowerCase())) {
-      filteredFamilyMembers.push(familyMember);
+      result.push(familyMember);
     }
   }
-  appendPersons(filteredFamilyMembers);
+  appendPersons(result);
 }
 
 function add() {
