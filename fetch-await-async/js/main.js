@@ -2,12 +2,9 @@
 
 async function loadData() {
   let response = await fetch("https://randomuser.me/api/?results=9");
-  let jsonData = await response.json();
-  console.log(jsonData);
-  appendPersons(jsonData.results);
-
-  let cvrData = await fetch('http://api.racedev.dk/cvr.json').then(res => res.json());
-  console.log(cvrData);
+  let data = await response.json();
+  console.log(data);
+  appendPersons(data.results);
 }
 
 loadData();
@@ -18,7 +15,7 @@ function appendPersons(persons) {
   for (let person of persons) { // looping trough all persons
     console.log(person);
     //creating person data, HTML tags and adding to the DOM, the element #gridPersons
-    document.querySelector("#grid-persons").innerHTML += `
+    document.querySelector("#grid-persons").innerHTML += /*html*/`
       <article>
       <img src="${person.picture.large}">
       <h4>${person.name.first} ${person.name.last}</h4>

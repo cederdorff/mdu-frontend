@@ -10,9 +10,9 @@ fetch('json/persons.json')
   .then(function (response) {
     return response.json();
   })
-  .then(function (jsonData) {
-    console.log(jsonData);
-    _familyMembers = jsonData;
+  .then(function (data) {
+    console.log(data);
+    _familyMembers = data;
     // todo: call appendPersons(...)
   });
 

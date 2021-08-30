@@ -13,10 +13,10 @@ fetch('json/products.json')
   .then(function (response) {
     return response.json();
   })
-  .then(function (json) {
-    console.log(json);
-    _products = json
-    appendProducts(json);
+  .then(function (data) {
+    console.log(data);
+    _products = data
+    appendProducts(_products);
   });
 
 function appendProducts(products) {

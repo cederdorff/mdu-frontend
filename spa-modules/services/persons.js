@@ -5,8 +5,8 @@ export default class PersonsService {
 
   async loadPersons() {
     let response = await fetch("https://randomuser.me/api/?results=9");
-    let jsonData = await response.json();
-    this.appendPersons(jsonData.results);
+    let data = await response.json();
+    this.appendPersons(data.results);
   }
 
   appendPersons(persons) {

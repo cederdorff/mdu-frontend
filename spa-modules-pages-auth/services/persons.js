@@ -3,8 +3,8 @@ class PersonsService {
 
   async loadPersons() {
     let response = await fetch("https://randomuser.me/api/?results=9");
-    let jsonData = await response.json();
-    return jsonData.results;
+    let data = await response.json();
+    return data.results;
   }
 }
 

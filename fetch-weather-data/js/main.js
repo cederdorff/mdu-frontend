@@ -13,9 +13,9 @@ function loadWeatherData() {
     .then(response => {
       return response.json();
     })
-    .then(json => {
-      console.log(json);
-      let current = json.current;
+    .then(data => {
+      console.log(data);
+      let current = data.current;
       document.querySelector('#current-condition').innerHTML = `
         <h2>${current.weather_descriptions}</h2>
         <img src='${current.weather_icons}'>

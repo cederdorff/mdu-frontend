@@ -2,9 +2,9 @@
 
 async function getData() {
   let response = await fetch("http://persons-api.racedev.dk/wp-json/wp/v2/posts");
-  let jsonData = response.json();
-  console.log(jsonData);
-  appendPosts(jsonData);
+  let data = response.json();
+  console.log(data);
+  appendPosts(data);
 }
 
 getData();

@@ -6,9 +6,9 @@ class PersonsService {
 
   async loadPersons() {
     let response = await fetch("https://randomuser.me/api/?results=9");
-    let jsonData = await response.json();
+    let data = await response.json();
     this.loaderService.show(false);
-    return jsonData.results;
+    return data.results;
   }
 }
 

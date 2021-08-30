@@ -13,9 +13,9 @@ fetch('json/products.json')
   .then(function (response) {
     return response.json();
   })
-  .then(function (json) {
-    _products = json
-    appendProducts(json);
+  .then(function (data) {
+    _products = data
+    appendProducts(_products);
   });
 
 function appendProducts(products) {
