@@ -6,6 +6,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaavlaf@students.eaaa.dk",
         "createdAt": "2020-08-07T02:55:14+02:00",
         "email": "eaavlaf@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaavlaf@students.eaaa.dk",
         "id": "24076"
@@ -17,6 +18,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaambarb@students.eaaa.dk",
         "createdAt": "2020-08-07T02:55:10+02:00",
         "email": "eaambarb@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaambarb@students.eaaa.dk",
         "id": "24072"
@@ -28,6 +30,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaaiib@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:40+02:00",
         "email": "eaaiib@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaaiib@students.eaaa.dk",
         "id": "24046"
@@ -50,6 +53,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaalmlb@students.eaaa.dk",
         "createdAt": "2020-08-07T02:53:12+02:00",
         "email": "eaalmlb@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaalmlb@students.eaaa.dk",
         "id": "23998"
@@ -83,6 +87,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaarce@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:44+02:00",
         "email": "eaarce@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaarce@students.eaaa.dk",
         "id": "24050"
@@ -94,6 +99,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaamsnf@students.eaaa.dk",
         "createdAt": "2020-08-07T02:53:27+02:00",
         "email": "eaamsnf@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaamsnf@students.eaaa.dk",
         "id": "24012"
@@ -116,6 +122,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaamail@students.eaaa.dk",
         "createdAt": "2020-08-07T02:55:17+02:00",
         "email": "eaamail@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaamail@students.eaaa.dk",
         "id": "24078"
@@ -127,6 +134,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaamadaj@students.eaaa.dk",
         "createdAt": "2020-08-07T02:53:13+02:00",
         "email": "eaamadaj@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaamadaj@students.eaaa.dk",
         "id": "23999"
@@ -149,6 +157,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaamkoz@students.eaaa.dk",
         "createdAt": "2020-08-07T02:55:20+02:00",
         "email": "eaamkoz@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaamkoz@students.eaaa.dk",
         "id": "24081"
@@ -160,6 +169,7 @@
         "avatarUrl": "https://eaaa.instructure.com/images/thumbnails/656526/r61o16TBGaMIaRdwSpn50iNyDKbhcF4BBGmg68su",
         "createdAt": "2020-08-07T02:55:00+02:00",
         "email": "eaakakry@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaakakry@students.eaaa.dk",
         "id": "24063"
@@ -171,6 +181,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaamlor@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:48+02:00",
         "email": "eaamlor@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaamlor@students.eaaa.dk",
         "id": "24053"
@@ -182,6 +193,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaabmat@students.eaaa.dk",
         "createdAt": "2020-08-07T02:55:09+02:00",
         "email": "bara.matejova@gmail.com",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaabmat@students.eaaa.dk",
         "id": "24071"
@@ -193,6 +205,7 @@
         "avatarUrl": "https://eaaa.instructure.com/images/thumbnails/664176/WZNTjVyM49uTLe4QZcFIgZXnpgep7LjeDwlmEZar",
         "createdAt": "2020-08-07T02:55:01+02:00",
         "email": "eaakimo@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaakimo@students.eaaa.dk",
         "id": "24064"
@@ -204,6 +217,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaaodm@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:41+02:00",
         "email": "eaaodm@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaaodm@students.eaaa.dk",
         "id": "24047"
@@ -215,6 +229,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaasmne@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:18+02:00",
         "email": "eaasmne@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaasmne@students.eaaa.dk",
         "id": "24044"
@@ -237,6 +252,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaathwp@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:13+02:00",
         "email": "thomaswpedersen@hotmail.com",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaathwp@students.eaaa.dk",
         "id": "24040"
@@ -259,6 +275,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaanipr@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:57+02:00",
         "email": "eaanipr@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaanipr@students.eaaa.dk",
         "id": "24061"
@@ -270,6 +287,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaafarz@students.eaaa.dk",
         "createdAt": "2020-08-07T02:55:19+02:00",
         "email": "eaafarz@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaafarz@students.eaaa.dk",
         "id": "24080"
@@ -292,6 +310,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaarlso@students.eaaa.dk",
         "createdAt": "2020-08-07T02:53:58+02:00",
         "email": "eaarlso@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaarlso@students.eaaa.dk",
         "id": "24027"
@@ -303,6 +322,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaaarsv@students.eaaa.dk",
         "createdAt": "2020-08-08T02:43:27+02:00",
         "email": "eaaarsv@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaaarsv@students.eaaa.dk",
         "id": "24207"
@@ -314,6 +334,7 @@
         "avatarUrl": "https://data.efif.dk/Image/StudSys.ashx?cmd=EAA&key=ccd6629f-904f-4356-b4c3-44d5d52cdc08&Username=eaadsz@students.eaaa.dk",
         "createdAt": "2020-08-07T02:54:43+02:00",
         "email": "eaadsz@students.eaaa.dk",
+        "course": "MDC-E20FRONT2",
         "enrollmentType": "StudentEnrollment",
         "loginId": "eaadsz@students.eaaa.dk",
         "id": "24049"
