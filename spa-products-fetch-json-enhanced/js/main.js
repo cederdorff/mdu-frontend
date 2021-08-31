@@ -46,8 +46,7 @@ function addNewProduct() {
   let model = document.querySelector('#model').value;
   let price = document.querySelector('#price').value;
   let img = document.querySelector('#img').value;
-  // dummy generated user id
-  const id = Date.now();
+  const id = Date.now(); // dummy generated user id
 
   if (brand && model && price && img) {
     _products.push({
@@ -145,9 +144,8 @@ function saveProduct() {
   _products[index].model = document.querySelector('#modelEdit').value;
   _products[index].price = document.querySelector('#priceEdit').value;
   _products[index].img = document.querySelector('#imgEdit').value;
-
+  // update dom usind appendProducts()
   appendProducts(_products);
-
   //navigating back
   navigateTo("products");
 }
