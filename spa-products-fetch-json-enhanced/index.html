@@ -39,7 +39,7 @@
     <section id="products-container" class="grid-container"></section>
   </section>
 
-  <!-- about page -->
+  <!-- create page -->
   <section id="add" class="page">
     <header class="topbar">
       <h2>Add New Product</h2>
@@ -52,6 +52,27 @@
       <button type="button" name="button" onclick="addNewProduct()">Save</button>
     </form>
   </section>
+
+  <!-- edit page -->
+  <section id="edit" class="page">
+    <header class="topbar">
+      <a class="left" href="#products">Back</a>
+      <h2>Edit Product</h2>
+    </header>
+    <form>
+      <input id="brandEdit" type="text" name="brand" placeholder="Brand">
+      <input id="modelEdit" type="text" name="model" placeholder="Model">
+      <input id="priceEdit" type="text" name="price" placeholder="Price">
+      <input id="imgEdit" type="text" name="img" placeholder="Image URL">
+      <button type="button" name="button" onclick="saveProduct()">Save</button>
+    </form>
+  </section>
+
+  <!-- loader  -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
 
   <!-- SPA functionality  -->
   <script src="js/spa.js"></script>

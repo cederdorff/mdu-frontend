@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "model": "MacBook Pro 13\"",
     "brand": "Apple",
     "price": "11799",
@@ -7,6 +8,7 @@
     "status": "outOfStock"
   },
   {
+    "id": 1,
     "model": "MacBook Pro 15\"",
     "brand": "Apple",
     "price": "21499",
@@ -14,6 +16,7 @@
     "status": "inStock"
   },
   {
+    "id": 2,
     "model": "Zenbook 14\"",
     "brand": "ASUS",
     "price": "8099",
@@ -21,6 +24,7 @@
     "status": "outOfStock"
   },
   {
+    "id": 3,
     "model": "Ideapad S340 14\" (platinum grey)",
     "brand": "Lenovo",
     "price": "6099",
@@ -28,10 +32,19 @@
     "status": "inStock"
   },
   {
+    "id": 4,
+    "model": "ASUSBOOK 12\"",
+    "brand": "ASUS",
+    "price": "2099",
+    "img": "https://media.power.dk/images/h-7f45c2a55ddb117ac5356153c12b4e3b/products/951450/951450_1_900x900_w_g.jpg",
+    "status": "outOfStock"
+  },
+  {
+    "id": 5,
     "model": "MacBook Pro 13\" M2",
     "brand": "Apple",
     "price": "20499",
-    "img": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp15touch-space-select-201807?wid=904&hei=840&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1529520056969",
+    "img": "https://media.power-cdn.net/images/h-c4944f8045db973eaca3a4bf1ad73ff3/products/1133508/1133508_6_1200x1200_t_g.webp",
     "status": "inStock"
   }
 ]

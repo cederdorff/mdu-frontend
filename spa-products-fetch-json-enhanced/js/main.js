@@ -5,6 +5,7 @@
 global variables: _products
 */
 let _products = [];
+let _selectedProductId;
 
 /*
 Fetches json data from the file products.json
@@ -15,6 +16,7 @@ async function fetchData() {
   _products = data;
   console.log(_products);
   appendProducts(_products);
+  showLoader(false);
 }
 
 fetchData();
@@ -29,6 +31,8 @@ function appendProducts(products) {
         <h3>${product.brand}</h3>
         <p>Price: ${product.price} kr.</p>
         <p class="status">Status: ${product.status}</p>
+        <button onclick="goToEdit(${product.id})">Edit</button>
+        <button onclick="deleteProduct(${product.id})">Delete</button>
       </article>
     `;
   }
@@ -36,10 +40,14 @@ function appendProducts(products) {
 }
 
 function addNewProduct() {
+  showLoader(true);
+
   let brand = document.querySelector('#brand').value;
   let model = document.querySelector('#model').value;
   let price = document.querySelector('#price').value;
   let img = document.querySelector('#img').value;
+  // dummy generated user id
+  const id = Date.now();
 
   if (brand && model && price && img) {
     _products.push({
@@ -47,15 +55,16 @@ function addNewProduct() {
       model,
       price,
       img,
-      status: 'inStock'
+      status: 'inStock',
+      id
     });
 
     appendProducts(_products);
     navigateTo('products');
-    document.querySelector('#brand').value = "";
   } else {
     alert('Please fill out all fields');
   }
+  showLoader(false);
 }
 
 function search(value) {
@@ -81,11 +90,9 @@ function showHideOfStock(checked) {
       item.style.display = "none";
     }
   }
-
 }
 
 function orderBy(option) {
-  console.log(option);
   if (option === "brand") {
     orderByBrand();
   } else if (option === "model") {
@@ -113,5 +120,40 @@ function orderByPrice() {
   _products.sort((product1, product2) => {
     return product1.price - product2.price;
   });
+  appendProducts(_products);
+}
+
+function goToEdit(id) {
+  // save id in global variable
+  _selectedProductId = id;
+  // find product to edit by using array.find and id
+  const productToEdit = _products.find(product => product.id === _selectedProductId);
+  // set input field values with the productToEdit properties
+  document.querySelector('#brandEdit').value = productToEdit.brand;
+  document.querySelector('#modelEdit').value = productToEdit.model;
+  document.querySelector('#priceEdit').value = productToEdit.price;
+  document.querySelector('#imgEdit').value = productToEdit.img;
+  //navigate to edit view
+  navigateTo("edit");
+}
+
+function saveProduct() {
+  // find index of the product to update in _products
+  let index = _products.findIndex(product => product.id === _selectedProductId);
+  // update values of user in array
+  _products[index].brand = document.querySelector('#brandEdit').value;
+  _products[index].model = document.querySelector('#modelEdit').value;
+  _products[index].price = document.querySelector('#priceEdit').value;
+  _products[index].img = document.querySelector('#imgEdit').value;
+
+  appendProducts(_products);
+
+  //navigating back
+  navigateTo("products");
+}
+
+function deleteProduct(id) {
+  // filter _products - all products that doesnt have the id 
+  _products = _products.filter(product => product.id !== id);
   appendProducts(_products);
 }
