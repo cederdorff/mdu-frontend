@@ -26,11 +26,13 @@ function appendProducts(products) {
   for (let product of products) {
     htmlTemplate += /*html*/`
       <article class="${product.status}">
-        <img src="${product.img}">
-        <h2>${product.model}</h2>
-        <h3>${product.brand}</h3>
-        <p>Price: ${product.price} kr.</p>
-        <p class="status">Status: ${product.status}</p>
+        <article onclick="showDetailView(${product.id})">
+          <img src="${product.img}">
+          <h2>${product.model}</h2>
+          <h3>${product.brand}</h3>
+          <p>Price: ${product.price} kr.</p>
+          <p class="status">Status: ${product.status}</p>
+        </article>
         <button onclick="goToEdit(${product.id})">Edit</button>
         <button onclick="deleteProduct(${product.id})">Delete</button>
       </article>
@@ -163,4 +165,20 @@ function deleteProduct(id) {
   // filter _products - all products that doesnt have the id 
   _products = _products.filter(product => product.id !== id);
   appendProducts(_products);
+}
+
+function showDetailView(id) {
+  const productToShow = _products.find(product => product.id === id);
+  navigateTo("detail-view");
+  document.querySelector("#detail-view .title").innerHTML = productToShow.model;
+  document.querySelector("#detail-view-container").innerHTML = /*html*/`
+    <img src="${productToShow.img}">
+    <article>
+      <h2>${productToShow.model}</h2>
+      <h3>${productToShow.brand}</h3>
+      <p>Price: ${productToShow.price} kr.</p>
+      <p>Status: ${productToShow.status}</p>
+      <p>ID: ${productToShow.id}</p>
+    </article>
+  `;
 }

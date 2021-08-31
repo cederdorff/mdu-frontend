@@ -24,18 +24,21 @@
     <header class="topbar">
       <h2>Products</h2>
     </header>
-    <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search('')">
-    <label for="outOfStock"> Show out of stock</label>
-    <input type="checkbox" id="outOfStock" onchange="showHideOfStock(this.checked)" checked>
-    <label for="sortBy">Order by: </label>
-    <select id="sortBy" onchange="orderBy(this.value)">
-      <option value="" selected disabled>Choose here</option>
-      <option value="brand">Brand</option>
-      <option value="model">Model</option>
-      <option value="price">Price</option>
-    </select>
-
-
+    <section class="tools-grid">
+      <label for="sortBy">Order by:
+        <select id="sortBy" onchange="orderBy(this.value)">
+          <option value="" selected disabled>Choose here</option>
+          <option value="brand">Brand</option>
+          <option value="model">Model</option>
+          <option value="price">Price</option>
+        </select>
+      </label>
+      <label for="outOfStock" class="checkmark-container">Show out of stock
+        <input type="checkbox" id="outOfStock" onchange="showHideOfStock(this.checked)" checked>
+        <span class="checkmark"></span>
+      </label>
+      <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search('')">
+    </section>
     <section id="products-container" class="grid-container"></section>
   </section>
 
@@ -66,6 +69,15 @@
       <input id="imgEdit" type="text" name="img" placeholder="Image URL">
       <button type="button" name="button" onclick="saveProduct()">Save</button>
     </form>
+  </section>
+
+  <!-- edit page -->
+  <section id="detail-view" class="page">
+    <header class="topbar">
+      <a class="left" href="#products">Back</a>
+      <h2 class="title">Product</h2>
+    </header>
+    <section id="detail-view-container"></section>
   </section>
 
   <!-- loader  -->
