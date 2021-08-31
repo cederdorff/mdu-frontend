@@ -8,15 +8,10 @@ Fetches json data from the file persons.json
 */
 
 function fetchPersons() {
-  fetch('json/persons.json')
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      _familyMembers = data;
-      appendPersons(_familyMembers);
-    });
+  let response = await fetch('json/persons.json');
+  let data = await response.json();
+  _familyMembers = data;
+  appendPersons(_familyMembers);
 }
 
 fetchPersons();
