@@ -50,11 +50,11 @@ h3 {
 }
 
 /* input form stryling */
-.form {
+form {
   margin: auto;
 }
 
-.form button {
+form button {
   font-weight: 200;
   text-align: center;
   cursor: pointer;
