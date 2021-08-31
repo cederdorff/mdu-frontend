@@ -80,14 +80,23 @@ function search(value) {
 }
 
 
+// function showHideOfStock(checked) {
+//   const items = document.querySelectorAll('.outOfStock'); //grabbing all the products in the DOM
+//   for (let item of items) {
+//     if (checked) {
+//       item.style.display = "block";
+//     } else {
+//       item.style.display = "none";
+//     }
+//   }
+// }
+
 function showHideOfStock(checked) {
-  const items = document.querySelectorAll('.outOfStock'); //grabbing all the products in the DOM
-  for (let item of items) {
-    if (checked) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
+  if (checked) {
+    appendProducts(_products);
+  } else {
+    const inStockProducts = _products.filter(product => product.status === "inStock");
+    appendProducts(inStockProducts);
   }
 }
 
