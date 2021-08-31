@@ -7,7 +7,7 @@ let _familyMembers = [];
 Fetches json data from the file persons.json
 */
 
-function fetchPersons() {
+async function fetchPersons() {
   let response = await fetch('json/persons.json');
   let data = await response.json();
   _familyMembers = data;
