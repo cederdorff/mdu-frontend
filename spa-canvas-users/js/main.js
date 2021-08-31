@@ -1,3 +1,3 @@
 "use strict";
 
-console.log("Ready to do Single Page Applications 🎉");
+// fetch users from: https://cederdorff.github.io/mdu-frontend/canvas-users/data/users.json
