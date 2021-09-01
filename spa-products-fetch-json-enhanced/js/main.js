@@ -51,14 +51,15 @@ function addNewProduct() {
   const id = Date.now(); // dummy generated user id
 
   if (brand && model && price && img) {
-    _products.push({
-      brand,
-      model,
-      price,
-      img,
-      status: 'inStock',
-      id
-    });
+    let newProduct = {
+      brand: brand,
+      model: model,
+      price: price,
+      img: img,
+      status: "inStock",
+      id: id
+    }
+    _products.push(newProduct);
 
     appendProducts(_products);
     navigateTo('products');
