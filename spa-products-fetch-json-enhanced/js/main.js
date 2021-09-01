@@ -2,7 +2,7 @@
 
 // =========== Product functionality =========== //
 /*
-global variables: _products
+global variables: _products _selectedProductId
 */
 let _products = [];
 let _selectedProductId;
