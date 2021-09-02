@@ -14,25 +14,55 @@
 <body onhashchange="pageChange()">
   <!-- tabbar navigation -->
   <nav class="tabbar">
-    <a href="#home">Home</a>
-    <a href="#page2">Page2</a>
+    <a href="#users">Users</a>
+    <a href="#create">Create</a>
   </nav>
 
   <!-- pages -->
-  <!-- home page -->
-  <section id="home" class="page">
+  <!-- all users page -->
+  <section id="users" class="page">
     <header class="topbar">
-      <h2>Home</h2>
+      <h2>All Users</h2>
     </header>
-    <p>My Single Page Web App Template</p>
+    <section class="tools-grid">
+      <label for="sortBy">Order by:
+        <select id="sortBy" onchange="orderBy(this.value)">
+          <option value="" selected disabled>Choose here</option>
+          <option value="name">First name</option>
+          <option value="sortableName">Last name</option>
+        </select>
+      </label>
+      <label for="filterByEnrollment">Filter by:
+        <select id="filterByEnrollment" onchange="filterByEnrollment(this.value)">
+          <option value="all" selected>All</option>
+          <option value="StudentEnrollment">Student</option>
+          <option value="TeacherEnrollment">Teacher</option>
+        </select>
+      </label>
+      <label for="filterByCourse">Courses:
+        <select id="filterByCourse" onchange="filterByCourse(this.value)">
+          <option value="all" selected>All</option>
+          <option value="MDU-E20FRONT1">Frontend 1</option>
+          <option value="MDC-E20FRONT2">Frontend 2</option>
+        </select>
+      </label>
+      <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search('')">
+    </section>
+    <section id="users-container" class="grid-container"></section>
   </section>
 
-  <!-- about page -->
-  <section id="page2" class="page">
+  <!-- create page -->
+  <section id="create" class="page">
     <header class="topbar">
-      <h2>Page 2</h2>
+      <h2>Create</h2>
     </header>
-    <p>This is my page 2</p>
+    <form>
+      <input id="name" type="text" name="name" placeholder="Type name">
+      <input id="model" type="text" name="model" placeholder="Model">
+      <input id="price" type="text" name="price" placeholder="Price">
+      <input id="img" type="text" name="img" placeholder="Image URL">
+      <button type="button" name="button" onclick="addNewProduct()">Save</button>
+    </form>
   </section>
 
   <!-- SPA functionality  -->

@@ -35,7 +35,7 @@ function navigateTo(pageId) {
 // set default page or given page by the hash url
 // function is called 'onhashchange'
 function pageChange() {
-  let page = "users";
+  let page = "home";
   if (location.hash) {
     page = location.hash.slice(1);
   }
