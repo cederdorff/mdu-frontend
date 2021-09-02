@@ -255,6 +255,12 @@ input {
   border: 0;
 }
 
+form select{
+  width: 100%;
+  background-color: var(--light-green);
+  color: var(--text-color-dark);
+}
+
 /* ---------- loader styling ---------- */
 #loader {
   position: fixed;
@@ -373,9 +379,15 @@ select{
 }
 
 /* ---------- custom select styling ---------- */
-#detail-view-container{
+#detailViewContainer{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   padding: 1em;
   gap: 1em;
 }
+
+#detailViewContainer article{
+  text-align: left;
+}
+
+
