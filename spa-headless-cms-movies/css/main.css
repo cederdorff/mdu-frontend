@@ -242,7 +242,7 @@ input {
   box-sizing: border-box;
   display: block;
   background: var(--white);
-  border: 0;
+  border: 5px solid var(--light-green);
 }
 
 /* ---------- loader styling ---------- */
@@ -354,9 +354,9 @@ input {
 
 /* ---------- custom select styling ---------- */
 select{
-  background-color: var(--green);
+  background-color: var(--light-green);
   border: none;
-  color: var(--text-color-light);
+  color: var(--green);
   padding: 1em;
   margin: 1em;
   max-width: 350px;
