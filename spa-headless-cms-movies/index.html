@@ -3,23 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Movies</title>
+  <title>SINGLE PAGE WEB APP TEMPLATE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Movie Single Page Application">
+  <meta name="description" content="Get started with HTML, CSS and JavaScript">
   <meta name="author" content="Rasmus Cederdorff">
   <link rel="stylesheet" href="css/main.css">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 </head>
 
 <body onhashchange="pageChange()">
-  <!-- tabbar navigation -->
-  <nav class="tabbar">
+  <!-- navigation -->
+  <nav>
     <a href="#movies">Movies</a>
-    <a href="#category">Categories</a>
+    <a href="#categories">Categories</a>
   </nav>
 
   <!-- pages -->
-  <!-- products -->
+  <!-- movies page -->
   <section id="movies" class="page">
     <header class="topbar">
       <h2>Movies</h2>
@@ -28,13 +28,13 @@
     <section id="movies-container" class="grid-container"></section>
   </section>
 
-  <!-- category page -->
-  <section id="category" class=" page">
+  <!-- categories page -->
+  <section id="categories" class="page">
     <header class="topbar">
-      <h2>Movies By Category</h2>
+      <h2>Categories</h2>
     </header>
     <select id="select-category" onchange="categorySelected(this.value)">
-      <option value="">Select Category</option>
+      <option selected disabled>Select Category</option>
     </select>
     <section id="movies-by-category-container" class="grid-container">
       <p>Please, select category</p>
@@ -42,9 +42,9 @@
   </section>
 
   <!-- loader  -->
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+  <section id="loader">
+    <section class="spinner"></section>
+  </section>
 
   <!-- SPA functionality  -->
   <script src="js/spa.js"></script>
