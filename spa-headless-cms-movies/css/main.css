@@ -252,6 +252,10 @@ input {
   border: 5px solid var(--light-green);
 }
 
+input[type=search]{
+  margin: 2em auto 0.7em;
+}
+
 /* ---------- loader styling ---------- */
 #loader {
   position: fixed;
