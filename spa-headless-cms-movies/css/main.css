@@ -193,6 +193,11 @@ nav a.active {
   height: auto;
 }
 
+.grid-container .empty{
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+
 /* ---------- tools grid styling ---------- */
 
 .tools-grid {
