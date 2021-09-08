@@ -3,6 +3,7 @@ class Spa {
     this.defaultPage = defaultPage;
     this.pages = document.querySelectorAll(".page");
     this.navItems = document.querySelectorAll(".tabbar a");
+    window.onhashchange = () => this.pageChange();
     this.pageChange();
   }
 

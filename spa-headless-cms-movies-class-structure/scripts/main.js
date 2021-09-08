@@ -6,14 +6,10 @@ let movieService = new MovieService();
 
 movieService.init();
 
-window.pageChange = function() {
-  spa.pageChange();
-}
-
-window.categorySelected = function(id) {
+window.categorySelected = function (id) {
   movieService.getMoviesByCategory(id);
 }
 
-window.search = function(searchValue) {
+window.search = function (searchValue) {
   movieService.search(searchValue);
 }

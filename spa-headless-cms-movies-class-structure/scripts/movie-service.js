@@ -30,6 +30,7 @@ class MovieService {
 
   async getMoviesByCategory(categoryId) {
     this.loader.show(true);
+    console.log(categoryId);
     let data = await fetch(`https://movie-api.cederdorff.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}`).then(res => res.json());
     this.appendMoviesByCategory(data);
     this.loader.show(false);
@@ -38,14 +39,13 @@ class MovieService {
   appendMovies(movies) {
     let htmlTemplate = "";
     for (let movie of movies) {
-      htmlTemplate += `
+      htmlTemplate += /*html*/ `
         <article>
-          <h2>${movie.title.rendered} (${movie.acf.year})</h2>
-          <img src="${movie.acf.img}">
-          <p>${movie.acf.description}</p>
-          <iframe src="${movie.acf.trailer}"></iframe>
+            <h2>${movie.title.rendered} (${movie.acf.year})</h2>
+            <img src="${this.getFeaturedImageUrl(movie)}">
+            <p>${movie.excerpt.rendered}</p>
         </article>
-      `;
+    `;
     }
     document.querySelector('#movies-container').innerHTML = htmlTemplate;
   }
@@ -53,7 +53,7 @@ class MovieService {
   appendCategories() {
     let htmlTemplate = "";
     for (let category of this.categories) {
-      htmlTemplate += `
+      htmlTemplate += /*html*/`
         <option value="${category.id}">${category.name}</option>
       `;
     }
@@ -64,23 +64,30 @@ class MovieService {
   appendMoviesByCategory(movies) {
     let htmlTemplate = "";
     for (let movie of movies) {
-      htmlTemplate += `
+      htmlTemplate += /*html*/ `
         <article>
-          <h2>${movie.title.rendered} (${movie.acf.year})</h2>
-          <img src="${movie.acf.img}">
-          <p>${movie.acf.description}</p>
-          <iframe src="${movie.acf.trailer}"></iframe>
+            <h2>${movie.title.rendered} (${movie.acf.year})</h2>
+            <img src="${this.getFeaturedImageUrl(movie)}">
+            <p>${movie.excerpt.rendered}</p>
         </article>
-      `;
+    `;
     }
     // if no movies, display feedback to the user
     if (movies.length === 0) {
-      htmlTemplate = `
+      htmlTemplate = /*html*/`
         <p>No Movies</p>
       `;
     }
 
     document.querySelector('#movies-by-category-container').innerHTML = htmlTemplate;
+  }
+
+  getFeaturedImageUrl(post) {
+    let imageUrl = "";
+    if (post._embedded['wp:featuredmedia']) {
+      imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return imageUrl;
   }
 
   search(value) {
