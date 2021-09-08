@@ -15,10 +15,28 @@ class Todo {
         ];
         this.domElement = domElement;
         this.render();
-
+        this.appendTodos();
     }
 
     render() {
+        const htmlTemplate = /*html*/`
+            <section class="todoListContainer">
+                <ol class="todoList"></ol>
+                <form>
+                    <input class="todoTextInput" placeholder="Type new todo">
+                    <button type="button">Add</button>
+                </form>
+            </section>
+        `;
+        this.domElement.innerHTML = htmlTemplate;
+
+        this.domElement.querySelector("button").onclick = () => {
+            const text = this.domElement.querySelector(".todoTextInput").value;
+            this.add(text);
+        }
+    }
+
+    appendTodos() {
         let todoList = "";
 
         for (const todo of this.todos) {
@@ -26,14 +44,7 @@ class Todo {
             <li>${todo.text}</li>
             `;
         }
-        const htmlTemplate = /*html*/`
-            <ol id="todoList">${todoList}</ol>
-            <form>
-                <input id="newTodoText" placeholder="Type new todo">
-                <button type="button" onclick="addTodo()">Add</button>
-            </form>
-        `;
-        this.domElement.insertAdjacentHTML("beforeend", htmlTemplate);
+        this.domElement.querySelector(".todoList").innerHTML = todoList;
     }
 
     add(text) {
@@ -41,7 +52,7 @@ class Todo {
             text: text
         }
         this.todos.push(newTodo);
-        this.append();
+        this.appendTodos();
     }
 }
 
