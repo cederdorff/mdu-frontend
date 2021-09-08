@@ -1,20 +1,24 @@
 /* ---------- root variables ---------- */
 :root {
   --green: rgb(38, 76, 89);
+  --green-opacity: rgba(38, 76, 89, 0.2);
   --light-green: rgb(172, 198, 201);
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
   --text-color-dark: #333;
+  --white: #fff;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --text-color-out-of-stock: rgb(89, 38, 38);
+  --text-color-in-stock: rgb(172, 198, 201);
 }
 
 /* ---------- general styling ---------- */
 html {
   color: var(--text-color-dark);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-family);
   height: 100%;
   text-align: center;
   width: 100%;
-  font-weight: 400;
 }
 
 body {
@@ -23,19 +27,19 @@ body {
 
 h1 {
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 3px;
 }
 
 h3 {
-  font-size: 1em;
   font-weight: 400;
   letter-spacing: 1px;
+  margin: 0.5em 0 0.2em;
 }
 
-a {
-  text-decoration: none;
-  color: var(--green);
+img {
+  width: 100%;
+  height: auto;
 }
 
 /* ---------- topbar styling ---------- */
@@ -53,7 +57,7 @@ a {
 
 .topbar h2 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .topbar a {
@@ -127,11 +131,11 @@ a {
 /* fade in */
 @keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -225,36 +229,42 @@ input {
   display: block;
 }
 
-/* Grid container */
+/* ---------- grid container styling ---------- */
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
-  padding: 10px;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  gap: 1em;
 }
 
 @media (min-width: 600px) {
   .grid-container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 992px) {
   .grid-container {
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.grid-container>article {
+.grid-container > article {
   text-align: center;
-  padding: 10px;
+  padding: 2em 1em;
+  background-color: var(--white);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.grid-container>article img {
-  max-width: 300px;
+.grid-container > article:hover {
+  box-shadow: 0 8px 16px 0 var(--green-opacity);
+}
+
+.grid-container > article img {
   width: 100%;
-  margin-bottom: 1em;
-  max-height: 200px;
-  object-fit: cover;
+  max-width: 250px;
+  height: auto;
 }
 
 .image-preview {
