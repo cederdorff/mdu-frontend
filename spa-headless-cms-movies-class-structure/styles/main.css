@@ -380,9 +380,15 @@ select {
 }
 
 /* ---------- custom select styling ---------- */
-#detail-view-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1em;
-  gap: 1em;
+.detail-grid article {
+  text-align: left;
+}
+
+.detail-grid iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.detail-grid h1 {
+  margin-top: 0;
 }
