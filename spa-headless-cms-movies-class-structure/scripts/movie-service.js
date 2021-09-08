@@ -40,7 +40,7 @@ class MovieService {
     let htmlTemplate = "";
     for (let movie of movies) {
       htmlTemplate += /*html*/ `
-        <article>
+        <article onclick="showDetailView('${movie.id}')">
             <h2>${movie.title.rendered} (${movie.acf.year})</h2>
             <img src="${this.getFeaturedImageUrl(movie)}">
             <p>${movie.excerpt.rendered}</p>
@@ -65,7 +65,7 @@ class MovieService {
     let htmlTemplate = "";
     for (let movie of movies) {
       htmlTemplate += /*html*/ `
-        <article>
+        <article onclick="showDetailView('${movie.id}')">
             <h2>${movie.title.rendered} (${movie.acf.year})</h2>
             <img src="${this.getFeaturedImageUrl(movie)}">
             <p>${movie.excerpt.rendered}</p>
@@ -95,6 +95,22 @@ class MovieService {
     let filteredMovies = this.movies.filter(movie => movie.title.rendered.toLowerCase().includes(searchValue));
     this.appendMovies(filteredMovies);
   }
+
+  showDetailView(id) {
+    const movie = this.movies.find(movie => movie.id == id);
+    document.querySelector("#detailView h2").innerHTML = movie.title.rendered;
+    document.querySelector("#detailViewContainer").innerHTML = /*html*/`
+        <img src="${this.getFeaturedImageUrl(movie)}">
+        <article>
+            <h1>${movie.title.rendered}</h1>
+            <h2>${movie.acf.year}</h2>
+            <p>${movie.content.rendered}</p>
+            <iframe src="${movie.acf.trailer}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </article>
+    `;
+    location.href = "#detailView";
+  }
+
 }
 
 export default MovieService;

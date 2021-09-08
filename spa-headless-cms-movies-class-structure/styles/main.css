@@ -379,7 +379,14 @@ select {
   cursor: pointer;
 }
 
-/* ---------- custom select styling ---------- */
+/* ---------- detail view styling ---------- */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1em;
+  gap: 1em;
+}
+
 .detail-grid article {
   text-align: left;
 }

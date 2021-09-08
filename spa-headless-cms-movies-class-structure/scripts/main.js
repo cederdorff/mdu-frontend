@@ -13,3 +13,7 @@ window.categorySelected = function (id) {
 window.search = function (searchValue) {
   movieService.search(searchValue);
 }
+
+window.showDetailView = function (id) {
+  movieService.showDetailView(id);
+}

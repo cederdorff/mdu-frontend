@@ -1,4 +1,5 @@
 class Spa {
+
   constructor(defaultPage) {
     this.defaultPage = defaultPage;
     this.pages = document.querySelectorAll(".page");
@@ -46,6 +47,7 @@ class Spa {
     }
     this.showPage(page);
   }
+
 }
 
 export default Spa;

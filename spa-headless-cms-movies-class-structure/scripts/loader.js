@@ -1,4 +1,5 @@
 class Loader {
+
   constructor() {
     this.loader = document.querySelector('#loader');
   }
@@ -10,6 +11,7 @@ class Loader {
       this.loader.classList.add("hide");
     }
   }
+
 }
 
 export default Loader;
