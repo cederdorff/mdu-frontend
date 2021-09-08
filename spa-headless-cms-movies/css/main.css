@@ -1,7 +1,7 @@
 /* ---------- root variables ---------- */
 :root {
   --green: rgb(38, 76, 89);
-   --green-opacity: rgba(38, 76, 89, 0.2);
+  --green-opacity: rgba(38, 76, 89, 0.2);
   --light-green: rgb(172, 198, 201);
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
@@ -43,7 +43,7 @@ h3 {
   margin: 0.5em 0 0.2em;
 }
 
-img{
+img {
   width: 100%;
   height: auto;
 }
@@ -137,11 +137,11 @@ nav a.active {
 /* fade in */
 @keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -165,7 +165,7 @@ nav a.active {
 
 @media (min-width: 600px) {
   .grid-container {
-     grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -175,7 +175,7 @@ nav a.active {
   }
 }
 
-.grid-container>article {
+.grid-container > article {
   text-align: center;
   padding: 2em 1em;
   background-color: var(--white);
@@ -183,17 +183,17 @@ nav a.active {
   cursor: pointer;
 }
 
-.grid-container>article:hover {
+.grid-container > article:hover {
   box-shadow: 0 8px 16px 0 var(--green-opacity);
 }
 
-.grid-container>article img {
+.grid-container > article img {
   width: 100%;
   max-width: 250px;
   height: auto;
 }
 
-.grid-container .empty{
+.grid-container .empty {
   grid-column: 1 / span 3;
   grid-row: 3;
 }
@@ -210,12 +210,12 @@ nav a.active {
 }
 
 @media (min-width: 600px) {
-  .tools-grid{
+  .tools-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.tools-grid label{
+.tools-grid label {
   max-width: 350px;
 }
 
@@ -225,14 +225,14 @@ form {
   margin: auto;
 }
 
-form button{
+form button {
   padding: 12px 15px;
   font-size: 1em;
   width: 100%;
   max-width: 350px;
 }
 
- button {
+button {
   font-weight: 300;
   text-align: center;
   cursor: pointer;
@@ -242,8 +242,8 @@ form button{
   background-color: var(--green);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: .5em 1em;
-  font-size: .8em;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
 }
 
 input {
@@ -257,7 +257,7 @@ input {
   border: 5px solid var(--light-green);
 }
 
-input[type=search]{
+input[type="search"] {
   margin: 2em auto 0.7em;
 }
 
@@ -369,7 +369,7 @@ input[type=search]{
 }
 
 /* ---------- custom select styling ---------- */
-select{
+select {
   background-color: var(--light-green);
   border: none;
   color: var(--green);
@@ -378,11 +378,23 @@ select{
   max-width: 350px;
   cursor: pointer;
 }
-
-/* ---------- custom select styling ---------- */
-#detail-view-container{
+/* ---------- detail view styling ---------- */
+#detailViewContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   padding: 1em;
   gap: 1em;
+}
+
+.detail-grid article {
+  text-align: left;
+}
+
+.detail-grid iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.detail-grid h1 {
+  margin-top: 0;
 }

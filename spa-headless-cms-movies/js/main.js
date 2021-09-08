@@ -3,6 +3,7 @@
 // =========== Movie SPA functionality =========== //
 
 let _movies = [];
+let _selectedMovieId;
 
 // fetch all movies from WP
 async function getMovies() {
@@ -21,7 +22,7 @@ function appendMovies(movies) {
     let htmlTemplate = "";
     for (let movie of movies) {
         htmlTemplate += /*html*/ `
-        <article>
+        <article onclick="showDetailView('${movie.id}')">
             <h2>${movie.title.rendered} (${movie.acf.year})</h2>
             <img src="${getFeaturedImageUrl(movie)}">
             <p>${movie.excerpt.rendered}</p>
@@ -104,6 +105,25 @@ function getFeaturedImageUrl(post) {
         imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
     }
     return imageUrl;
+}
+
+function showDetailView(id) {
+    const movie = _movies.find(movie => movie.id == id);
+    document.querySelector("#detailView h2").innerHTML = movie.title.rendered;
+    document.querySelector("#detailViewContainer").innerHTML = /*html*/`
+        <img src="${getFeaturedImageUrl(movie)}">
+        <article>
+            <h1>${movie.title.rendered}</h1>
+            <h2>${movie.acf.year}</h2>
+            <p>${movie.content.rendered}</p>
+            <iframe src="${movie.acf.trailer}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </article>
+    `;
+    navigateTo("detailView");
+}
+
+if (!_selectedMovieId) {
+    navigateTo("movies");
 }
 
 
