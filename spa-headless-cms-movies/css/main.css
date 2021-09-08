@@ -379,7 +379,7 @@ select {
   cursor: pointer;
 }
 /* ---------- detail view styling ---------- */
-#detailViewContainer {
+.detail-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 1em;
