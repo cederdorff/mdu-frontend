@@ -1,11 +1,10 @@
 "use strict";
 
 // ========== GLOBAL VARS ==========
-
-let _selectedUser;
 let _users = [];
+let _selectedUser;
 const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1"
-let _headers = {
+const _headers = {
   "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
   "Content-Type": "application/json"
 };
