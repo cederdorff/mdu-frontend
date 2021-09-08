@@ -82,7 +82,7 @@ function appendMoviesByCategory(moviesByCategory) {
     let htmlTemplate = "";
     for (let movie of moviesByCategory) {
         htmlTemplate += /*html*/ `
-        <article>
+        <article onclick="showDetailView('${movie.id}')">
             <h2>${movie.title.rendered} (${movie.acf.year})</h2>
             <img src="${getFeaturedImageUrl(movie)}">
             <p>${movie.excerpt.rendered}</p>
