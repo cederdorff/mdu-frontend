@@ -11,14 +11,15 @@ class MovieService {
   init() {
     this.getMovies();
     this.getCategories();
-    this.loader.show(false);
   }
 
   async getMovies() {
+    this.loader.show(true);
     let data = await fetch('https://movie-api.cederdorff.com/wp-json/wp/v2/posts?_embed').then(res => res.json());
     console.log(data);
     this.movies = data;
     this.appendMovies(this.movies);
+    this.loader.show(false);
   }
 
   async getCategories() {
