@@ -22,7 +22,7 @@ class Todo {
         const htmlTemplate = /*html*/`
             <section class="todoListContainer">
                 <ol class="todoList"></ol>
-                <form>
+                <form action="#">
                     <input class="todoTextInput" placeholder="Type new todo">
                     <button type="button">Add</button>
                 </form>
