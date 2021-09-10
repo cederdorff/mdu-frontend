@@ -41,7 +41,7 @@ class User {
   getHtmlTemplate() {
     return /*html*/`
     <article>
-    <img src="${this.getProfileImage()}">
+      <img src="${this.getProfileImage()}">
       <h2>${this.name}</h2> 
       <p>Age: ${this.getAge()}</p>
       <p><a href="mailto:${this.mail}">${this.mail}</a></p>
