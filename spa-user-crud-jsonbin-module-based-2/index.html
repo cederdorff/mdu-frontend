@@ -25,7 +25,7 @@
             <h2>Users</h2>
             <a class="right" href="#create">Create</a>
         </header>
-        <section id="users-grid" class="grid-container"></section>
+        <section class="users-grid grid-container"></section>
     </section>
 
     <!-- create user page -->
@@ -36,8 +36,8 @@
             <a class="right" onclick="createUser()">Save</a>
         </header>
         <form>
-            <input type="text" id="name" placeholder="Type your name" required>
-            <input type="email" id="mail" placeholder="Type your mail" required>
+            <input type="text" class="name-input" placeholder="Type your name" required>
+            <input type="email" class="mail-input" placeholder="Type your mail" required>
             <button type="button" name="button" onclick="createUser()">Create User</button>
         </form>
     </section>
@@ -50,8 +50,8 @@
             <a class="right" onclick="updateUser()">Update</a>
         </header>
         <form>
-            <input type="text" id="name-update" placeholder="Type your name" required>
-            <input type="email" id="mail-update" placeholder="Type your mail" required>
+            <input type="text" class="name-input" placeholder="Type your name" required>
+            <input type="email" class="mail-input" placeholder="Type your mail" required>
             <button type="button" name="button" onclick="updateUser()">Update User</button>
         </form>
     </section>
@@ -62,7 +62,7 @@
     </div>
 
     <!-- main js file -->
-    <script src="src/scripts/app.js" type="module"></script>
+    <script src="src/app.js" type="module"></script>
 </body>
 
 </html>

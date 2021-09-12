@@ -19,6 +19,7 @@ class Todo {
     }
 
     render() {
+        // todo list html template
         const htmlTemplate = /*html*/`
             <section class="todoListContainer">
                 <ol class="todoList"></ol>
@@ -28,8 +29,9 @@ class Todo {
                 </form>
             </section>
         `;
-        this.domElement.innerHTML = htmlTemplate;
+        this.domElement.innerHTML = htmlTemplate; // add to DOM
 
+        // attach on click event to add button
         this.domElement.querySelector("button").onclick = () => {
             const text = this.domElement.querySelector(".todoTextInput").value;
             this.add(text);

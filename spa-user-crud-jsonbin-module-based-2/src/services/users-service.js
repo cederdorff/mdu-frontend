@@ -1,5 +1,3 @@
-import loaderService from "./loader-service.js";
-
 class UserService {
     constructor() {
         this.baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
@@ -8,17 +6,9 @@ class UserService {
             "Content-Type": "application/json"
         };
         this.users = [];
-        this.init();
     }
 
-    async init() {
-        await this.fetchUsers();
-        this.appendUsers(this.users);
-    }
-
-
-
-    async fetchUsers() {
+    async get() {
         const url = this.baseUrl + "/latest"; // make sure to get the latest version
         const response = await fetch(url, { headers: this.defaultHeaders });
         const data = await response.json();
@@ -27,23 +17,7 @@ class UserService {
         return this.users;
     }
 
-    async appendUsers(users) {
-        let htmlTemplate = "";
-        for (let user of users) {
-            htmlTemplate += /*html*/ `
-                <article>
-                    <h3>${user.name}</h3>
-                    <p><a href="mailto:${user.mail}">${user.mail}</a></p>
-                    <button onclick="selectUser('${user.id}')">Update</button>
-                    <button onclick="deleteUser('${user.id}')">Delete</button>
-                </article>
-                `;
-        }
-        document.querySelector("#users-grid").innerHTML = htmlTemplate;
-        loaderService.show(false);
-    }
-
-    create(name, mail) {
+    async create(name, mail) {
         // dummy generated user id
         const userId = Date.now();
         // declaring a new user object
@@ -53,11 +27,8 @@ class UserService {
             id: userId
         };
         this.users.push(newUser);
-        this.updateJsonBin();
-    }
-
-    selectedUser(id) {
-        console.log(id);
+        console.log(this.users);
+        return this.updateJsonBin();
     }
 
     async update(id, name, mail) {
@@ -72,7 +43,7 @@ class UserService {
 
     async delete(id) {
         this.users = this.users.filter(user => user.id != id);
-        await this.updateJsonBin(this.users);
+        return this.updateJsonBin();
     }
 
     async updateJsonBin() {
@@ -82,7 +53,10 @@ class UserService {
             body: JSON.stringify(this.users)
         });
         let result = await response.json();
-        this.users = result.data;
+        console.log(result);
+        this.users = result.record;
+        console.log(this.users);
+        return this.users;
     }
 }
 
