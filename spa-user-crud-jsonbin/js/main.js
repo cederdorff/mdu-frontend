@@ -1,9 +1,7 @@
-"use strict";
-
 // ========== GLOBAL VARS ==========
 let _users = [];
 let _selectedUser;
-const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1"
+const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
 const _headers = {
   "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
   "Content-Type": "application/json"
@@ -62,8 +60,7 @@ async function createUser() {
   nameInput.value = "";
   mailInput.value = "";
   //navigating back
-  navigateTo("users");
-  console.log("createUser DONE");
+  navigateTo("#/");
 }
 
 // ========== UPDATE ==========
@@ -77,7 +74,7 @@ function selectUser(id) {
   // set indout values with selected user values 
   nameInput.value = _selectedUser.name;
   mailInput.value = _selectedUser.mail;
-  navigateTo("update");
+  navigateTo("#/update");
 }
 
 async function updateUser() {
@@ -96,7 +93,7 @@ async function updateUser() {
   nameInput.value = "";
   mailInput.value = "";
   //navigating back
-  navigateTo("users");
+  navigateTo("#/");
 }
 
 // ========== DELETE ==========
@@ -121,4 +118,15 @@ async function updateJSONBIN(users) {
   console.log(result);
   //updating the DOM with the new fetched users
   appendUsers(result.record);
+}
+
+// ========== Loader ==========
+// to show and hide the loader
+function showLoader(show) {
+  let loader = document.getElementById('loader');
+  if (show) {
+    loader.classList.remove("hide");
+  } else {
+    loader.classList.add("hide");
+  }
 }
