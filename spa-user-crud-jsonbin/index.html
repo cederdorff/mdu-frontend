@@ -11,11 +11,11 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 </head>
 
-<body onhashchange="pageChange()">
+<body>
   <!-- tabbar navigation -->
   <nav class="tabbar">
-    <a href="#users">Users</a>
-    <a href="#create">Create</a>
+    <a href="#/" class="nav-link">Users</a>
+    <a href="#/create" class="nav-link">Create</a>
   </nav>
 
   <!-- pages -->
@@ -23,7 +23,7 @@
   <section id="users" class="page">
     <header class="topbar">
       <h2>Users</h2>
-      <a class="right" href="#create">Create</a>
+      <a href="#/create" class="nav-link right">Create</a>
     </header>
     <div id="grid-users" class="grid-container"></div>
   </section>
@@ -31,7 +31,7 @@
   <!-- create user page -->
   <section id="create" class="page">
     <header class="topbar">
-      <a class="left" href="#users">Back</a>
+      <a href="#/" class="nav-link left">Back</a>
       <h2>Create user</h2>
       <a class="right" onclick="createUser()">Save</a>
     </header>
@@ -45,7 +45,7 @@
   <!-- edir user page -->
   <section id="update" class="page">
     <header class="topbar">
-      <a class="left" href="#users">Back</a>
+      <a href="#/" class="nav-link left">Back</a>
       <h2>Update user</h2>
       <a class="right" onclick="updateUser()">Update</a>
     </header>
@@ -61,8 +61,8 @@
     <div class="spinner"></div>
   </div>
 
-  <!-- SPA functionality  -->
-  <script src="js/spa.js"></script>
+  <!-- Router functionality  -->
+  <script src="js/router.js"></script>
   <!-- main js file -->
   <script src="js/main.js"></script>
 </body>
