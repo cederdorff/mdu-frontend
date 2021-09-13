@@ -1,4 +1,4 @@
-import userService from "./../services/users-service.js";
+import userService from "../services/users-service.js";
 import loaderService from "../services/loader-service.js";
 
 class UsersPage {

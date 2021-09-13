@@ -1,4 +1,4 @@
-class Loader {
+class LoaderComponent {
     constructor() {
         this.render();
         this.loader = document.querySelector(".loader");
@@ -22,5 +22,5 @@ class Loader {
 
 }
 
-const loader = new Loader();
+const loader = new LoaderComponent();
 export default loader;

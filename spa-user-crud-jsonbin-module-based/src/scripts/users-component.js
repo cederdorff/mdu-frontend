@@ -1,19 +1,22 @@
-import loader from "./loader.js";
+import loader from "./loader-component.js";
 
-class UserService {
-    constructor() {
+export default class UsersComponent {
+
+    constructor(domElement) {
+        this.domElement = domElement;
         this.baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
         this.defaultHeaders = {
             "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
             "Content-Type": "application/json"
         };
         this.users = [];
+        this.selectedUser;
         this.init();
     }
 
     async init() {
         await this.fetchUsers();
-        this.appendUsers(this.users);
+        this.appendUsers();
     }
 
     async fetchUsers() {
@@ -25,9 +28,9 @@ class UserService {
         return this.users;
     }
 
-    appendUsers(users) {
+    appendUsers() {
         let htmlTemplate = "";
-        for (let user of users) {
+        for (let user of this.users) {
             htmlTemplate += /*html*/ `
                 <article>
                     <h3>${user.name}</h3>
@@ -37,11 +40,11 @@ class UserService {
                 </article>
                 `;
         }
-        document.querySelector("#users-grid").innerHTML = htmlTemplate;
+        this.domElement.querySelector(".users-grid").innerHTML = htmlTemplate;
         loader.show(false);
     }
 
-    create(name, mail) {
+    async create(name, mail) {
         // dummy generated user id
         const userId = Date.now();
         // declaring a new user object
@@ -51,38 +54,37 @@ class UserService {
             id: userId
         };
         this.users.push(newUser);
-        this.updateJsonBin();
-    }
-
-    selectedUser(id) {
-        console.log(id);
-    }
-
-    async update(id, name, mail) {
-        // find index of the user to update
-        let index = this.users.findIndex(user => user.id == _selectedUser.id);
-        // update values of user in array
-        this.users[index].name = nameInput.value;
-        this.users[index].mail = mailInput.value;
-        // wait for update
         await this.updateJsonBin();
+    }
+
+    setSelectedUser(id) {
+        this.selectedUser = this.users.find(user => user.id == id);
+        this.domElement.querySelector('.name-update').value = this.selectedUser.name;
+        this.domElement.querySelector('.mail-update').value = this.selectedUser.mail;
+    }
+
+    async update() {
+        this.selectedUser.name = this.domElement.querySelector('.name-update').value;
+        this.selectedUser.mail = this.domElement.querySelector('.mail-update').value;
+        await this.updateJsonBin(); // wait for update
     }
 
     async delete(id) {
         this.users = this.users.filter(user => user.id != id);
-        await this.updateJsonBin(this.users);
+        await this.updateJsonBin(); // wait for update
     }
 
     async updateJsonBin() {
+        loader.show(true);
         let response = await fetch(this.baseUrl, {
             method: "PUT",
             headers: this.defaultHeaders,
             body: JSON.stringify(this.users)
         });
         let result = await response.json();
-        this.users = result.data;
+        console.log(result);
+        this.users = result.record;
+        this.appendUsers();
+        loader.show(false);
     }
 }
-
-const userService = new UserService();
-export default userService;
