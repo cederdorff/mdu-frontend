@@ -1,4 +1,4 @@
-class Spa {
+class Router {
 
     constructor(defaultPage) {
         this.defaultPage = defaultPage;
@@ -50,4 +50,4 @@ class Spa {
 
 }
 
-export default Spa;
+export default Router;

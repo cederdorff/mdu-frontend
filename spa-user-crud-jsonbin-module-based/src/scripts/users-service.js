@@ -1,4 +1,4 @@
-import loaderService from "./loader-service.js";
+import loader from "./loader.js";
 
 class UserService {
     constructor() {
@@ -16,18 +16,16 @@ class UserService {
         this.appendUsers(this.users);
     }
 
-
-
     async fetchUsers() {
-        const url = this.baseUrl + "/latest"; // make sure to get the latest version
+        const url = this.baseUrl + "/latest"; // make sure to get the latest version of your bin
         const response = await fetch(url, { headers: this.defaultHeaders });
         const data = await response.json();
         console.log(data);
-        this.users = data.record
+        this.users = data.record;
         return this.users;
     }
 
-    async appendUsers(users) {
+    appendUsers(users) {
         let htmlTemplate = "";
         for (let user of users) {
             htmlTemplate += /*html*/ `
@@ -40,7 +38,7 @@ class UserService {
                 `;
         }
         document.querySelector("#users-grid").innerHTML = htmlTemplate;
-        loaderService.show(false);
+        loader.show(false);
     }
 
     create(name, mail) {
@@ -86,5 +84,5 @@ class UserService {
     }
 }
 
-let userService = new UserService();
+const userService = new UserService();
 export default userService;
