@@ -1,7 +1,8 @@
 // ========== GLOBAL VARS ==========
 let _users = [];
-let _selectedUser;
+let _selectedUserId;
 const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
+
 const _headers = {
   "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
   "Content-Type": "application/json"
@@ -66,14 +67,15 @@ async function createUser() {
 // ========== UPDATE ==========
 
 function selectUser(id) {
+  _selectedUserId = id;
   // find user by given user id
-  _selectedUser = _users.find(user => user.id == id);
+  const user = _users.find(user => user.id == _selectedUserId);
   // references to the input fields
   let nameInput = document.querySelector('#name-update');
   let mailInput = document.querySelector('#mail-update');
   // set indout values with selected user values 
-  nameInput.value = _selectedUser.name;
-  mailInput.value = _selectedUser.mail;
+  nameInput.value = user.name;
+  mailInput.value = user.mail;
   navigateTo("#/update");
 }
 
@@ -82,11 +84,11 @@ async function updateUser() {
   // references to input fields
   let nameInput = document.querySelector("#name-update");
   let mailInput = document.querySelector("#mail-update");
-  // find index of the user to update
-  let index = _users.findIndex(user => user.id == _selectedUser.id);
+  // find user to update by given user id
+  const userToUpdate = _users.find(user => user.id == _selectedUserId);
   // update values of user in array
-  _users[index].name = nameInput.value;
-  _users[index].mail = mailInput.value;
+  userToUpdate.name = nameInput.value;
+  userToUpdate.mail = mailInput.value;
   // wait for update
   await updateJSONBIN(_users);
   // reset
