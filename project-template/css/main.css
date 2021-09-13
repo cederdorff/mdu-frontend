@@ -51,28 +51,37 @@ button {
 /* ---------- grid container styling ---------- */
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
-  padding: 10px;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  gap: 1em;
 }
 
 @media (min-width: 600px) {
   .grid-container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 992px) {
   .grid-container {
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.grid-container>article {
+.grid-container > article {
   text-align: center;
-  padding: 1em;
+  padding: 2em 1em;
+  background-color: var(--white);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.grid-container>article img {
-  max-width: 300px;
+.grid-container > article:hover {
+  box-shadow: 0 8px 16px 0 var(--green-opacity);
+}
+
+.grid-container > article img {
   width: 100%;
+  max-width: 250px;
+  height: auto;
 }
