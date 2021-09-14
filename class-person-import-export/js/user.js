@@ -1,4 +1,4 @@
-export default class Person {
+export default class User {
   constructor(name, mail, birthDate, img) {
     this.name = name;
     this.mail = mail;
