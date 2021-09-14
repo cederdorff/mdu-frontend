@@ -18,10 +18,8 @@ class Person {
   getAge() {
     const birthDate = new Date(this.birthDate);
     const today = new Date();
-
-    const diff = new Date(today - birthDate.getTime());
-
-    return diff.getUTCFullYear() - 1970;
+    const diff = new Date(today - birthDate);
+    return diff.getFullYear() - 1970;
   }
 
   getHtmlTemplate() {
@@ -42,5 +40,5 @@ class Person {
 const person1 = new Person("Birgitte Kirk Iversen", "bki@eaaa.dk", "1966-01-14", "https://www.eaaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg");
 document.querySelector("#content").innerHTML += person1.getHtmlTemplate();
 
-const person2 = new Person("Rasmus Cederdorff", "race@eaaa.dk", "1990-09-14", "https://www.eaaa.dk/media/devlvvgj/rasmus-cederdorff.jpg");
+const person2 = new Person("Rasmus Cederdorff", "race@eaaa.dk", "1990-09-17", "https://www.eaaa.dk/media/devlvvgj/rasmus-cederdorff.jpg");
 document.querySelector("#content").innerHTML += person2.getHtmlTemplate();
