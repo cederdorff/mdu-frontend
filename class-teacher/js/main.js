@@ -17,7 +17,7 @@ class Teacher {
   }
 
   sayHi() {
-    alert("Hey " + this.name);
+    alert(`Hey ${this.name}`);
   }
 
   append(containerId) {
