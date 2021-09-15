@@ -1,51 +1,61 @@
 class Router {
 
-    constructor(defaultPage) {
+    constructor(app, defaultPage) {
         this.defaultPage = defaultPage;
-        this.pages = document.querySelectorAll(".page");
-        this.navItems = document.querySelectorAll(".tabbar a");
-        window.onhashchange = () => this.pageChange();
-        this.pageChange();
+        this.pages = app.querySelectorAll(".page");
+        this.navItems = app.querySelectorAll(".nav-link");
+        this.routes = {
+            "#/users": "users",
+            "#/create": "create",
+            "#/update": "update"
+        };
+        this.initRouter();
     }
 
-    // hide all pages
-    hideAllPages() {
-        for (let page of this.pages) {
-            page.style.display = "none";
+    initRouter() {
+        this.attachNavLinkEvents();
+
+        if (this.routes[location.hash]) {
+            this.defaultPage = location.hash;
         }
+        this.navigateTo(this.defaultPage);
     }
 
-    // show page or tab
-    showPage(pageId) {
-        this.hideAllPages();
-        document.querySelector(`#${pageId}`).style.display = "block";
-        this.setActiveTab(pageId);
-    }
-
-    // sets active tabbar/ menu item
-    setActiveTab(pageId) {
-        for (let navItem of this.navItems) {
-            if (`#${pageId}` === navItem.getAttribute("href")) {
-                navItem.classList.add("active");
-            } else {
-                navItem.classList.remove("active");
-            }
+    attachNavLinkEvents() {
+        for (const link of this.navItems) {
+            link.addEventListener("click", event => {
+                const path = link.getAttribute("href");
+                this.navigateTo(path);
+                event.preventDefault();
+            });
         }
     }
 
     // navigate to a new view/page by changing href
-    navigateTo(pageId) {
-        window.location.href = `#${pageId}`;
+    navigateTo(pathname) {
+        this.hideAllPages();
+        const basePath = location.pathname.replace("index.html", "");
+        window.history.pushState({}, pathname, basePath + pathname);
+        document.querySelector(`#${this.routes[pathname]}`).style.display = "block";
+        this.setActiveTab(pathname);
     }
 
-    // set default page or given page by the hash url
-    // function is called 'onhashchange'
-    pageChange() {
-        let page = this.defaultPage;
-        if (window.location.hash) {
-            page = window.location.hash.slice(1);
+    // hide all pages
+    hideAllPages() {
+        for (const page of this.pages) {
+            page.style.display = "none";
         }
-        this.showPage(page);
+    }
+
+    // sets active tabbar/ menu item
+    setActiveTab(pathname) {
+        for (const link of this.navItems) {
+            if (pathname === link.getAttribute("href")) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        }
     }
 
 }
