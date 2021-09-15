@@ -1,9 +1,9 @@
 // ========== GLOBAL VARIABLES ==========
 let _users = [];
 let _selectedUserId;
-const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
+const _baseUrl = "https://api.jsonbin.io/v3/b/6141af694a82881d6c4f5182";
 const _headers = {
-  "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
+  "X-Master-Key": "$2b$10$iAOLguBJ8cd9y87RJTcXy.hlVPE8tVaiaURQ1q9DJH2YLmj.4pmhq",
   "Content-Type": "application/json"
 };
 
@@ -96,7 +96,6 @@ function selectUser(id) {
  * Updates user with values from input fields
  */
 async function updateUser() {
-  showLoader(true);
   // references to input fields
   const nameInput = document.querySelector("#name-update");
   const mailInput = document.querySelector("#mail-update");
