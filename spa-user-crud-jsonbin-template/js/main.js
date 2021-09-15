@@ -1,6 +1,5 @@
 // ========== GLOBAL VARIABLES ==========
-let _users = [];
-let _selectedUserId;
+
 const _baseUrl = "https://api.jsonbin.io/v3/b/YOUR-BIN-ID";
 const _headers = {
   "X-Master-Key": "YOUR-JSONBIN-X-MASTER-KEY",
@@ -15,8 +14,7 @@ const _headers = {
 async function loadUsers() {
   const url = _baseUrl + "/latest"; // make sure to get the latest version
   const response = await fetch(url, { headers: _headers });
-  const data = await response.json();
-  //...
+  // todo ...
 }
 
 
@@ -46,7 +44,7 @@ async function updateJSONBIN(users) {
     body: JSON.stringify(users)
   });
 
-  // todo
+  // todo ...
 }
 
 // ========== Loader ==========
