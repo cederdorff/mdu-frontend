@@ -3,7 +3,7 @@ let _users = [];
 let _selectedUserId;
 const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
 const _headers = {
-  "X-Master-Key": "$2b$10$iAOLguBJ8cd9y87RJTcXy.hlVPE8tVaiaURQ1q9DJH2YLmj.4pmhq",
+  "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
   "Content-Type": "application/json"
 };
 
