@@ -30,7 +30,7 @@ export default class UsersComponent {
 
     appendUsers() {
         let htmlTemplate = "";
-        for (let user of this.users) {
+        for (const user of this.users) {
             htmlTemplate += /*html*/ `
                 <article>
                     <h3>${user.name}</h3>
@@ -48,7 +48,7 @@ export default class UsersComponent {
         // dummy generated user id
         const userId = Date.now();
         // declaring a new user object
-        let newUser = {
+        const newUser = {
             name: name,
             mail: mail,
             id: userId
@@ -76,12 +76,12 @@ export default class UsersComponent {
 
     async updateJsonBin() {
         loader.show(true);
-        let response = await fetch(this.baseUrl, {
+        const response = await fetch(this.baseUrl, {
             method: "PUT",
             headers: this.defaultHeaders,
             body: JSON.stringify(this.users)
         });
-        let result = await response.json();
+        const result = await response.json();
         console.log(result);
         this.users = result.record;
         this.appendUsers();
