@@ -26,7 +26,7 @@ function hideAllPages() {
 function navigateTo(path) {
     window.history.pushState({}, path, _basePath + path);
     showPage(path);
-};
+}
 
 function showPage(path) {
     hideAllPages(); // hide all pages
