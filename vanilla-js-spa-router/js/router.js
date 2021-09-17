@@ -4,19 +4,20 @@ console.log("router.js is running!");
  * All routes of the SPA
  * "path": "id of page in DOM"
  */
-const routes = {
+const _routes = {
     "/": "home",
     "/about": "about",
     "/clients": "clients",
     "/contact": "contact"
 };
+const _pages = document.querySelectorAll(".page");
+const _navLinks = document.querySelectorAll("nav a");
 
 /**
  * Changing display to none for all pages
  */
 function hideAllPages() {
-    let pages = document.querySelectorAll(".page");
-    for (let page of pages) {
+    for (const page of _pages) {
         page.style.display = "none";
     }
 }
@@ -24,19 +25,22 @@ function hideAllPages() {
 /**
  * Navigating SPA to specific page by given pathnameß
  */
-function navigateTo(pathname) {
-    hideAllPages();
-    window.history.pushState({}, pathname, location.origin + pathname);
-    document.querySelector(`#${routes[pathname]}`).style.display = "block";
-    setActiveTab(pathname);
+function navigateTo(path) {
+    window.history.pushState({}, path, location.origin + path);
+    showPage(path)
 };
+
+function showPage(path) {
+    hideAllPages(); // hide all pages
+    document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path
+    setActiveTab(path);
+}
 
 /**
  * sets active tabbar/ menu item
  */
 function setActiveTab(pathname) {
-    let navLinks = document.querySelectorAll("nav a");
-    for (let link of navLinks) {
+    for (const link of _navLinks) {
         if (pathname === link.getAttribute("href")) {
             link.classList.add("active");
         } else {
@@ -60,16 +64,17 @@ function attachNavLinkEvents() {
 }
 
 /**
- * Initialising the router, calling attachNavLinkEvents() and navigateTo()
+ * Initialising the router, calling attachNavLinkEvents(), popstate event and navigateTo()
  */
 function initRouter() {
     attachNavLinkEvents();
+    window.addEventListener("popstate", () => showPage(location.pathname)); // change page when using back and forth in browser
 
-    let defaultPath = "/";
-    if (routes[location.pathname]) {
-        defaultPath = location.pathname;
+    let path = "/"; // default path
+    if (_routes[location.pathname]) {
+        path = location.pathname;
     }
-    navigateTo(defaultPath);
+    navigateTo(path);
 }
 
 initRouter();

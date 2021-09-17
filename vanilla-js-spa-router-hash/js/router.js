@@ -16,7 +16,7 @@ const _navLinks = document.querySelectorAll("nav a");
  * Changing display to none for all pages
  */
 function hideAllPages() {
-    for (let page of _pages) {
+    for (const page of _pages) {
         page.style.display = "none";
     }
 }
