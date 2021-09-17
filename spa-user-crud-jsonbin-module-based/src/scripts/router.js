@@ -2,6 +2,7 @@ class Router {
 
     constructor(app, defaultPage) {
         this.defaultPage = defaultPage;
+        this.basePath = location.pathname.replace("index.html", ""); // remove index.html from path
         this.pages = app.querySelectorAll(".page");
         this.navItems = app.querySelectorAll(".nav-link");
         this.routes = {
@@ -14,6 +15,7 @@ class Router {
 
     initRouter() {
         this.attachNavLinkEvents();
+        window.addEventListener("popstate", () => showPage(location.hash));
 
         if (this.routes[location.hash]) {
             this.defaultPage = location.hash;
@@ -32,12 +34,14 @@ class Router {
     }
 
     // navigate to a new view/page by changing href
-    navigateTo(pathname) {
-        this.hideAllPages();
-        const basePath = location.pathname.replace("index.html", "");
-        window.history.pushState({}, pathname, basePath + pathname);
-        document.querySelector(`#${this.routes[pathname]}`).style.display = "block";
-        this.setActiveTab(pathname);
+    navigateTo(path) {
+        window.history.pushState({}, path, this.basePath + path);
+        this.showPage(path);
+    }
+    showPage(path) {
+        this.hideAllPages(); // hide all pages
+        document.querySelector(`#${this.routes[path]}`).style.display = "block"; // show page by given path
+        this.setActiveTab(path);
     }
 
     // hide all pages
