@@ -1,44 +1,46 @@
-console.log("router.js is running!");
-
 /**
  * All routes of the SPA
  * "path": "id of page in DOM"
  */
-const routes = {
+const _routes = {
     "#/": "home",
     "#/about": "about",
     "#/clients": "clients",
     "#/contact": "contact"
 };
+const _pages = document.querySelectorAll(".page");
+const _basePath = location.pathname.replace("index.html", ""); // remove index.html from path
+const _navLinks = document.querySelectorAll("nav a");
 
 /**
  * Changing display to none for all pages
  */
 function hideAllPages() {
-    let pages = document.querySelectorAll(".page");
-    for (let page of pages) {
+    for (let page of _pages) {
         page.style.display = "none";
     }
 }
 
 /**
- * Navigating SPA to specific page by given pathnameß
+ * Navigating SPA to specific page by given path
  */
-function navigateTo(pathname) {
-    hideAllPages();
-    const basePath = location.pathname.replace("index.html", "");
-    window.history.pushState({}, pathname, basePath + pathname);
-    document.querySelector(`#${routes[pathname]}`).style.display = "block";
-    setActiveTab(pathname);
+function navigateTo(path) {
+    window.history.pushState({}, path, _basePath + path);
+    showPage(path);
 };
 
+function showPage(path) {
+    hideAllPages(); // hide all pages
+    document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path
+    setActiveTab(path);
+}
+
 /**
- * sets active tabbar/ menu item
+ * sets active menu item by given path
  */
-function setActiveTab(pathname) {
-    let navLinks = document.querySelectorAll("nav a");
-    for (let link of navLinks) {
-        if (pathname === link.getAttribute("href")) {
+function setActiveTab(path) {
+    for (const link of _navLinks) {
+        if (path === link.getAttribute("href")) {
             link.classList.add("active");
         } else {
             link.classList.remove("active");
@@ -61,16 +63,17 @@ function attachNavLinkEvents() {
 }
 
 /**
- * Initialising the router, calling attachNavLinkEvents() and navigateTo()
+ * Initialising the router, calling attachNavLinkEvents(), popstate event and navigateTo()
  */
 function initRouter() {
     attachNavLinkEvents();
+    window.addEventListener("popstate", () => showPage(location.hash)); // change page when using back and forth in browser
 
-    let defaultPath = "#/";
-    if (routes[location.hash]) {
-        defaultPath = location.hash;
+    let path = "#/"; // default path
+    if (_routes[location.hash]) {
+        path = location.hash;
     }
-    navigateTo(defaultPath);
+    navigateTo(path);
 }
 
 initRouter();
