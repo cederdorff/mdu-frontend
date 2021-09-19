@@ -11,55 +11,14 @@
     <title>SPA User CRUD</title>
 </head>
 
-<body>
-    <!-- tabbar navigation -->
+<body id="app">
+    <!-- navigation -->
     <nav class="tabbar">
-        <a href="#users">Users</a>
-        <a href="#create">Create</a>
+        <a href="#/users" class="nav-link">Users</a>
+        <a href="#/create" class="nav-link">Create</a>
     </nav>
 
-    <!-- pages -->
-    <!-- users page -->
-    <section id="users" class="page">
-        <header class="topbar">
-            <h2>Users</h2>
-            <a class="right" href="#create">Create</a>
-        </header>
-        <section class="users-grid grid-container"></section>
-    </section>
-
-    <!-- create user page -->
-    <section id="create" class="page">
-        <header class="topbar">
-            <a class="left" href="#users">Back</a>
-            <h2>Create user</h2>
-            <a class="right" onclick="createUser()">Save</a>
-        </header>
-        <form>
-            <input type="text" class="name-input" placeholder="Type your name" required>
-            <input type="email" class="mail-input" placeholder="Type your mail" required>
-            <button type="button" name="button" onclick="createUser()">Create User</button>
-        </form>
-    </section>
-
-    <!-- edit user page -->
-    <section id="update" class="page">
-        <header class="topbar">
-            <a class="left" href="#users">Back</a>
-            <h2>Update user</h2>
-            <a class="right" onclick="updateUser()">Update</a>
-        </header>
-        <form>
-            <input type="text" class="name-input" placeholder="Type your name" required>
-            <input type="email" class="mail-input" placeholder="Type your mail" required>
-            <button type="button" name="button" onclick="updateUser()">Update User</button>
-        </form>
-    </section>
-
-    <!-- loader  -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
+    <main id="pages"></main>
 
     <!-- main js file -->
     <script src="src/app.js" type="module"></script>

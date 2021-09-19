@@ -1,20 +1,17 @@
-import Spa from "./services/spa-service.js";
-import userService from "./services/users-service.js";
-import loaderService from "./services/loader-service.js";
+import Router from "./services/router.js";
 
-import UserPage from "./pages/users-page.js";
+import UsersPage from "./pages/users-page.js";
 import CreatePage from "./pages/create-page.js";
+import UpdatePage from "./pages/update-page.js";
 
-
-// init spa service
-const spaService = new Spa("users");
+// app - dom element
+const app = document.querySelector("#app");
+const pages = document.querySelector("#pages");
 
 // init pages
-const usersPage = new UserPage(document.querySelector("#users"));
-const createPage = new CreatePage(document.querySelector("#create"));
+const usersPage = new UsersPage(pages);
+const createPage = new CreatePage(pages);
+const updatePage = new UpdatePage(pages);
 
-
-window.selectUser = (id) => usersPage.showEditPage(id);
-window.deleteUser = (id) => usersPage.showDeleteDialog(id);
-
-window.createUser = () => createPage.createUser();
+// init spa service
+const router = new Router(app, "#/users");

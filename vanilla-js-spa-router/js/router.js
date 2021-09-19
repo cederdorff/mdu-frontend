@@ -1,5 +1,3 @@
-console.log("router.js is running!");
-
 /**
  * All routes of the SPA
  * "path": "id of page in DOM"
@@ -28,8 +26,11 @@ function hideAllPages() {
 function navigateTo(path) {
     window.history.pushState({}, path, location.origin + path);
     showPage(path)
-};
+}
 
+/**
+ * Displaying page by given path
+ */
 function showPage(path) {
     hideAllPages(); // hide all pages
     document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path

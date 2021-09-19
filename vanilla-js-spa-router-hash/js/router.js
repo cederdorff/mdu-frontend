@@ -27,8 +27,11 @@ function hideAllPages() {
 function navigateTo(path) {
     window.history.pushState({}, path, _basePath + path);
     showPage(path);
-};
+}
 
+/**
+ * Displaying page by given path
+ */
 function showPage(path) {
     hideAllPages(); // hide all pages
     document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path

@@ -55,7 +55,6 @@ class UserService {
         let result = await response.json();
         console.log(result);
         this.users = result.record;
-        console.log(this.users);
         return this.users;
     }
 }
