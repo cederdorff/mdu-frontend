@@ -5,14 +5,12 @@ window.login = () => {
     const mail = document.querySelector("#login-mail").value;
     const password = document.querySelector("#login-password").value;
 
-    console.log(mail, password);
-
     if (mail === "race@eaaa.dk" && password === "test01") {
-        console.log("User is authenticated");
         localStorage.setItem("userIsAuthenticated", true);
+        document.querySelector(".login-message").innerHTML = "";
         navigateTo("#/");
     } else {
-        console.log("User is not authenticated");
+        document.querySelector(".login-message").innerHTML = "User not found. Wrong mail og password.";
     }
 }
 
