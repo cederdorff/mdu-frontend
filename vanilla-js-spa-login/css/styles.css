@@ -8,7 +8,7 @@
   --text-color-dark: #333;
   --white: #fff;
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --text-color-out-of-stock: rgb(89, 38, 38);
+  --text-color-error: #ee6e73;
   --text-color-in-stock: rgb(172, 198, 201);
 }
 
@@ -275,4 +275,9 @@ input {
   width: 100%;
   height: auto;
   margin: 1em 0;
+}
+
+/* ---------- login styling ---------- */
+.login-message {
+  color: var(--text-color-error);
 }
