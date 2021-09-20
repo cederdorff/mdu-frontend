@@ -34,14 +34,20 @@ export function navigateTo(path) {
  * Displaying page by given path
  */
 function showPage(path) {
-    const userIsAuthenticated = localStorage.getItem("userIsAuthenticated");
-    if (!userIsAuthenticated && path !== "#/login") {
-        navigateTo("#/login");
-    } else {
-        hideAllPages(); // hide all pages
-        document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path
-        setActiveTab(path);
+    const userIsAuthenticated = localStorage.getItem("userIsAuthenticated"); // get from localstorage
+
+    if (userIsAuthenticated) { // user user is authenticated: 
+        showTabbar(true); // then show show tabbar
+        setActiveTab(path); // and set active tab
+    } else { // if user NOT authenticated: 
+        path = "#/login"; // then change path to #/login,
+        window.history.pushState({}, path, _basePath + path); // set pushState with new path
+        showTabbar(false); // and hide the tabbar
     }
+
+    hideAllPages(); // hide all pages
+    document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by path
+
 }
 
 /**
@@ -76,7 +82,7 @@ function attachNavLinkEvents() {
  */
 function initRouter() {
     attachNavLinkEvents();
-    window.addEventListener("popstate", () => showPage(location.hash)); // change page when using back and forth in browser
+    window.onpopstate = () => showPage(location.hash); // change page when using back and forth in browser
 
     let path = "#/"; // default path
     if (_routes[location.hash]) {
@@ -86,3 +92,13 @@ function initRouter() {
 }
 
 initRouter();
+
+// show and hide tabbar
+function showTabbar(show) {
+    let tabbar = document.querySelector('.tabbar');
+    if (show) {
+        tabbar.classList.remove("hide");
+    } else {
+        tabbar.classList.add("hide");
+    }
+}
