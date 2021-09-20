@@ -6,7 +6,8 @@ const _routes = {
     "#/": "home",
     "#/about": "about",
     "#/clients": "clients",
-    "#/contact": "contact"
+    "#/contact": "contact",
+    "#/login": "login"
 };
 const _pages = document.querySelectorAll(".page");
 const _basePath = location.pathname.replace("index.html", ""); // remove index.html from path
@@ -24,7 +25,7 @@ function hideAllPages() {
 /**
  * Navigating SPA to specific page by given path
  */
-function navigateTo(path) {
+export function navigateTo(path) {
     window.history.pushState({}, path, _basePath + path);
     showPage(path);
 }
@@ -33,9 +34,14 @@ function navigateTo(path) {
  * Displaying page by given path
  */
 function showPage(path) {
-    hideAllPages(); // hide all pages
-    document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path
-    setActiveTab(path);
+    const userIsAuthenticated = localStorage.getItem("userIsAuthenticated");
+    if (!userIsAuthenticated && path !== "#/login") {
+        navigateTo("#/login");
+    } else {
+        hideAllPages(); // hide all pages
+        document.querySelector(`#${_routes[path]}`).style.display = "block"; // show page by given path
+        setActiveTab(path);
+    }
 }
 
 /**
