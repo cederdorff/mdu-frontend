@@ -25,10 +25,9 @@ async function loadUsers() {
     const newUser = new User(user.id, user.name, user.mail, user.birthDate, user.img);
     _users.push(newUser);
   }
-
-  appendUsers(_users)
-
+  appendUsers(_users);
 }
+
 loadUsers();
 
 function appendUsers(users) {
