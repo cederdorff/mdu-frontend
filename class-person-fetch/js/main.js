@@ -2,7 +2,7 @@ import User from "./user.js";
 
 // ========== GLOBAL VARIABLES ==========
 let _users = [];
-const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
+const _baseUrl = "https://api.jsonbin.io/v3/b/6149a5484a82881d6c52ead4";
 const _headers = {
   "X-Master-Key": "$2b$10$Uf1lbMtIPrrWeneN3Wz6JuDcyBuOz.1LbHiUg32QexCCJz3nOpoS2",
   "Content-Type": "application/json"
