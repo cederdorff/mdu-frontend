@@ -13,9 +13,7 @@ navigator.geolocation.getCurrentPosition(position => {
   `;
 });
 
-fetch('http://ip-api.com/json').then(response => {
-  return response.json();
-}).then(location => {
+fetch('http://ip-api.com/json').then(response => response.json()).then(location => {
   console.log(location);
   document.querySelector("#location").innerHTML += `
   <p>City: ${location.city}</p>
@@ -23,7 +21,7 @@ fetch('http://ip-api.com/json').then(response => {
   `;
 });
 
-document.querySelector('#createUserBtn').addEventListener("click", function() {
+document.querySelector('#createUserBtn').addEventListener("click", function () {
   createUser();
 });
 
