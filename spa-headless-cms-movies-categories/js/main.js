@@ -38,15 +38,18 @@ function appendMovies(movies, container) {
     document.querySelector(container).innerHTML = htmlTemplate;
 }
 
+// appends posts for each cagtegory on the search page
 function appendPostsByCategories(categories) {
     let html = ""
-    for (const category of categories) { // loop through all categories
-        html +=/*html*/`
-            <h2>${category.name}</h2>
-        `;
-
-        for (const movie of _movies) { // loop through all movies 
+    // loop through all categories: Action, Adventure, Animation, Comedy, Drama Fantasy, Horror, etc. 
+    for (const category of categories) {
+        // creating html for the catgegory title (<h2>Actions</h2>) - headers on search page
+        html +=/*html*/`<h2>${category.name}</h2>`;
+        // looping through all movies 
+        for (const movie of _movies) {
+            // if the movie has the id of the given category, ex id of Action
             if (movie.categories.includes(category.id)) {
+                // creating html for the movie
                 html += /*html*/ `
                     <article onclick="showDetailView('${movie.id}')">
                         <h2>${movie.title.rendered} (${movie.acf.year})</h2>
@@ -57,6 +60,7 @@ function appendPostsByCategories(categories) {
             }
         }
     }
+    // when looped through all categories and created html for all matching movies, add html to search page (#categories-container)
     document.querySelector("#categories-container").innerHTML = html;
 }
 
