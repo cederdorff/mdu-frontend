@@ -56,7 +56,6 @@ window.like = function like(id) {
     console.log("Like, post id: " + id);
     // add to favorites 🎉
     _favMovies.push(id);
-    console.log(_favMovies);
     appendFavMovies();
 }
 
