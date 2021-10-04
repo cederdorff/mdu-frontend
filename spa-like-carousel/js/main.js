@@ -1,15 +1,16 @@
 import Carousel from "./carousel.js";
 
-let board = document.querySelector('#board');
-
-let carousel = new Carousel(board);
+const board = document.querySelector('#board');
+const _carousel = new Carousel(board);
+let _movies = [];
+let _favMovies = [];
 
 async function getPosts() {
-    const url = "https://api.cederdorff.com/wp-json/wp/v2/posts?categories=2";
-    let response = await fetch(url);
-    let posts = await response.json();
-    console.log(posts);
-    appendCards(posts);
+    const url = "https://movie-api.cederdorff.com/wp-json/wp/v2/posts?_embed";
+    const response = await fetch(url);
+    _movies = await response.json();
+    console.log(_movies);
+    appendCards(_movies);
 }
 
 getPosts();
@@ -19,17 +20,44 @@ function appendCards(posts) {
         let template = /*html*/`
             <article>
                 <h2>${post.title.rendered}</h2>
-                <img src="${post.acf.image_1.url}">
+                <img src="${getFeaturedImageUrl(post)}">
             </article>
         `;
-        carousel.push(template, post.id);
+        _carousel.push(template, post.id);
     }
-    carousel.handle();
+    _carousel.handle();
+}
+
+// Get image URL
+function getFeaturedImageUrl(post) {
+    let imageUrl = "";
+    if (post._embedded['wp:featuredmedia']) {
+        imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return imageUrl;
+}
+
+function appendFavMovies() {
+    let html = "";
+    for (const movieId of _favMovies) {
+        const movie = _movies.find(movie => movie.id == movieId);
+        console.log(movie);
+        html += /*html*/`
+            <article>
+                <h2>${movie.title.rendered}</h2>
+                <img src="${getFeaturedImageUrl(movie)}">
+            </article>
+        `;
+    }
+    document.querySelector("#favMovieContainer").innerHTML = html;
 }
 
 window.like = function like(id) {
     console.log("Like, post id: " + id);
     // add to favorites 🎉
+    _favMovies.push(id);
+    console.log(_favMovies);
+    appendFavMovies();
 }
 
 window.dislike = function dislike(id) {
