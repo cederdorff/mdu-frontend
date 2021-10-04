@@ -14,7 +14,7 @@ html {
   height: 100%;
   text-align: center;
   width: 100%;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 h1 {
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 3px;
 }
 
@@ -42,7 +42,7 @@ h1 {
 
 .topbar h2 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* ---------- header styling ---------- */
@@ -109,10 +109,10 @@ header {
 /* fade in */
 @keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
