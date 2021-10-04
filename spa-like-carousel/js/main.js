@@ -52,13 +52,23 @@ function appendFavMovies() {
     document.querySelector("#favMovieContainer").innerHTML = html;
 }
 
-window.like = function like(id) {
+window.like = (id) => {
     console.log("Like, post id: " + id);
     // add to favorites 🎉
     _favMovies.push(id);
     appendFavMovies();
+
+    console.log(_carousel);
+    if (_carousel.cards.length === 1) {
+        alert("Last movie card");
+    }
 }
 
-window.dislike = function dislike(id) {
+window.dislike = (id) => {
     console.log("Dislike, post id: " + id);
+
+    console.log(_carousel);
+    if (!_carousel.nextCard) {
+        alert("Last movie card");
+    }
 }
