@@ -15,7 +15,6 @@ const images = [
   "https://www.eaaa.dk/media/b5ahrlra/maria-louise-bendixen.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335295830000&format=webp",
   "https://www.eaaa.dk/media/4rgjd3dx/marie-elise-brandtoft.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335298570000&format=webp",
   "https://www.eaaa.dk/media/lhxfrp3r/marie-venoe-thesbjerg.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335299270000&format=webp",
-  "https://www.eaaa.dk/media/fiwflrmn/marlene-ahlgreen-jensen.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335300300000&format=webp",
   "https://www.eaaa.dk/media/hi4lv5hw/morten-bonderup.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335308630000&format=webp",
   "https://www.eaaa.dk/media/llyavasj/murat-kilic.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335310270000&format=webp",
   "https://www.eaaa.dk/media/s5tlzx35/niels-erik-h-kaster.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335311370000&format=webp",
@@ -23,7 +22,13 @@ const images = [
   "https://www.eaaa.dk/media/devlvvgj/rasmus-cederdorff.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335324630000&format=webp",
   "https://www.eaaa.dk/media/dvkczglr/sara-julie-ejstrup-mathiesen.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335328000000&format=webp",
   "https://www.eaaa.dk/media/qgcjntty/sergio-da-luz-benros.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335328300000&format=webp",
-  "https://www.eaaa.dk/media/hlonpjqi/stinne-j%C3%B8rup-heydari-pour.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335332730000&format=webp"
+  "https://www.eaaa.dk/media/hlonpjqi/stinne-j%C3%B8rup-heydari-pour.jpg?anchor=center&mode=crop&width=1000&height=1000&rnd=132301335332730000&format=webp",
+  "img/mnor.jpg",
+  "img/kato.jpg",
+  "img/dob.jpg",
+  "img/sbj.jpg",
+  "img/marlene.jpg",
+  "img/ankt.jpg"
 ];
 
 for (const image of images) {
