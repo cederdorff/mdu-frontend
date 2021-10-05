@@ -16,6 +16,7 @@
   <nav class="tabbar">
     <a href="#users">Users</a>
     <a href="#create">Create</a>
+    <a href="#random">Random</a>
   </nav>
 
   <!-- pages -->
@@ -100,10 +101,19 @@
     </form>
   </section>
 
+  <section id="random" class="page">
+    <header class="topbar">
+      <h2>Show random user</h2>
+    </header>
+    <section class="grid-container">
+      <button type="button" name="button" onclick="showRandomUser()">Display random user</button>
+    </section>
+  </section>
+
   <!-- update page -->
   <section id="detailView" class="page">
     <header class="topbar">
-      <a class="left" href="#users">Back</a>
+      <a class="left" onclick="goBack()" href="#">Back</a>
       <h2>Detail View</h2>
     </header>
     <section id="detailViewContainer" class="detail-grid"></section>

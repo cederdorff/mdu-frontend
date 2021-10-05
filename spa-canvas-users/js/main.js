@@ -20,6 +20,9 @@ async function fetchUsers() {
     _users = data;
 }
 
+
+
+
 function appendUsers(usersArray) {
     let html = "";
     for (const userObject of usersArray) {
@@ -187,3 +190,8 @@ if (!_selectedUserId) {
     navigateTo("users");
 }
 
+function showRandomUser() {
+    const randomUser = _users[Math.floor(Math.random() * _users.length)];
+    console.log(randomUser);
+    showDetailView(randomUser.id);
+}

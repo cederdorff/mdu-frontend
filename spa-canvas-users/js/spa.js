@@ -32,6 +32,10 @@ function navigateTo(pageId) {
   location.href = `#${pageId}`;
 }
 
+function goBack() {
+  window.history.back();
+}
+
 // set default page or given page by the hash url
 // function is called 'onhashchange'
 function pageChange() {
@@ -39,6 +43,7 @@ function pageChange() {
   if (location.hash) {
     page = location.hash.slice(1);
   }
+  console.log(page);
   showPage(page);
 }
 
