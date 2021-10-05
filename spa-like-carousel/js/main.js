@@ -60,7 +60,7 @@ window.like = (id) => {
 
     console.log(_carousel);
     if (_carousel.cards.length === 1) {
-        alert("Last movie card");
+        navigateTo("favs");
     }
 }
 
