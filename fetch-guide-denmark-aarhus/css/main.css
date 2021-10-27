@@ -1,0 +1,41 @@
+* {
+  line-height: 1.2;
+  margin: 0;
+}
+
+html {
+  color: #333;
+  display: table;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: 1em 0 0 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 400;
+  margin: 1em 0 0 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-container > article {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.grid-container > article > img {
+  width: 100%;
+  height: auto;
+}

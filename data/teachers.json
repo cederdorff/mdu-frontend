@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Birgitte Kirk Iversen",
+        "mail": "bki@baaa.dk",
+        "phone": "72286316",
+        "position": "Senior Lecturer",
+        "img": "https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg"
+    },
+    {
+        "name": "Dan Okkels Brendstrup",
+        "mail": "dob@baaa.dk",
+        "phone": "72286327",
+        "position": "Lecturer",
+        "img": "https://www.eaaa.dk/media/bdojel41/dan-okkels-brendstrup.jpg"
+    },
+    {
+        "name": "Maria Louise Bendixen",
+        "mail": "mlbe@baaa.dk",
+        "phone": "72286345",
+        "position": "Senior Lecturer",
+        "img": "https://www.baaa.dk/media/b5ahrlra/maria-louise-bendixen.jpg"
+    },
+    {
+        "name": "Marlene Ahlgreen Jensen",
+        "mail": "maj@baaa.dk",
+        "phone": "72286345",
+        "position": "Senior Lecturer",
+        "img": "https://www.eaaa.dk/media/fiwflrmn/marlene-ahlgreen-jensen.jpg"
+    },
+    {
+        "name": "Rasmus Cederdorff",
+        "mail": "race@baaa.dk",
+        "phone": "72286318",
+        "position": "Lecturer",
+        "img": "https://www.baaa.dk/media/devlvvgj/rasmus-cederdorff.jpg"
+    }
+]
