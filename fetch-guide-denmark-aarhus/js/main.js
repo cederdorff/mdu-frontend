@@ -1,7 +1,7 @@
 "use strict";
 
 async function loadData() {
-  let response = await fetch("./data/data.json");
+  let response = await fetch("../visit-denmark/data-en.json");
   let data = await response.json();
   console.log(data);
   appendData(data);
@@ -12,7 +12,6 @@ loadData();
 
 function getImageUrl(item) {
   if (item.Files.length >= 1) {
-    console.log(item.Files);
     return item.Files[0].Uri;
   }
 }

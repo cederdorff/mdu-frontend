@@ -1,0 +1,264 @@
+[
+    {
+        "Id": 3,
+        "Name": "Attraktioner",
+        "ImageUrl": "https://files.guidedanmark.org/files/466/221961_VDKType-Attraktioner.jpg",
+        "Children": [
+            {
+                "Id": 4,
+                "Name": "Arkitektur og byrum",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219070_VDKType-buildings-and-townscapes.jpg",
+                "Children": null
+            },
+            {
+                "Id": 5,
+                "Name": "Forlystelses- og temaparker",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219083_VDKType-forlystelsparker.jpg",
+                "Children": null
+            },
+            {
+                "Id": 6,
+                "Name": "Gallerier og kunsthaller",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219085_VDKType-galleri.jpg",
+                "Children": null
+            },
+            {
+                "Id": 7,
+                "Name": "Haver og parker",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219081_VDKType-Parks-and-gardens.jpg",
+                "Children": null
+            },
+            {
+                "Id": 8,
+                "Name": "Kirker og klostre",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219071_VDKType-Churches.jpg",
+                "Children": null
+            },
+            {
+                "Id": 10,
+                "Name": "Kunstnere og kunsthåndværkere",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219084_VDKType-Crafts.jpg",
+                "Children": null
+            },
+            {
+                "Id": 12,
+                "Name": "Street art og skulpturer",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219073_VDKType-Monuments.jpg",
+                "Children": null
+            },
+            {
+                "Id": 13,
+                "Name": "Museer",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219074_VDKType-Museums.png",
+                "Children": null
+            },
+            {
+                "Id": 14,
+                "Name": "Naturområder",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219075_VDKType-MuseumsNatural-areas.jpg",
+                "Children": null
+            },
+            {
+                "Id": 15,
+                "Name": "Fortidsminder og ruiner",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219079_VDKType-Prehistoric-monuments.jpg",
+                "Children": null
+            },
+            {
+                "Id": 16,
+                "Name": "Slotte og herregårde",
+                "ImageUrl": "https://files.guidedanmark.org/files/407/218991_VDKType-Castle-Manor-house-hotel.jpg",
+                "Children": null
+            },
+            {
+                "Id": 18,
+                "Name": "Zoo og dyreparker",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/214603_vdktype-6.jpg",
+                "Children": null
+            },
+            {
+                "Id": 100,
+                "Name": "Øvrige attraktioner",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219077_VDKType-other-attractions.jpg",
+                "Children": null
+            }
+        ]
+    },
+    {
+        "Id": 36,
+        "Name": "Aktiviteter",
+        "ImageUrl": "https://files.guidedanmark.org/files/466/221953_VDKType-Aktiviteter.jpg",
+        "Children": [
+            {
+                "Id": 37,
+                "Name": "Sport og aktiviteter",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219162_VDKType-Sport-og-andre-aktiviteter.jpg",
+                "Children": null
+            },
+            {
+                "Id": 38,
+                "Name": "Bådudlejere",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219167_VDKType-baadudlejere.jpg",
+                "Children": null
+            },
+            {
+                "Id": 39,
+                "Name": "Biblioteker",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219150_VDKType-biblioteker.jpg",
+                "Children": null
+            },
+            {
+                "Id": 40,
+                "Name": "Teatre / biografer",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219170_VDKType-biografer.jpg",
+                "Children": null
+            },
+            {
+                "Id": 41,
+                "Name": "Cykeludlejere",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219171_VDKType-cykeludlejning.jpg",
+                "Children": null
+            },
+            {
+                "Id": 42,
+                "Name": "Lystfiskeri",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219168_VDKType-fiskevande.jpg",
+                "Children": null
+            },
+            {
+                "Id": 43,
+                "Name": "Golfbaner",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219151_VDKType-golfklub.jpg",
+                "Children": null
+            },
+            {
+                "Id": 44,
+                "Name": "Hesteoplevelser",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219152_VDKType-hesteudlejning.jpg",
+                "Children": null
+            },
+            {
+                "Id": 45,
+                "Name": "Kulturhuse / spillesteder ",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/214621_vdktype-27.jpg",
+                "Children": null
+            },
+            {
+                "Id": 46,
+                "Name": "Lystbådehavne",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219156_VDKType-lystbaadhavne.jpg",
+                "Children": null
+            },
+            {
+                "Id": 47,
+                "Name": "Shopping",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219160_VDKType-shopping.jpg",
+                "Children": null
+            },
+            {
+                "Id": 48,
+                "Name": "Sightseeing og guidede ture",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/214602_vdktype-4.jpg",
+                "Children": null
+            },
+            {
+                "Id": 49,
+                "Name": "Strande og udendørsbade",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219163_VDKType-strande.jpg",
+                "Children": null
+            },
+            {
+                "Id": 50,
+                "Name": "Svømmehaller og vandlande",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219164_VDKType-svoemmehaller.jpg",
+                "Children": null
+            },
+            {
+                "Id": 52,
+                "Name": "Ture på egen hånd",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219166_VDKType-turforslag.jpg",
+                "Children": null
+            },
+            {
+                "Id": 53,
+                "Name": "Wellness",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/214607_vdktype-13.jpg",
+                "Children": null
+            },
+            {
+                "Id": 54,
+                "Name": "Badesøer",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219172_VDKType-Bade.jpg",
+                "Children": null
+            },
+            {
+                "Id": 55,
+                "Name": "Indendørs sjov for store og små",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219153_VDKType-indendoers-legeland.jpg",
+                "Children": null
+            },
+            {
+                "Id": 56,
+                "Name": "Legepladser",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219155_VDKType-legepladser.jpg",
+                "Children": null
+            },
+            {
+                "Id": 57,
+                "Name": "Naturfitness",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219157_VDKType-naturfitness.jpg",
+                "Children": null
+            },
+            {
+                "Id": 101,
+                "Name": "Øvrige aktiviteter",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/214617_vdktype-20.jpg",
+                "Children": null
+            }
+        ]
+    },
+    {
+        "Id": 58,
+        "Name": "Begivenheder",
+        "ImageUrl": "https://files.guidedanmark.org/files/466/221960_VDKType-Begivenheder.jpg",
+        "Children": [
+            {
+                "Id": 59,
+                "Name": "Det sker",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/221960_VDKType-Begivenheder.jpg",
+                "Children": null
+            }
+        ]
+    },
+    {
+        "Id": 62,
+        "Name": "Mad og drikke",
+        "ImageUrl": "https://files.guidedanmark.org/files/466/221970_VDKType-Spisesteder.jpg",
+        "Children": [
+            {
+                "Id": 63,
+                "Name": "Restauranter",
+                "ImageUrl": "https://files.guidedanmark.org/files/407/218969_VDKType-Restaurants.jpg",
+                "Children": null
+            },
+            {
+                "Id": 64,
+                "Name": "Cafeer",
+                "ImageUrl": "https://files.guidedanmark.org/files/407/218968_VDKType-Cafes.jpg",
+                "Children": null
+            },
+            {
+                "Id": 65,
+                "Name": "Lokale smagsoplevelser",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219082_VDKType-Local-specialities.jpg",
+                "Children": null
+            },
+            {
+                "Id": 107,
+                "Name": "Natklubber og barer",
+                "ImageUrl": "https://files.guidedanmark.org/files/466/219058_VDKType-Nightlife.jpg",
+                "Children": null
+            }
+        ]
+    }
+]
