@@ -1,104 +1,121 @@
-"use strict";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+import {
+	getFirestore,
+	collection,
+	onSnapshot,
+	doc,
+	updateDoc,
+	deleteDoc,
+	addDoc,
+} from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCI_VTBj8inrJWIjIYf_Y7bBpT9aRRQS1o",
-  authDomain: "user-app-289f1.firebaseapp.com",
-  databaseURL: "https://user-app-289f1.firebaseio.com",
-  projectId: "user-app-289f1",
-  storageBucket: "user-app-289f1.appspot.com",
-  messagingSenderId: "438369021654",
-  appId: "1:438369021654:web:8138ce7351d51603c0a377"
+	apiKey: "AIzaSyCI_VTBj8inrJWIjIYf_Y7bBpT9aRRQS1o",
+	authDomain: "user-app-289f1.firebaseapp.com",
+	databaseURL: "https://user-app-289f1.firebaseio.com",
+	projectId: "user-app-289f1",
+	storageBucket: "user-app-289f1.appspot.com",
+	messagingSenderId: "438369021654",
+	appId: "1:438369021654:web:8138ce7351d51603c0a377",
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const userRef = db.collection("users");
+initializeApp(firebaseConfig);
 
-let selectedUserId = "";
+// reference to database
+const _db = getFirestore();
+// reference to users collection in database
+const _usersRef = collection(_db, "users");
+// global variable: users array & selectedUserId
+let _users = [];
+let _selectedUserId = "";
 
 // ========== READ ==========
-// watch the database ref for changes
-userRef.onSnapshot(function (snapshotData) {
-  let users = [];
-  snapshotData.forEach(function (doc) {
-    let user = doc.data();
-    console.log(user);
-    user.id = doc.id;
-    users.push(user);
-  });
-  appendUsers(users);
-  showLoader(false);
+
+// onSnapshot: listen for realtime updates
+onSnapshot(_usersRef, snapshot => {
+	// mapping snapshot data from firebase in to user objects
+	_users = snapshot.docs.map(doc => {
+		const user = doc.data();
+		user.id = doc.id;
+		return user;
+	});
+	appendUsers(_users);
+	showLoader(false);
 });
 
 // append users to the DOM
 function appendUsers(users) {
-  let htmlTemplate = "";
-  for (let user of users) {
-    console.log(user.id);
-    console.log(user.name);
-    htmlTemplate += `
+	let htmlTemplate = "";
+	for (const user of users) {
+		htmlTemplate += /*html*/ `
     <article>
-      <h2>${user.name}</h2>
+      <h3>${user.name}</h3>
       <p><a href="mailto:${user.mail}">${user.mail}</a></p>
-      <button onclick="selectUser('${user.id}','${user.name}', '${user.mail}')">Update</button>
+      <button onclick="selectUser('${user.id}')">Update</button>
       <button onclick="deleteUser('${user.id}')">Delete</button>
     </article>
     `;
-  }
-  document.querySelector('#content').innerHTML = htmlTemplate;
+	}
+	document.querySelector("#content").innerHTML = htmlTemplate;
 }
 
 // ========== CREATE ==========
 // add a new user to firestore (database)
 function createUser() {
-  // references to the input fields
-  let nameInput = document.querySelector('#name');
-  let mailInput = document.querySelector('#mail');
+	// references to the input fields
+	let nameInput = document.querySelector("#name");
+	let mailInput = document.querySelector("#mail");
 
-  let newUser = {
-    name: nameInput.value,
-    mail: mailInput.value
-  };
+	let newUser = {
+		name: nameInput.value,
+		mail: mailInput.value,
+	};
 
-  userRef.add(newUser);
+	addDoc(_usersRef, newUser);
 }
 
 // ========== UPDATE ==========
 
-function selectUser(id, name, mail) {
-  // references to the input fields
-  let nameInput = document.querySelector('#name-update');
-  let mailInput = document.querySelector('#mail-update');
-  nameInput.value = name;
-  mailInput.value = mail;
-  selectedUserId = id;
+function selectUser(id) {
+	_selectedUserId = id;
+	const user = _users.find(user => user.id == _selectedUserId);
+	// references to the input fields
+	document.querySelector("#name-update").value = user.name;
+	document.querySelector("#mail-update").value = user.mail;
+	//scroll to update form
+	document.querySelector("#form-update").scrollIntoView({ behavior: "smooth" });
 }
 
 function updateUser() {
-  let nameInput = document.querySelector('#name-update');
-  let mailInput = document.querySelector('#mail-update');
+	const userToUpdate = {
+		name: document.querySelector("#name-update").value,
+		mail: document.querySelector("#mail-update").value,
+	};
 
-  let userToUpdate = {
-    name: nameInput.value,
-    mail: mailInput.value
-  };
-  userRef.doc(selectedUserId).update(userToUpdate);
+	const userRef = doc(_usersRef, _selectedUserId);
+	updateDoc(userRef, userToUpdate);
 }
 
 // ========== DELETE ==========
 function deleteUser(id) {
-  console.log(id);
-  userRef.doc(id).delete();
+	const docRef = doc(_usersRef, id);
+	deleteDoc(docRef);
 }
 
 // =========== Loader functionality =========== //
 
 function showLoader(show = true) {
-  let loader = document.querySelector('#loader');
-  if (show) {
-    loader.classList.remove("hide");
-  } else {
-    loader.classList.add("hide");
-  }
+	const loader = document.querySelector("#loader");
+	if (show) {
+		loader.classList.remove("hide");
+	} else {
+		loader.classList.add("hide");
+	}
 }
+
+// =========== attach events =========== //
+window.selectUser = id => selectUser(id);
+window.deleteUser = id => deleteUser(id);
+document.querySelector("#btn-update").onclick = () => updateUser();
+document.querySelector("#btn-create").onclick = () => createUser();
