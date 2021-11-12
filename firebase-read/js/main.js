@@ -33,6 +33,20 @@ onSnapshot(usersRef, snapshot => {
 		user.id = doc.id;
 		return user;
 	});
-
-	console.log(users);
+	// append data to the DOM
+	appendUsers(users);
 });
+
+// append users to the DOM
+function appendUsers(users) {
+	let htmlTemplate = "";
+	for (let user of users) {
+		htmlTemplate += /*html*/ `
+			<article>
+			<h2>${user.name}</h2>
+			<p><a href="mailto:${user.mail}">${user.mail}</a></p>
+			</article>
+    `;
+	}
+	document.querySelector("#content").innerHTML = htmlTemplate;
+}
