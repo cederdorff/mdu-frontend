@@ -1,5 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -9,7 +9,7 @@ const firebaseConfig = {
 	projectId: "user-app-289f1",
 	storageBucket: "user-app-289f1.appspot.com",
 	messagingSenderId: "438369021654",
-	appId: "1:438369021654:web:8138ce7351d51603c0a377",
+	appId: "1:438369021654:web:8138ce7351d51603c0a377"
 };
 // Initialize Firebase
 initializeApp(firebaseConfig);

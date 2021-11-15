@@ -5,8 +5,8 @@ import {
 	doc,
 	updateDoc,
 	deleteDoc,
-	addDoc,
-} from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+	addDoc
+} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 export default class UserService {
 	constructor() {
@@ -53,7 +53,7 @@ export default class UserService {
 	create(name, mail) {
 		const newUser = {
 			name: name,
-			mail: mail,
+			mail: mail
 		};
 		console.log(newUser);
 		addDoc(this.usersRef, newUser);
@@ -63,7 +63,7 @@ export default class UserService {
 	update(id, name, mail) {
 		const userToUpdate = {
 			name: name,
-			mail: mail,
+			mail: mail
 		};
 
 		const userRef = doc(this.usersRef, id);

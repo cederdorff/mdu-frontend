@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import {
 	getFirestore,
 	collection,
@@ -7,7 +7,7 @@ import {
 	updateDoc,
 	deleteDoc,
 	addDoc
-} from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
