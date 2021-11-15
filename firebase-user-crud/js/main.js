@@ -67,12 +67,15 @@ function createUser() {
 	let nameInput = document.querySelector("#name");
 	let mailInput = document.querySelector("#mail");
 
-	let newUser = {
+	const newUser = {
 		name: nameInput.value,
 		mail: mailInput.value
 	};
-
-	addDoc(_usersRef, newUser);
+	if (validate(newUser)) {
+		addDoc(_usersRef, newUser);
+	} else {
+		alert("Please type a real name and mail.");
+	}
 }
 
 // ========== UPDATE ==========
@@ -91,15 +94,27 @@ function updateUser() {
 		name: document.querySelector("#name-update").value,
 		mail: document.querySelector("#mail-update").value
 	};
-
-	const userRef = doc(_usersRef, _selectedUserId);
-	updateDoc(userRef, userToUpdate);
+	if (validate(userToUpdate)) {
+		const userRef = doc(_usersRef, _selectedUserId);
+		updateDoc(userRef, userToUpdate);
+	} else {
+		alert("Please type a real name and mail.");
+	}
 }
 
 // ========== DELETE ==========
 function deleteUser(id) {
 	const docRef = doc(_usersRef, id);
 	deleteDoc(docRef);
+}
+
+// =========== Helper functions =========== //
+function validate({ name, mail }) {
+	if (name.length > 0 && /\S+@\S+\.\S+/.test(mail)) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 // =========== Loader functionality =========== //
