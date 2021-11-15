@@ -6,7 +6,7 @@ import {
 	doc,
 	updateDoc,
 	deleteDoc,
-	addDoc,
+	addDoc
 } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -17,7 +17,7 @@ const firebaseConfig = {
 	projectId: "user-app-289f1",
 	storageBucket: "user-app-289f1.appspot.com",
 	messagingSenderId: "438369021654",
-	appId: "1:438369021654:web:8138ce7351d51603c0a377",
+	appId: "1:438369021654:web:8138ce7351d51603c0a377"
 };
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -69,14 +69,13 @@ function createUser() {
 
 	let newUser = {
 		name: nameInput.value,
-		mail: mailInput.value,
+		mail: mailInput.value
 	};
 
 	addDoc(_usersRef, newUser);
 }
 
 // ========== UPDATE ==========
-
 function selectUser(id) {
 	_selectedUserId = id;
 	const user = _users.find(user => user.id == _selectedUserId);
@@ -90,7 +89,7 @@ function selectUser(id) {
 function updateUser() {
 	const userToUpdate = {
 		name: document.querySelector("#name-update").value,
-		mail: document.querySelector("#mail-update").value,
+		mail: document.querySelector("#mail-update").value
 	};
 
 	const userRef = doc(_usersRef, _selectedUserId);
