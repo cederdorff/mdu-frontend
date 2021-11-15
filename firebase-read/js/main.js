@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase
 import {
 	getFirestore,
 	collection,
-	onSnapshot,
+	onSnapshot
 } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -13,7 +13,7 @@ const firebaseConfig = {
 	projectId: "user-app-289f1",
 	storageBucket: "user-app-289f1.appspot.com",
 	messagingSenderId: "438369021654",
-	appId: "1:438369021654:web:8138ce7351d51603c0a377",
+	appId: "1:438369021654:web:8138ce7351d51603c0a377"
 };
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -43,8 +43,8 @@ function appendUsers(users) {
 	for (let user of users) {
 		htmlTemplate += /*html*/ `
 			<article>
-			<h2>${user.name}</h2>
-			<p><a href="mailto:${user.mail}">${user.mail}</a></p>
+				<h2>${user.name}</h2>
+				<p><a href="mailto:${user.mail}">${user.mail}</a></p>
 			</article>
     `;
 	}
