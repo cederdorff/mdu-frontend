@@ -52,12 +52,20 @@ function appendUsers(users) {
     <article>
       <h3>${user.name}</h3>
       <p><a href="mailto:${user.mail}">${user.mail}</a></p>
-      <button onclick="selectUser('${user.id}')">Update</button>
-      <button onclick="deleteUser('${user.id}')">Delete</button>
+      <button class="btn-update-user" data-id="${user.id}">Update</button>
+      <button class="btn-delete-user" data-id="${user.id}">Delete</button>
     </article>
     `;
 	}
 	document.querySelector("#content").innerHTML = htmlTemplate;
+
+	document.querySelectorAll(".btn-update-user").forEach(btn =>{
+		btn.onclick = () =>selectUser(btn.getAttribute("data-id"))
+	});
+
+	document.querySelectorAll(".btn-delete-user").forEach(btn =>{
+		btn.onclick = () =>deleteUser(btn.getAttribute("data-id"))
+	});
 }
 
 // ========== CREATE ==========
@@ -129,7 +137,9 @@ function showLoader(show = true) {
 }
 
 // =========== attach events =========== //
-window.selectUser = id => selectUser(id);
-window.deleteUser = id => deleteUser(id);
+// window.selectUser = id => selectUser(id);
+// window.deleteUser = id => deleteUser(id);
 document.querySelector("#btn-update").onclick = () => updateUser();
 document.querySelector("#btn-create").onclick = () => createUser();
+
+
