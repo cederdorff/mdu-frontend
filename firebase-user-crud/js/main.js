@@ -59,12 +59,13 @@ function appendUsers(users) {
 	}
 	document.querySelector("#content").innerHTML = htmlTemplate;
 
-	document.querySelectorAll(".btn-update-user").forEach(btn =>{
-		btn.onclick = () =>selectUser(btn.getAttribute("data-id"))
+	//attach events to update and delete btns
+	document.querySelectorAll(".btn-update-user").forEach(btn => {
+		btn.onclick = () => selectUser(btn.getAttribute("data-id"));
 	});
 
-	document.querySelectorAll(".btn-delete-user").forEach(btn =>{
-		btn.onclick = () =>deleteUser(btn.getAttribute("data-id"))
+	document.querySelectorAll(".btn-delete-user").forEach(btn => {
+		btn.onclick = () => deleteUser(btn.getAttribute("data-id"));
 	});
 }
 
@@ -137,9 +138,5 @@ function showLoader(show = true) {
 }
 
 // =========== attach events =========== //
-// window.selectUser = id => selectUser(id);
-// window.deleteUser = id => deleteUser(id);
 document.querySelector("#btn-update").onclick = () => updateUser();
 document.querySelector("#btn-create").onclick = () => createUser();
-
-
