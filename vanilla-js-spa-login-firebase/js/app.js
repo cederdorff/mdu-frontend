@@ -23,14 +23,12 @@ initializeApp(firebaseConfig);
 const _auth = getAuth();
 
 onAuthStateChanged(_auth, user => {
+	console.log(user);
 	if (user) {
-		// User is signed in
-		const uid = user;
-		console.log(user);
 		navigateTo("#/");
 	} else {
 		// User is signed out
-
+		console.log("heh");
 		if (location.hash == "#/signup") {
 			navigateTo("#/signup");
 		} else {
@@ -75,6 +73,7 @@ function signup() {
 		});
 }
 
-window.login = () => login();
-window.logout = () => logout();
-window.signup = () => signup();
+// =========== attach events =========== //
+document.querySelector("#btn-login").onclick = () => login();
+document.querySelector("#btn-logout").onclick = () => logout();
+document.querySelector("#btn-signup").onclick = () => signup();

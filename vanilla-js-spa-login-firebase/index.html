@@ -34,7 +34,7 @@
       <form>
         <input id="login-mail" type="email" placeholder="Type email">
         <input id="login-password" type="password" placeholder="Password">
-        <button type="button" onclick="login()">Login</button>
+        <button type="button" id="btn-login">Login</button>
       </form>
       <p><a class="nav-link" href="#/signup">Go to Sign up</a></p>
     </section>
@@ -49,7 +49,7 @@
       <form>
         <input id="signup-mail" type="email" placeholder="Type email" autocomplete="new-email">
         <input id="signup-password" type="password" placeholder="Password" autocomplete="new-password">
-        <button type="button" onclick="signup()">Login</button>
+        <button type="button" id="btn-signup">Sign up</button>
       </form>
     </section>
 
@@ -57,7 +57,7 @@
     <section id="home" class="page">
       <header class="topbar">
         <h2>Home</h2>
-        <a class="right" onclick="logout()">Logout</a>
+        <a class="right" id="btn-logout">Logout</a>
       </header>
       <p>My Single Page Web App Template</p>
     </section>
