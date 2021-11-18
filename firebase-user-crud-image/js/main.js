@@ -88,9 +88,17 @@ function createUser() {
 	};
 	if (validate(newUser)) {
 		addDoc(_usersRef, newUser);
+		resetCreateForm();
 	} else {
 		alert("Please type a real name and mail.");
 	}
+}
+
+function resetCreateForm() {
+	document.querySelector("#name").value = "";
+	document.querySelector("#mail").value = "";
+	document.querySelector("#img").value = "";
+	document.querySelector("#imagePreview").setAttribute("src", "");
 }
 
 // ========== UPDATE ==========
@@ -114,12 +122,17 @@ function updateUser() {
 	if (validate(userToUpdate)) {
 		const userRef = doc(_usersRef, _selectedUserId);
 		updateDoc(userRef, userToUpdate);
-		document.querySelector("#name-update").value = "";
-		document.querySelector("#mail-update").value = "";
-		document.querySelector("#imagePreviewUpdate").src = "";
+		resetUpdateForm();
 	} else {
 		alert("Please type a real name and mail.");
 	}
+}
+
+function resetUpdateForm() {
+	document.querySelector("#name-update").value = "";
+	document.querySelector("#mail-update").value = "";
+	document.querySelector("#img-update").value = "";
+	document.querySelector("#imagePreviewUpdate").setAttribute("src", "");
 }
 
 // ========== DELETE ==========

@@ -18,8 +18,8 @@
   <section id="content" class="grid-container"></section>
   <form id="userForm">
     <h2>Create a new User</h2>
-    <input type="text" id="name" placeholder="Type your name" required>
-    <input type="email" id="mail" placeholder="Type your mail" required>
+    <input type="text" id="name" placeholder="Type your name">
+    <input type="email" id="mail" placeholder="Type your mail">
     <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
     <img id="imagePreview" class="image-preview">
     <button type="button" name="button" id="btn-create">Create User</button>
@@ -27,9 +27,9 @@
 
   <form id="form-update">
     <h2>Update User</h2>
-    <input type="text" id="name-update" required>
-    <input type="email" id="mail-update" required>
-    <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreviewUpdate')">
+    <input type="text" id="name-update" placeholder="Select a user">
+    <input type="email" id="mail-update" placeholder="Select a user">
+    <input type="file" id="img-update" accept="image/*" onchange="previewImage(this.files[0], 'imagePreviewUpdate')">
     <img id="imagePreviewUpdate" class="image-preview">
     <button type="button" name="button" id="btn-update">Update User</button>
   </form>
