@@ -28,7 +28,6 @@ onAuthStateChanged(_auth, user => {
 		navigateTo("#/");
 	} else {
 		// User is signed out
-		console.log("heh");
 		if (location.hash == "#/signup") {
 			navigateTo("#/signup");
 		} else {

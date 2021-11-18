@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Single Page Application - RACE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Get started with HTML, CSS and JavaScript">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+
+</head>
+
+<body>
+  <!-------------- Navigation -------------->
+  <nav class="tabbar hide">
+    <a class="nav-link" href="#/">Home</a>
+    <a class="nav-link" href="#/about">About</a>
+    <a class="nav-link" href="#/clients">Clients</a>
+    <a class="nav-link" href="#/profile">Profile</a>
+  </nav>
+
+  <main id="appRoot">
+    <!-------------- Pages -------------->
+
+    <!-- login page -->
+    <section id="login" class="page">
+      <header class="topbar">
+        <h2>Login</h2>
+      </header>
+      <p>My Single Page Web App Login Screen</p>
+      <!-- firebase auth container  -->
+      <section id="firebaseui-auth-container"></section>
+    </section>
+
+    <!-- home page -->
+    <section id="home" class="page">
+      <header class="topbar">
+        <h2>Home</h2>
+      </header>
+      <p>My Single Page Web App Template</p>
+    </section>
+
+    <!-- about page -->
+    <section id="about" class="page">
+      <header class="topbar">
+        <h2>About</h2>
+      </header>
+      <p>This is my about page</p>
+    </section>
+
+    <!-- clients page -->
+    <section id="clients" class="page">
+      <header class="topbar">
+        <h2>Clients</h2>
+      </header>
+      <p>Clients page. Here goes some content.</p>
+    </section>
+
+    <!-- profile page -->
+    <section id="profile" class="page">
+      <header class="topbar">
+        <h2>Profile</h2>
+        <a class="right" id="btn-logout">Logout</a>
+      </header>
+      <div id="user-data"></div>
+
+    </section>
+
+    <!-- loader  -->
+    <section id="loader">
+      <section class="spinner"></section>
+    </section>
+
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+  <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>

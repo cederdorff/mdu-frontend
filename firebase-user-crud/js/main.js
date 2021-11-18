@@ -33,6 +33,7 @@ let _selectedUserId = "";
 // ========== READ ==========
 
 // onSnapshot: listen for realtime updates
+
 onSnapshot(_usersRef, snapshot => {
 	// mapping snapshot data from firebase in to user objects
 	_users = snapshot.docs.map(doc => {
@@ -113,8 +114,8 @@ function updateUser() {
 
 // ========== DELETE ==========
 function deleteUser(id) {
-	const docRef = doc(_usersRef, id);
-	deleteDoc(docRef);
+	const userRef = doc(_usersRef, id);
+	deleteDoc(userRef);
 }
 
 // =========== Helper functions =========== //
