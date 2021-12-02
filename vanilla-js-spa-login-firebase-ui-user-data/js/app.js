@@ -12,7 +12,7 @@ import {
 	onSnapshot,
 	doc,
 	getDoc,
-	updateDoc
+	setDoc
 } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -155,7 +155,7 @@ async function updateUser() {
 		img: document.querySelector("#imagePreview").src
 	};
 	const userRef = doc(_usersRef, _auth.currentUser.uid);
-	await updateDoc(userRef, userToUpdate);
+	await setDoc(userRef, userToUpdate, { merge: true });
 	showLoader(false);
 }
 
