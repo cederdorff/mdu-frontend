@@ -9,7 +9,7 @@ async function init() {
     await getMovies();
     await getCategories();
 }
-init()
+init();
 
 // fetch all movies from WP
 async function getMovies() {
@@ -20,8 +20,6 @@ async function getMovies() {
     appendMovies(data, "#movies-container");
     showLoader(false);
 }
-
-
 
 // append movies to the DOM
 function appendMovies(movies, container) {
@@ -40,12 +38,12 @@ function appendMovies(movies, container) {
 
 // appends posts for each cagtegory on the search page
 function appendPostsByCategories(categories) {
-    let html = ""
-    // loop through all categories: Action, Adventure, Animation, Comedy, Drama Fantasy, Horror, etc. 
+    let html = "";
+    // loop through all categories: Action, Adventure, Animation, Comedy, Drama Fantasy, Horror, etc.
     for (const category of categories) {
         // creating html for the catgegory title (<h2>Actions</h2>) - headers on search page
-        html +=/*html*/`<h2>${category.name}</h2>`;
-        // looping through all movies 
+        html += /*html*/ `<h2>${category.name}</h2>`;
+        // looping through all movies
         for (const movie of _movies) {
             // if the movie has the id of the given category, ex id of Action
             if (movie.categories.includes(category.id)) {
@@ -66,7 +64,6 @@ function appendPostsByCategories(categories) {
 
 // search functionality
 function search(value) {
-
     // show or hide results (search container)
     if (value) {
         document.querySelector("#search-container").classList.remove("hide");
@@ -101,17 +98,19 @@ function appendCategories(categories) {
     let htmlTemplate = "";
     for (let category of categories) {
         htmlTemplate += /*html*/ `
-        <option value="${category.id}">${category.name}</option>
+        <option value="${category.id}">${category.name} (${category.count})</option>
     `;
     }
-    document.querySelector('#select-category').innerHTML += htmlTemplate;
+    document.querySelector("#select-category").innerHTML += htmlTemplate;
 }
 
 // category selected event - fetch movies by selected category
 async function categorySelected(categoryId) {
     if (categoryId) {
         showLoader(true);
-        let response = await fetch(`https://movie-api.cederdorff.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}`)
+        let response = await fetch(
+            `https://movie-api.cederdorff.com/wp-json/wp/v2/posts?_embed&categories=${categoryId}`
+        );
         let data = await response.json();
         appendMoviesByCategory(data);
         showLoader(false);
@@ -136,14 +135,14 @@ function appendMoviesByCategory(moviesByCategory) {
       <p>No Movies</p>
     `;
     }
-    document.querySelector('#movies-by-category-container').innerHTML = htmlTemplate;
+    document.querySelector("#movies-by-category-container").innerHTML = htmlTemplate;
 }
 
 // get the featured image url
 function getFeaturedImageUrl(post) {
     let imageUrl = "";
-    if (post._embedded['wp:featuredmedia']) {
-        imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    if (post._embedded["wp:featuredmedia"]) {
+        imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
     }
     return imageUrl;
 }
@@ -151,13 +150,15 @@ function getFeaturedImageUrl(post) {
 function showDetailView(id) {
     const movie = _movies.find(movie => movie.id == id);
     document.querySelector("#detailView h2").innerHTML = movie.title.rendered;
-    document.querySelector("#detailViewContainer").innerHTML = /*html*/`
+    document.querySelector("#detailViewContainer").innerHTML = /*html*/ `
         <img src="${getFeaturedImageUrl(movie)}">
         <article>
             <h1>${movie.title.rendered}</h1>
             <h2>${movie.acf.year}</h2>
             <p>${movie.content.rendered}</p>
-            <iframe src="${movie.acf.trailer}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="${
+                movie.acf.trailer
+            }" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </article>
     `;
     navigateTo("detailView");
@@ -167,11 +168,10 @@ if (!_selectedMovieId) {
     navigateTo("movies");
 }
 
-
 // =========== Loader functionality =========== //
 
 function showLoader(show = true) {
-    let loader = document.querySelector('#loader');
+    let loader = document.querySelector("#loader");
     if (show) {
         loader.classList.remove("hide");
     } else {
