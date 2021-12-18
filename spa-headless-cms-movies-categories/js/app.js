@@ -1,4 +1,4 @@
-"use strict";
+import { navigateTo, initRouter } from "./router.js";
 
 // =========== Movie SPA functionality =========== //
 
@@ -6,6 +6,7 @@ let _movies = [];
 let _selectedMovieId;
 
 async function init() {
+    initRouter();
     await getMovies();
     await getCategories();
 }
@@ -15,7 +16,6 @@ init();
 async function getMovies() {
     let response = await fetch("https://movie-api.cederdorff.com/wp-json/wp/v2/posts?_embed");
     let data = await response.json();
-    console.log(data);
     _movies = data;
     appendMovies(data, "#movies-container");
     showLoader(false);
@@ -161,11 +161,11 @@ function showDetailView(id) {
             }" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </article>
     `;
-    navigateTo("detailView");
+    navigateTo("#/detailView");
 }
 
-if (!_selectedMovieId) {
-    navigateTo("movies");
+if (!_selectedMovieId && location.hash == "#/detailView") {
+    navigateTo("#/");
 }
 
 // =========== Loader functionality =========== //
@@ -178,3 +178,8 @@ function showLoader(show = true) {
         loader.classList.add("hide");
     }
 }
+
+// =========== Attach Events =========== //
+window.showDetailView = id => showDetailView(id);
+window.categorySelected = categoryId => categorySelected(categoryId);
+window.search = value => search(value);

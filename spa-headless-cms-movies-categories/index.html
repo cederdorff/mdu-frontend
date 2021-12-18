@@ -1,80 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>SINGLE PAGE WEB APP TEMPLATE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Get started with HTML, CSS and JavaScript" />
+        <meta name="author" content="Rasmus Cederdorff" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>SINGLE PAGE WEB APP TEMPLATE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Get started with HTML, CSS and JavaScript">
-  <meta name="author" content="Rasmus Cederdorff">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-</head>
+    <body>
+        <!-- navigation -->
 
-<body onhashchange="pageChange()">
-  <!-- navigation -->
-  <nav>
-    <a href="#movies">Movies</a>
-    <a href="#search">Search</a>
-    <a href="#categories">Categories</a>
-  </nav>
+        <!-------------- Navigation -------------->
+        <nav>
+            <a class="nav-link" href="#/">Movies</a>
+            <a class="nav-link" href="#/search">Search</a>
+            <a class="nav-link" href="#/categories">Categories</a>
+        </nav>
 
-  <!-- pages -->
-  <!-- movies page -->
-  <section id="movies" class="page">
-    <header class="topbar">
-      <h2>Movies</h2>
-    </header>
-    <section id="movies-container" class="grid-container"></section>
-  </section>
+        <!-------------- pages -------------->
+        <!-- movies page -->
+        <section id="movies" class="page">
+            <header class="topbar">
+                <h2>Movies</h2>
+            </header>
+            <section id="movies-container" class="grid-container"></section>
+        </section>
 
-  <!-- pages -->
-  <!-- movies page -->
-  <section id="search" class="page">
-    <header class="topbar">
-      <h2>Search Page</h2>
-    </header>
-    <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search(this.value)">
-    <section id="search-container" class="hide">
-      <h2>Search Results</h2>
-      <section id="movies-search-container" class="grid-container"></section>
-    </section>
-    <section id="categories-container" class="grid-container"></section>
-  </section>
+        <!-- pages -->
+        <!-- movies page -->
+        <section id="search" class="page">
+            <header class="topbar">
+                <h2>Search Page</h2>
+            </header>
+            <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search(this.value)" />
+            <section id="search-container" class="hide">
+                <h2>Search Results</h2>
+                <section id="movies-search-container" class="grid-container"></section>
+            </section>
+            <section id="categories-container" class="grid-container"></section>
+        </section>
 
-  <!-- categories page -->
-  <section id="categories" class="page">
-    <header class="topbar">
-      <h2>Categories</h2>
-    </header>
-    <select id="select-category" onchange="categorySelected(this.value)">
-      <option selected disabled>Select Category</option>
-    </select>
-    <section id="movies-by-category-container" class="grid-container">
-      <article class="empty">
-        <p>Please, select category</p>
-      </article>
-    </section>
-  </section>
+        <!-- categories page -->
+        <section id="categories" class="page">
+            <header class="topbar">
+                <h2>Categories</h2>
+            </header>
+            <select id="select-category" onchange="categorySelected(this.value)">
+                <option selected disabled>Select Category</option>
+            </select>
+            <section id="movies-by-category-container" class="grid-container">
+                <article class="empty">
+                    <p>Please, select category</p>
+                </article>
+            </section>
+        </section>
 
-  <!-- detail page -->
-  <section id="detailView" class="page">
-    <header class="topbar">
-      <a class="left" href="#movies">Back</a>
-      <h2>Detail View</h2>
-    </header>
-    <section id="detailViewContainer" class="detail-grid"></section>
-  </section>
+        <!-- detail page -->
+        <section id="detailView" class="page">
+            <header class="topbar">
+                <a class="left nav-link" href="#/">Back</a>
+                <h2>Detail View</h2>
+            </header>
+            <section id="detailViewContainer" class="detail-grid"></section>
+        </section>
 
-  <!-- loader  -->
-  <section id="loader">
-    <section class="spinner"></section>
-  </section>
+        <!-- loader  -->
+        <section id="loader">
+            <section class="spinner"></section>
+        </section>
 
-  <!-- SPA functionality  -->
-  <script src="js/spa.js"></script>
-  <!-- main js file -->
-  <script src="js/main.js"></script>
-</body>
-
+        <!-- app js file -->
+        <script src="js/app.js" type="module"></script>
+    </body>
 </html>
