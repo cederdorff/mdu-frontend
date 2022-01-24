@@ -20,13 +20,10 @@ async function fetchUsers() {
     _users = data;
 }
 
-
-
-
 function appendUsers(usersArray) {
     let html = "";
     for (const userObject of usersArray) {
-        html += /*html*/`
+        html += /*html*/ `
             <article>
                 <img src="${userObject.avatarUrl}" onclick="showDetailView('${userObject.id}')">
                 <h2>${userObject.name}</h2>
@@ -69,7 +66,7 @@ function filterByEnrollment(type) {
         appendUsers(_users);
     } else {
         const results = _users.filter(user => user.enrollmentType === type);
-        appendUsers(results)
+        appendUsers(results);
     }
 }
 
@@ -171,7 +168,7 @@ function deleteUser(id) {
 function showDetailView(id) {
     const userObject = _users.find(user => user.id == id);
     document.querySelector("#detailView h2").innerHTML = userObject.name;
-    document.querySelector("#detailViewContainer").innerHTML = /*html*/`
+    document.querySelector("#detailViewContainer").innerHTML = /*html*/ `
         <img src="${userObject.avatarUrl}" onclick="showDetailView('${userObject.id}')">
         <article>
             <h2>${userObject.name}</h2>
@@ -184,7 +181,6 @@ function showDetailView(id) {
     `;
     navigateTo("detailView");
 }
-
 
 if (!_selectedUserId) {
     navigateTo("users");
