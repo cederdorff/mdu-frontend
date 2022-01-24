@@ -11,5 +11,5 @@ document.querySelector("#content").innerHTML = message;
 
 // showing and alert with a message
 function showAlert() {
-  alert('Open your Developer Console!');
+    alert("Open your Developer Console!");
 }
