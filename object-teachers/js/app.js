@@ -41,7 +41,7 @@ document.querySelector("#grid-teachers").innerHTML += /*html*/ `
   <a href='mailto:${teacher1.mail}'>${teacher1.mail}</a>
 </article>`;
 
-//teacher2 - Martin
+//teacher2 - Lykke
 document.querySelector("#grid-teachers").innerHTML += /*html*/ `
 <article>
   <img src='${teacher2.img}'>
