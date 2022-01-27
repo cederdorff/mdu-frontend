@@ -1,53 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>SINGLE PAGE WEB APP TEMPLATE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Get started with HTML, CSS and JavaScript" />
+        <meta name="author" content="Rasmus Cederdorff" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>SINGLE PAGE WEB APP TEMPLATE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Get started with HTML, CSS and JavaScript">
-  <meta name="author" content="Rasmus Cederdorff">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-</head>
+    <body>
+        <!-- tabbar navigation -->
+        <nav class="tabbar">
+            <a href="#/" class="nav-link">Home</a>
+            <a href="#/about" class="nav-link">About</a>
+            <a href="#/clients" class="nav-link">Clients</a>
+        </nav>
 
-<body>
-  <!-- tabbar navigation -->
-  <nav class="tabbar">
-    <a href="#/home" class="nav-link">Home</a>
-    <a href="#/about" class="nav-link">About</a>
-    <a href="#/clients" class="nav-link">Clients</a>
-  </nav>
+        <!-- pages -->
+        <!-- home page -->
+        <section id="home" class="page">
+            <header class="topbar">
+                <h2>Home</h2>
+            </header>
+            <p>My Single Page Web App Template</p>
+        </section>
 
-  <!-- pages -->
-  <!-- home page -->
-  <section id="home" class="page">
-    <header class="topbar">
-      <h2>Home</h2>
-    </header>
-    <p>My Single Page Web App Template</p>
-  </section>
+        <!-- about page -->
+        <section id="about" class="page">
+            <header class="topbar">
+                <h2>About</h2>
+            </header>
+            <p>This is my about page</p>
+        </section>
 
-  <!-- about page -->
-  <section id="about" class="page">
-    <header class="topbar">
-      <h2>About</h2>
-    </header>
-    <p>This is my about page</p>
-  </section>
+        <!-- clients page -->
+        <section id="clients" class="page">
+            <header class="topbar">
+                <h2>Clients</h2>
+            </header>
+            <p>Clients page. Here goes some content.</p>
+        </section>
 
-  <!-- clients page -->
-  <section id="clients" class="page">
-    <header class="topbar">
-      <h2>Clients</h2>
-    </header>
-    <p>Clients page. Here goes some content.</p>
-  </section>
-
-  <!-- SPA Router functionality  -->
-  <script src="js/router.js"></script>
-  <!-- main js file -->
-  <script src="js/main.js"></script>
-</body>
-
+        <!-- SPA Router functionality  -->
+        <script src="js/router.js"></script>
+        <!-- app js file -->
+        <script src="js/app.js"></script>
+    </body>
 </html>
