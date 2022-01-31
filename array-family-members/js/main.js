@@ -84,19 +84,15 @@ function search(searchValue) {
     appendPersons(result);
 }
 
-function add() {
-    let inputName = document.getElementById("inputName");
-    let inputAge = document.getElementById("inputAge");
-    let inputHairColor = document.getElementById("inputHairColor");
-    let inputRelation = document.getElementById("inputRelation");
-    let inputImageUrl = document.getElementById("inputImageUrl");
-
+function add(event) {
+    event.preventDefault();
+    const formData = event.target;
     let newPerson = {
-        name: inputName.value,
-        age: inputAge.value,
-        hairColor: inputHairColor.value,
-        relation: inputRelation.value,
-        img: inputImageUrl.value
+        name: formData.name.value,
+        age: formData.age.value,
+        hairColor: formData.hairColor.value,
+        relation: formData.relation.value,
+        img: formData.imageUrl.value
     };
     console.log(newPerson);
 
