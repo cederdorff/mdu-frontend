@@ -28,12 +28,18 @@ body {
 h1 {
     font-size: 2em;
     font-weight: 400;
-    letter-spacing: 3px;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 h3 {
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
     margin: 0.5em 0 0.2em;
 }
 
