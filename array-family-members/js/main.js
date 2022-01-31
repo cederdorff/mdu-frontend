@@ -86,7 +86,9 @@ function search(searchValue) {
 
 function add(event) {
     event.preventDefault();
+
     const formData = event.target;
+
     let newPerson = {
         name: formData.name.value,
         age: formData.age.value,
