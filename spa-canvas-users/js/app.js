@@ -140,7 +140,7 @@ function selectUser(id) {
     document.querySelector("#mailEdit").value = userToEdit.mail;
     document.querySelector("#enrollmentTypeEdit").value = userToEdit.enrollmentType;
     document.querySelector("#imgEdit").value = userToEdit.image;
-    navigateTo("update");
+    navigateTo("#/update");
 }
 
 function updateUser() {
