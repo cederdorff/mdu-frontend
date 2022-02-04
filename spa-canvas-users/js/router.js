@@ -5,6 +5,7 @@
 const _routes = {
     "#/": "users",
     "#/create": "create",
+    "#/update": "update",
     "#/user": "detailView",
     "#/random": "random"
 };
