@@ -1,4 +1,4 @@
-console.log("app.js ready 🎉");
+// products: https://raw.githubusercontent.com/cederdorff/mdu-frontend/main/data/products.json
 
 // =========== Product functionality =========== //
 
