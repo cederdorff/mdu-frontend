@@ -14,9 +14,10 @@ async function initApp() {
 initApp();
 
 async function fetchUsers() {
-    const url = "https://cederdorff.github.io/mdu-frontend/canvas-users/data/users.json";
+    const url = "https://cederdorff.github.io/mdu-frontend/canvas-users/data/users.json?v=999";
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
     _users = data;
 }
 
@@ -25,9 +26,9 @@ function appendUsers(usersArray) {
     for (const userObject of usersArray) {
         html += /*html*/ `
             <article>
-                <img src="${userObject.avatarUrl}" onclick="showDetailView('${userObject.id}')">
+                <img src="${userObject.image}" onclick="showDetailView('${userObject.id}')">
                 <h2>${userObject.name}</h2>
-                <a href="mailto:${userObject.email}">${userObject.email}</a>
+                <a href="mailto:${userObject.mail}">${userObject.mail}</a>
                 <p>${userObject.enrollmentType.replace("Enrollment", "")}</p>
                 <p>Course: ${userObject.course}</p>
                 <button onclick="selectUser('${userObject.id}')">Update</button>
@@ -110,10 +111,10 @@ function addNewUser() {
     const id = Date.now(); // dummy generated user id
 
     const newUser = {
-        avatarUrl: img,
+        image: img,
         course: course,
         createdAt: id,
-        email: mail,
+        mail: mail,
         enrollmentType: enrollmentType,
         id: id,
         loginId: mail,
