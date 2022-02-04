@@ -14,7 +14,7 @@ async function initApp() {
 initApp();
 
 async function fetchUsers() {
-    const url = "https://cederdorff.github.io/mdu-frontend/canvas-users/data/users.json?v=999";
+    const url = "https://cederdorff.github.io/mdu-frontend/canvas-users/data/users.json";
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
@@ -113,11 +113,9 @@ function addNewUser() {
     const newUser = {
         image: img,
         course: course,
-        createdAt: id,
         mail: mail,
         enrollmentType: enrollmentType,
         id: id,
-        loginId: mail,
         name: name,
         sortableName: generateSortableName(name)
     };
@@ -139,9 +137,9 @@ function selectUser(id) {
     const userToEdit = _users.find(user => user.id == id);
     document.querySelector("#nameEdit").value = userToEdit.name;
     document.querySelector("#courseEdit").value = userToEdit.course;
-    document.querySelector("#mailEdit").value = userToEdit.email;
+    document.querySelector("#mailEdit").value = userToEdit.mail;
     document.querySelector("#enrollmentTypeEdit").value = userToEdit.enrollmentType;
-    document.querySelector("#imgEdit").value = userToEdit.avatarUrl;
+    document.querySelector("#imgEdit").value = userToEdit.image;
     navigateTo("update");
 }
 
@@ -149,10 +147,9 @@ function updateUser() {
     const userToEdit = _users.find(user => user.id == _selectedUserId);
     userToEdit.name = document.querySelector("#nameEdit").value;
     userToEdit.course = document.querySelector("#courseEdit").value;
-    userToEdit.email = document.querySelector("#mailEdit").value;
-    userToEdit.loginId = userToEdit.email;
+    userToEdit.mail = document.querySelector("#mailEdit").value;
     userToEdit.enrollmentType = document.querySelector("#enrollmentTypeEdit").value;
-    userToEdit.avatarUrl = document.querySelector("#imgEdit").value;
+    userToEdit.image = document.querySelector("#imgEdit").value;
     userToEdit.sortableName = generateSortableName(userToEdit.name);
     appendUsers(_users);
     navigateTo("users");
@@ -174,7 +171,7 @@ function showDetailView(id) {
         <article>
             <h2>${userObject.name}</h2>
             <p>Sortable name: ${userObject.sortableName}</p>
-            <a href="mailto:${userObject.email}">${userObject.email}</a>
+            <a href="mailto:${userObject.email}">${userObject.mail}</a>
             <p>${userObject.enrollmentType.replace("Enrollment", "")}</p>
             <p>Course: ${userObject.course}</p>
             <p>User id: ${userObject.id}</p>
