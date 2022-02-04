@@ -170,21 +170,21 @@ function showDetailView(id) {
     const userObject = _users.find(user => user.id == id);
     document.querySelector("#detailView h2").innerHTML = userObject.name;
     document.querySelector("#detailViewContainer").innerHTML = /*html*/ `
-        <img src="${userObject.avatarUrl}" onclick="showDetailView('${userObject.id}')">
+        <img src="${userObject.image}" onclick="showDetailView('${userObject.id}')">
         <article>
             <h2>${userObject.name}</h2>
             <p>Sortable name: ${userObject.sortableName}</p>
-            <a href="mailto:${userObject.email}">${userObject.email}</a>
+            <a href="mailto:${userObject.mail}">${userObject.mail}</a>
             <p>${userObject.enrollmentType.replace("Enrollment", "")}</p>
             <p>Course: ${userObject.course}</p>
             <p>User id: ${userObject.id}</p>
         </article>
     `;
-    navigateTo("detailView");
+    navigateTo("#/user");
 }
 
 if (!_selectedUserId) {
-    navigateTo("users");
+    navigateTo("#/");
 }
 
 function showRandomUser() {
