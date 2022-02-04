@@ -28,18 +28,12 @@ body {
 h1 {
     font-size: 2em;
     font-weight: 400;
-    letter-spacing: 0.05em;
-}
-
-h2 {
-    font-size: 1.5em;
-    font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 3px;
 }
 
 h3 {
     font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 1px;
     margin: 0.5em 0 0.2em;
 }
 
@@ -81,8 +75,8 @@ img {
     right: 20px;
 }
 
-/* ---------- nav styling ---------- */
-nav {
+/* ---------- tabbar styling ---------- */
+.tabbar {
     background-color: var(--green);
     position: fixed;
     bottom: 0;
@@ -92,25 +86,25 @@ nav {
 }
 
 /* Style the links inside the navigation bar */
-nav a {
+.tabbar a {
     display: inline-block;
     color: var(--text-color-light);
     text-align: center;
-    padding: 1.2em 1.3em;
+    padding: 20px 16px;
     text-decoration: none;
-    font-size: 1em;
-    letter-spacing: 0.05em;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
 /* Change the color of links on hover */
-nav a:hover {
+.tabbar a:hover {
     background-color: var(--light-grey);
     color: var(--text-color-dark);
 }
 
 /* Add a color to the active/current link */
-nav a.active {
+.tabbar a.active {
     background-color: var(--light-green);
     color: var(--green);
 }
@@ -214,7 +208,17 @@ nav a.active {
     max-width: 350px;
 }
 
+/* ---------- product styling ---------- */
+.outOfStock p.status {
+    color: var(--text-color-out-of-stock);
+}
+
+.inStock p.status {
+    color: var(--text-color-in-stock);
+}
+
 /* ---------- form styling ---------- */
+/* input form stryling */
 form {
     margin: auto;
 }
@@ -248,7 +252,7 @@ input {
     box-sizing: border-box;
     display: block;
     background: var(--white);
-    border: 5px solid var(--light-green);
+    border: 0;
 }
 
 /* ---------- loader styling ---------- */
@@ -360,13 +364,12 @@ input {
 
 /* ---------- custom select styling ---------- */
 select {
-    background-color: var(--light-green);
+    background-color: var(--green);
     border: none;
-    color: var(--green);
+    color: var(--text-color-light);
     padding: 1em;
     margin: 1em;
     max-width: 350px;
-    cursor: pointer;
 }
 
 /* ---------- custom select styling ---------- */
