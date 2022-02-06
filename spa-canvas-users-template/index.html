@@ -1,44 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>SINGLE PAGE WEB APP TEMPLATE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Get started with HTML, CSS and JavaScript" />
+        <meta name="author" content="Rasmus Cederdorff" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>SINGLE PAGE WEB APP TEMPLATE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Get started with HTML, CSS and JavaScript">
-  <meta name="author" content="Rasmus Cederdorff">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-</head>
+    <body>
+        <!-- tabbar navigation -->
+        <nav class="tabbar">
+            <a href="#/">Users</a>
+            <a href="#/create">Create</a>
+        </nav>
 
-<body onhashchange="pageChange()">
-  <!-- tabbar navigation -->
-  <nav class="tabbar">
-    <a href="#home">Home</a>
-    <a href="#page2">Page2</a>
-  </nav>
+        <!-- pages -->
+        <!-- users page -->
+        <section id="users" class="page">
+            <header class="topbar">
+                <h2>All Users</h2>
+            </header>
+            <section class="tools-grid">
+                <label for="sortBy"
+                    >Order by:
+                    <select id="sortBy" onchange="orderBy(this.value)">
+                        <option value="" selected disabled>Choose here</option>
+                        <option value="name">First name</option>
+                        <option value="sortableName">Last name</option>
+                    </select>
+                </label>
+                <label for="filterByEnrollment"
+                    >Filter by:
+                    <select id="filterByEnrollment" onchange="filterByEnrollment(this.value)">
+                        <option value="all" selected>All</option>
+                        <option value="StudentEnrollment">Student</option>
+                        <option value="TeacherEnrollment">Teacher</option>
+                    </select>
+                </label>
+                <label for="filterByCourse"
+                    >Courses:
+                    <select id="filterByCourse" onchange="filterByCourse(this.value)">
+                        <option value="all" selected>All</option>
+                        <option value="MDU-E20FRONT1">Frontend 1</option>
+                        <option value="MDC-E20FRONT2">Frontend 2</option>
+                    </select>
+                </label>
+                <input type="search" placeholder="Search" onkeyup="search(this.value)" onsearch="search('')" />
+            </section>
+            <section id="users-container" class="grid-container"></section>
+        </section>
 
-  <!-- pages -->
-  <!-- home page -->
-  <section id="home" class="page">
-    <header class="topbar">
-      <h2>Home</h2>
-    </header>
-    <p>My Single Page Web App Template</p>
-  </section>
+        <!-- create page -->
+        <section id="create" class="page">
+            <header class="topbar">
+                <a class="left" href="#/">Back</a>
+                <h2>Create</h2>
+            </header>
+            <form>
+                <input id="name" type="text" name="name" placeholder="Type name" />
+                <select id="course">
+                    <option selected disabled>Select course</option>
+                    <option value="MDU-E20FRONT1">Frontend 1</option>
+                    <option value="MDC-E20FRONT2">Frontend 2</option>
+                </select>
+                <input id="mail" type="email" name="mail" placeholder="Type email" />
+                <select id="enrollmentType">
+                    <option selected disabled>Select enrollment type</option>
+                    <option value="StudentEnrollment">Student</option>
+                    <option value="TeacherEnrollment">Teacher</option>
+                </select>
+                <input id="img" type="text" name="img" placeholder="Paste image URL" />
+                <button type="button" name="button" onclick="addNewUser()">Add new</button>
+            </form>
+        </section>
 
-  <!-- about page -->
-  <section id="page2" class="page">
-    <header class="topbar">
-      <h2>Page 2</h2>
-    </header>
-    <p>This is my page 2</p>
-  </section>
+        <!-- update page -->
+        <section id="update" class="page">
+            <header class="topbar">
+                <a class="left" href="#/">Back</a>
+                <h2>Update user</h2>
+            </header>
+            <form>
+                <input id="nameEdit" type="text" name="name" placeholder="Type name" />
+                <select id="courseEdit">
+                    <option selected disabled>Select course</option>
+                    <option value="admin">Admin</option>
+                    <option value="MDU-E20FRONT1">Frontend 1</option>
+                    <option value="MDC-E20FRONT2">Frontend 2</option>
+                </select>
+                <input id="mailEdit" type="email" name="mail" placeholder="Type email" />
+                <select id="enrollmentTypeEdit">
+                    <option selected disabled>Select enrollment type</option>
+                    <option value="StudentEnrollment">Student</option>
+                    <option value="TeacherEnrollment">Teacher</option>
+                </select>
+                <input id="imgEdit" type="text" name="img" placeholder="Paste image URL" />
+                <button type="button" name="button" onclick="updateUser()">Update user</button>
+            </form>
+        </section>
 
-  <!-- SPA functionality  -->
-  <script src="js/spa.js"></script>
-  <!-- main js file -->
-  <script src="js/main.js"></script>
-</body>
+        <!-- update page -->
+        <section id="detailView" class="page">
+            <header class="topbar">
+                <a class="left" onclick="goBack()" href="#">Back</a>
+                <h2>Detail View</h2>
+            </header>
+            <section id="detailViewContainer" class="detail-grid"></section>
+        </section>
 
+        <!-- Router script  -->
+        <script src="js/router.js"></script>
+        <!-- App js script -->
+        <script src="js/app.js"></script>
+    </body>
 </html>
