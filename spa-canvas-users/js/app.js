@@ -122,7 +122,7 @@ function addNewUser() {
 
     _users.push(newUser);
     appendUsers(_users);
-    navigateTo("users");
+    navigateTo("#/");
 }
 
 function generateSortableName(name) {
@@ -152,7 +152,7 @@ function updateUser() {
     userToEdit.image = document.querySelector("#imgEdit").value;
     userToEdit.sortableName = generateSortableName(userToEdit.name);
     appendUsers(_users);
-    navigateTo("users");
+    navigateTo("#/");
 }
 
 function deleteUser(id) {
