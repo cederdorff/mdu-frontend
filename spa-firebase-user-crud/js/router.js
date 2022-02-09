@@ -3,7 +3,7 @@
  * "path": "id of page in DOM"
  */
 const _routes = {
-    "#/": "home",
+    "#/": "users",
     "#/create": "create",
     "#/update": "update"
 };
