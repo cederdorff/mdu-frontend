@@ -1,94 +1,94 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Single Page Application - RACE</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Get started with HTML, CSS and JavaScript" />
+        <meta name="author" content="Rasmus Cederdorff" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    </head>
 
-<head>
-  <title>Single Page Application - RACE</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Get started with HTML, CSS and JavaScript">
-  <meta name="author" content="Rasmus Cederdorff">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <body>
+        <!-------------- Navigation -------------->
+        <nav class="tabbar hide">
+            <a class="nav-link" href="#/">Home</a>
+            <a class="nav-link" href="#/about">About</a>
+            <a class="nav-link" href="#/clients">Clients</a>
+            <a class="nav-link" href="#/contact">Contact</a>
+        </nav>
 
-</head>
+        <main id="appRoot">
+            <!-------------- Pages -------------->
 
-<body>
-  <!-------------- Navigation -------------->
-  <nav class="tabbar hide">
-    <a class="nav-link" href="#/">Home</a>
-    <a class="nav-link" href="#/about">About</a>
-    <a class="nav-link" href="#/clients">Clients</a>
-    <a class="nav-link" href="#/contact">Contact</a>
-  </nav>
+            <!-- login page -->
+            <section id="login" class="page">
+                <header class="topbar">
+                    <h2>Login</h2>
+                </header>
+                <p>My Single Page Web App Login Screen</p>
+                <p class="login-message"></p>
+                <form id="form-login">
+                    <input name="mail" type="email" placeholder="Type email" />
+                    <input name="password" type="password" placeholder="Password" />
+                    <button>Login</button>
+                </form>
+                <p><a class="nav-link" href="#/signup">Go to Sign up</a></p>
+            </section>
 
-  <main id="appRoot">
-    <!-------------- Pages -------------->
+            <!-- login page -->
+            <section id="signup" class="page">
+                <header class="topbar">
+                    <h2>Sign Up</h2>
+                </header>
+                <p>Sign up</p>
+                <p class="signup-message"></p>
+                <form id="form-signup">
+                    <input name="mail" type="email" placeholder="Type email" autocomplete="new-email" />
+                    <input name="password" type="password" placeholder="Password" autocomplete="new-password" />
+                    <button>Sign up</button>
+                </form>
+            </section>
 
-    <!-- login page -->
-    <section id="login" class="page">
-      <header class="topbar">
-        <h2>Login</h2>
-      </header>
-      <p>My Single Page Web App Login Screen</p>
-      <p class="login-message"></p>
-      <form>
-        <input id="login-mail" type="email" placeholder="Type email">
-        <input id="login-password" type="password" placeholder="Password">
-        <button type="button" id="btn-login">Login</button>
-      </form>
-      <p><a class="nav-link" href="#/signup">Go to Sign up</a></p>
-    </section>
+            <!-- home page -->
+            <section id="home" class="page">
+                <header class="topbar">
+                    <h2>Home</h2>
+                    <a class="right" id="btn-logout">Logout</a>
+                </header>
+                <p>My Single Page Web App Template</p>
+            </section>
 
-    <!-- login page -->
-    <section id="signup" class="page">
-      <header class="topbar">
-        <h2>Sign Up</h2>
-      </header>
-      <p>Sign up</p>
-      <p class="signup-message"></p>
-      <form>
-        <input id="signup-mail" type="email" placeholder="Type email" autocomplete="new-email">
-        <input id="signup-password" type="password" placeholder="Password" autocomplete="new-password">
-        <button type="button" id="btn-signup">Sign up</button>
-      </form>
-    </section>
+            <!-- about page -->
+            <section id="about" class="page">
+                <header class="topbar">
+                    <h2>About</h2>
+                </header>
+                <p>This is my about page</p>
+            </section>
 
-    <!-- home page -->
-    <section id="home" class="page">
-      <header class="topbar">
-        <h2>Home</h2>
-        <a class="right" id="btn-logout">Logout</a>
-      </header>
-      <p>My Single Page Web App Template</p>
-    </section>
+            <!-- clients page -->
+            <section id="clients" class="page">
+                <header class="topbar">
+                    <h2>Clients</h2>
+                </header>
+                <p>Clients page. Here goes some content.</p>
+            </section>
 
-    <!-- about page -->
-    <section id="about" class="page">
-      <header class="topbar">
-        <h2>About</h2>
-      </header>
-      <p>This is my about page</p>
-    </section>
+            <!-- clients page -->
+            <section id="contact" class="page">
+                <header class="topbar">
+                    <h2>Contact</h2>
+                </header>
+                <p>This is a contact page</p>
+            </section>
 
-    <!-- clients page -->
-    <section id="clients" class="page">
-      <header class="topbar">
-        <h2>Clients</h2>
-      </header>
-      <p>Clients page. Here goes some content.</p>
-    </section>
-
-    <!-- clients page -->
-    <section id="contact" class="page">
-      <header class="topbar">
-        <h2>Contact</h2>
-      </header>
-      <p>This is a contact page</p>
-    </section>
-
-  </main>
-
-  <script src="./js/app.js" type="module"></script>
-</body>
-
+            <!-- loader  -->
+            <section id="loader">
+                <section class="spinner"></section>
+            </section>
+        </main>
+        <script src="./js/app.js" type="module"></script>
+    </body>
 </html>
