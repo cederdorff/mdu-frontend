@@ -26,18 +26,7 @@ const persons = [
     }
 ];
 
-persons.map(person => console.log(person));
-
-const mappedHtml = persons
-    .map(
-        person => /*html*/ `
-	<article>
-		<h2>${person.firstName} ${person.lastName}</h2>
-		<p>${person.birthDate}</p>
-	</article>
-`
-    )
-    .join("");
-
-console.log(mappedHtml);
-document.querySelector("#content").innerHTML = mappedHtml;
+const result = persons.map(person => {
+    console.log(person);
+    // manipulate and return value
+});
