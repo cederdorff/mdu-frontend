@@ -69,7 +69,7 @@ function appendUsers(userList) {
 // === INITIALIZE APP === //
 
 async function initApp() {
-    users = await getUsers();
+    const users = await getUsers();
     appendUsers(users);
 }
 
