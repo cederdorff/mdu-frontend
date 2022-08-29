@@ -1,9 +1,9 @@
 export default class View {
     constructor(controller) {
         this.controller = controller;
+        this.selectedUserId;
         this.createSubmitEvent();
         this.updateSubmitEvent();
-        this.selectedUserId;
     }
 
     displayUsers(userList) {
