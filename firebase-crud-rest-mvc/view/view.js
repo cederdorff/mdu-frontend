@@ -24,10 +24,10 @@ export default class View {
         }
 
         document.querySelector("#users-grid").innerHTML = html;
-        this.addClickEvents();
+        this.addUserClickEvents();
     }
 
-    addClickEvents() {
+    addUserClickEvents() {
         //delete event
         document.querySelectorAll(".btn-delete-user").forEach(
             btn =>
