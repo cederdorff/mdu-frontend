@@ -119,7 +119,7 @@ a {
     background: var(--light-grey);
     animation: fadeIn 0.4s;
     /* padding equals height of tabbar and topbar */
-    padding: 108px 0;
+    padding: 108px 0 0;
 }
 
 /* ---------- logo styling ---------- */
