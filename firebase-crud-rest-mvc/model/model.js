@@ -4,7 +4,7 @@ export default class Model {
     }
 
     async fetchUsers() {
-        const res = await fetch(this.endpoint + "/users.json");
+        const res = await fetch(`${this.endpoint}/users.json`);
         const data = await res.json();
         const userList = Object.keys(data).map(key => ({ id: key, ...data[key] })); // from object to array
         return userList;
