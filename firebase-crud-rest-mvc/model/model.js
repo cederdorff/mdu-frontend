@@ -2,7 +2,7 @@ export default class Model {
     constructor() {
         this.endpoint = "https://race-crud-rest-default-rtdb.firebaseio.com";
     }
-
+    // === READ & FETCH USERS (GET) === //
     async fetchUsers() {
         const res = await fetch(`${this.endpoint}/users.json`);
         const data = await res.json();
@@ -10,7 +10,6 @@ export default class Model {
         return userList;
     }
 
-    // === READ (GET) === //
     async getUsers() {
         return await this.fetchUsers();
     }
