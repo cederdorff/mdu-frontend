@@ -2,8 +2,8 @@ export default class View {
     constructor(controller) {
         this.controller = controller;
         this.selectedUserId;
-        this.createSubmitEvent();
-        this.updateSubmitEvent();
+        this.addCreateSubmitEvent();
+        this.addUpdateSubmitEvent();
     }
 
     displayUsers(userList) {
@@ -29,33 +29,33 @@ export default class View {
 
     addUserClickEvents() {
         //delete event
-        document.querySelectorAll(".btn-delete-user").forEach(
-            btn =>
-                (btn.onclick = () => {
-                    const userId = btn.getAttribute("data-id");
-                    const shouldDelete = confirm("Are you sure you want to delete this user?");
-                    if (shouldDelete) {
-                        this.controller.handleDeleteUser(userId);
-                    }
-                })
-        );
+        const deleteBtns = document.querySelectorAll(".btn-delete-user");
+        for (const btn of deleteBtns) {
+            btn.onclick = () => {
+                const userId = btn.getAttribute("data-id");
+                const shouldDelete = confirm("Are you sure you want to delete this user?");
+                if (shouldDelete) {
+                    this.controller.handleDeleteUser(userId);
+                }
+            };
+        }
 
         //update event
-        document.querySelectorAll(".btn-update-user").forEach(
-            btn =>
-                (btn.onclick = async () => {
-                    this.selectedUserId = btn.getAttribute("data-id");
-                    const user = await this.controller.handleGetUser(this.selectedUserId);
-                    const form = document.querySelector("#form-update");
-                    form.name.value = user.name;
-                    form.mail.value = user.mail;
-                    form.image.value = user.image;
-                    form.scrollIntoView({ behavior: "smooth" });
-                })
-        );
+        const updateBtns = document.querySelectorAll(".btn-update-user");
+        for (const btn of updateBtns) {
+            btn.onclick = async () => {
+                this.selectedUserId = btn.getAttribute("data-id");
+                const user = await this.controller.handleGetUser(this.selectedUserId);
+                const form = document.querySelector("#form-update");
+                form.name.value = user.name;
+                form.mail.value = user.mail;
+                form.image.value = user.image;
+                form.scrollIntoView({ behavior: "smooth" });
+            };
+        }
     }
 
-    createSubmitEvent() {
+    addCreateSubmitEvent() {
         document.querySelector("#form-create").onsubmit = event => {
             event.preventDefault();
             const name = event.target.name.value;
@@ -66,7 +66,7 @@ export default class View {
         };
     }
 
-    updateSubmitEvent() {
+    addUpdateSubmitEvent() {
         document.querySelector("#form-update").onsubmit = event => {
             event.preventDefault();
             const name = event.target.name.value;
