@@ -24,14 +24,16 @@
             <input type="url" name="image" placeholder="Paste image url" required>
             <button>Create User</button>
         </form>
-
-        <form id="form-update">
-            <h2>Update User</h2>
-            <input type="text" name="name" id="name-update" placeholder="Type your name" required>
-            <input type="email" name="mail" id="mail-update" placeholder="Type your mail" required>
-            <input type="url" name="image" id="image-update" placeholder="Paste image url" required>
-            <button>Update User</button>
-        </form>
+        <dialog id="dialog-update">
+            <form method="dialog" id="form-update">
+                <h2>Update User</h2>
+                <input type="text" name="name" id="name-update" placeholder="Type your name" required>
+                <input type="email" name="mail" id="mail-update" placeholder="Type your mail" required>
+                <input type="url" name="image" id="image-update" placeholder="Paste image url" required>
+                <button type="button" id="btn-cancel">Cancel</button>
+                <button type="submit">Update User</button>
+            </form>
+        </dialog>
     </main>
     <!-- app js file -->
     <script src="app.js" type="module"></script>
