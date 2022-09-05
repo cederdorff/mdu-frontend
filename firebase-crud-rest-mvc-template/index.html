@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Firebase CRUD, REST & MVC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Firebase CRUD & REST Project" />
+    <meta name="author" content="Rasmus Cederdorff" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>Firebase CRUD, REST & MVC</h1>
+    </header>
+    <main class="page">
+        <section id="users-grid" class="grid-container"></section>
+        <form id="form-create">
+            <h2>Create a new User</h2>
+            <input type="text" name="name" placeholder="Type your name" required>
+            <input type="email" name="mail" placeholder="Type your mail" required>
+            <input type="url" name="image" placeholder="Paste image url" required>
+            <button>Create User</button>
+        </form>
+        <dialog id="dialog-update">
+            <form method="dialog" id="form-update">
+                <h2>Update User</h2>
+                <input type="text" name="name" id="name-update" placeholder="Type your name" required>
+                <input type="email" name="mail" id="mail-update" placeholder="Type your mail" required>
+                <input type="url" name="image" id="image-update" placeholder="Paste image url" required>
+                <button type="button" id="btn-cancel">Cancel</button>
+                <button type="submit">Update User</button>
+            </form>
+        </dialog>
+    </main>
+    <!-- app js file -->
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
