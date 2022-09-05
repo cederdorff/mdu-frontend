@@ -17,7 +17,6 @@ html {
     color: var(--text-color-dark);
     font-family: var(--font-family);
     height: 100%;
-    text-align: center;
     width: 100%;
 }
 
@@ -173,7 +172,6 @@ a {
 }
 
 .grid-container > article {
-    text-align: center;
     padding: 2em 1em;
     background-color: var(--light-grey);
     transition: 0.3s;
@@ -185,15 +183,15 @@ a {
 
 .grid-container > article img {
     width: 100%;
-    max-width: 250px;
-    height: auto;
+    height: 175px;
+    object-fit: cover;
 }
 
 .grid-container > article button {
     padding: 0.3em;
 
-    margin-top: 1em;
-    width: 35%;
+    margin: 1em 0;
+    width: calc(50% - 0.15em);
 }
 
 /* ---------- form styling ---------- */
@@ -202,6 +200,7 @@ form {
     margin: 2em auto 0;
     background-color: var(--light-green);
     padding: 1em 1em 2em;
+    text-align: center;
 }
 
 button {
@@ -228,12 +227,27 @@ input {
     box-sizing: border-box;
     display: block;
     background: var(--white);
+    border-color: var(--green);
 }
 
 form select {
     width: 100%;
     background-color: var(--light-green);
     color: var(--text-color-dark);
+}
+
+dialog {
+    border-color: var(--green);
+    background-color: var(--light-green);
+    width: 450px;
+}
+
+dialog button {
+    margin: 0.5em 0 0;
+}
+
+dialog form {
+    margin: 0;
 }
 
 /* ---------- loader styling ---------- */
