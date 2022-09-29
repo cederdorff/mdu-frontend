@@ -1,0 +1,88 @@
+{
+    "users": {
+        "AlOr0n80qPLrqA0vJl48": {
+            "title": "Lecturer",
+            "mail": "mnor@eaaa.dk",
+            "image": "https://www.eaaa.dk/media/oayjq02h/martin-n%C3%B8hr.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921658800000&format=webp",
+            "name": "Martin Aagaard Nøhr",
+            "phone": "72286320"
+        },
+        "GFCogUyrdizw6dD221Qp": {
+            "name": "Morten Algy Bonderup",
+            "title": "Senior Lecturer",
+            "phone": "72286339",
+            "image": "https://www.baaa.dk/media/hi4lv5hw/morten-bonderup.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921669800000&format=webp",
+            "mail": "moab@eaaa.dk"
+        },
+        "HlvRHr58C05guOLl64k5": {
+            "image": "https://www.eaaa.dk/media/bdojel41/dan-okkels-brendstrup.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921559630000&format=webp",
+            "title": "Lecturer",
+            "mail": "dob@eaaa.dk",
+            "name": "Dan Okkels Brendstrup",
+            "phone": "72286327"
+        },
+        "LWPSKpRvx7Htyjlb8JqV": {
+            "image": "https://www.baaa.dk/media/3zihz21l/kim-elkjaer-marcher-jepsen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921620830000&format=webp",
+            "name": "Kim Elkjær Marcher-Jepsen",
+            "title": "Senior Lecturer",
+            "phone": "7228 6325",
+            "mail": "kije@eaaa.dk"
+        },
+        "SaW39AGOfU8DMUUG0FhJ": {
+            "phone": "72286316",
+            "mail": "bki@eaaa.dk",
+            "image": "https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921541630000&format=webp",
+            "name": "Birgitte Kirk Iversen",
+            "title": "Senior Lecturer"
+        },
+        "WKjy6B8IfDJxIsBbyxEe": {
+            "phone": "72283264",
+            "title": "Lecturer",
+            "name": "Jes Arbov",
+            "mail": "jear@eaaa.dk",
+            "image": "https://www.eaaa.dk/media/opybpteb/jes-arbov.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921604700000&format=webp"
+        },
+        "ZfPTVEMQKf9vhNiUh0bj": {
+            "phone": "72286345",
+            "image": "https://www.baaa.dk/media/b5ahrlra/maria-louise-bendixen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921650330000&format=webp",
+            "mail": "mlbe@eaaa.dk",
+            "name": "Maria Louise Bendixen",
+            "title": "Senior Lecturer"
+        },
+        "fTs84KRoYw5pRZEWCq2Z": {
+            "mail": "race@eaaa.dk",
+            "name": "Rasmus Cederdorff",
+            "image": "https://www.baaa.dk/media/devlvvgj/rasmus-cederdorff.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921695570000&format=webp",
+            "phone": "72286318",
+            "title": "Senior Lecturer"
+        },
+        "fjpRTRTjZHwrq3tTLHri": {
+            "image": "https://www.baaa.dk/media/5buh1xeo/anne-kirketerp.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921531600000&format=webp",
+            "name": "Anne Kirketerp",
+            "phone": "72286380",
+            "mail": "anki@eaaa.dk",
+            "title": "Head of Department"
+        },
+        "pqzGY1MnHYm3I4Ca79Xn": {
+            "image": "https://www.eaaa.dk/media/14qpfeq4/line-skj%C3%B8dt.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921638700000&format=webp",
+            "title": "Senior Lecturer & Internship Coordinator",
+            "mail": "lskj@eaaa.dk",
+            "phone": "72286336",
+            "name": "Line Skjødt"
+        },
+        "qzeiwWfvceyfY3ntBPGv": {
+            "name": "Anne Storm Rasmussen",
+            "mail": "anst@eaaa.dk",
+            "title": "Rector",
+            "image": "https://www.baaa.dk/media/uqxhqlzq/anne-storm-rasmussen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921534400000&format=webp",
+            "phone": "72286001"
+        },
+        "vnH85C4TbGnSTnylYf8I": {
+            "title": "Lecturer",
+            "image": "https://www.eaaa.dk/media/lxzcybme/kasper-topp.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921618200000&format=webp",
+            "mail": "kato@eaaa.dk",
+            "name": "Kasper Fischer Topp",
+            "phone": "72286328"
+        }
+    }
+}
